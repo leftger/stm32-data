@@ -16,3 +16,11 @@ override_pins:
       signal: VINM0
     - pin: PB0
       signal: VOUT
+---
+peripherals:
+  - name: DESIG
+    address: 0x0BFA0500
+    registers: 
+      kind: desig
+      version: v1
+      block: DESIG

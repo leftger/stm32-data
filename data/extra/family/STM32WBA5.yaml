@@ -1,0 +1,8 @@
+---
+peripherals:
+  - name: DESIG
+    address: 0x0BF90500
+    registers: 
+      kind: desig
+      version: v1
+      block: DESIG

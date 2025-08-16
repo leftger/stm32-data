@@ -1,0 +1,179 @@
+block/DESIG:
+  description: Device electronic signature
+  items:
+  - name: PKGR
+    description: Package data register
+    byte_offset: 0
+    fieldset: PKGR
+  - name: UIDR1
+    description: 96-bit unique device ID register 1
+    byte_offset: 512
+  - name: UIDR2
+    description: 96-bit unique device ID register 2
+    byte_offset: 516
+  - name: UIDR3
+    description: 96-bit unique device ID register 3
+    byte_offset: 520
+  - name: TSCAL1R
+    description: Temperature calibration register 1
+    byte_offset: 528
+    fieldset: TSCAL1R
+  - name: TSCAL2R
+    description: Temperature calibration register 2
+    byte_offset: 576
+    fieldset: TSCAL2R
+  - name: FLASHSIZER
+    description: Flash and RAM size register
+    byte_offset: 672
+    fieldset: FLASHSIZER
+  - name: VREFINTCALR
+    description: Internal voltage reference calibration register
+    byte_offset: 676
+    fieldset: VREFINTCALR
+  - name: VREFBUFCALR
+    description: Voltage reference buffer calibration register
+    byte_offset: 680
+    fieldset: VREFBUFCALR
+  - name: RCALR
+    description: Resistor calibration register
+    byte_offset: 752
+    fieldset: RCALR
+  - name: RFGAINCALR
+    description: Radio gain calibration register
+    byte_offset: 756
+    fieldset: RFGAINCALR
+  - name: UID64R1
+    description: IEEE 64-bit unique device ID register 1
+    byte_offset: 1280
+  - name: UID64R2
+    description: IEEE 64-bit unique device ID register 2
+    byte_offset: 1284
+    fieldset: UID64R2
+fieldset/FLASHSIZER:
+  description: Flash and RAM size
+  fields:
+  - name: FLASH_SIZE
+    description: Flash size in KB
+    bit_offset: 0
+    bit_size: 16
+  - name: RAM_SIZE
+    description: RAM size in KB
+    bit_offset: 16
+    bit_size: 16
+fieldset/PKGR:
+  description: Package information
+  fields:
+  - name: PKG
+    description: Package type
+    bit_offset: 0
+    bit_size: 5
+    enum: PKGR_PKG
+fieldset/RCALR:
+  description: Resistor calibration
+  fields:
+  - name: R_CAL
+    bit_offset: 0
+    bit_size: 8
+fieldset/RFGAINCALR:
+  description: Radio gain calibration
+  fields:
+  - name: GAIN1_CAL
+    bit_offset: 0
+    bit_size: 8
+  - name: GAIN2_CAL
+    bit_offset: 8
+    bit_size: 8
+  - name: GAIN3_CAL
+    bit_offset: 16
+    bit_size: 8
+  - name: GAIN4_CAL
+    bit_offset: 24
+    bit_size: 8
+fieldset/TSCAL1R:
+  description: Temperature sensor calibration 1
+  fields:
+  - name: TS_CAL1
+    description: Factory temperature sensor calibration 1 value for ADC4
+    bit_offset: 0
+    bit_size: 12
+fieldset/TSCAL2R:
+  description: Temperature sensor calibration 2
+  fields:
+  - name: TS_CAL2
+    description: Factory temperature sensor calibration 2 value for ADC4
+    bit_offset: 16
+    bit_size: 12
+fieldset/UID64R2:
+  description: IEEE unique ID register 2
+  fields:
+  - name: DEVID
+    description: Device ID (e.g., 0x2C for STM32WBA6xxx)
+    bit_offset: 0
+    bit_size: 8
+    enum: UID64R2_DEVID
+  - name: STID
+    description: Company ID (e.g., 0x0080E1 for STMicroelectronics)
+    bit_offset: 8
+    bit_size: 24
+    enum: UID64R2_STID
+fieldset/VREFBUFCALR:
+  description: Voltage reference buffer calibration
+  fields:
+  - name: VREFBUF3_TRIM
+    bit_offset: 0
+    bit_size: 6
+  - name: VREFBUF2_TRIM
+    bit_offset: 8
+    bit_size: 6
+  - name: VREFBUF1_TRIM
+    bit_offset: 16
+    bit_size: 6
+  - name: VREFBUF0_TRIM
+    bit_offset: 24
+    bit_size: 6
+fieldset/VREFINTCALR:
+  description: Internal voltage reference calibration
+  fields:
+  - name: VREFINT_CAL
+    description: Calibration value for internal reference (ADC4)
+    bit_offset: 8
+    bit_size: 12
+enum/PKGR_PKG:
+  bit_size: 5
+  variants:
+  - name: UFQFPN48_USB
+    description: UFQFPN48 package with USB
+    value: 3
+  - name: WLSCP88_USB
+    description: WLSCP88 package with USB
+    value: 5
+  - name: UFBGA121_USB
+    description: UFBGA121 package with USB
+    value: 7
+  - name: UFQFPN48_SMPS
+    description: UFQFPN48 package with SMPS
+    value: 10
+  - name: UFQFPN48_SMPS_USB
+    description: UFQFPN48 package with SMPS and USB
+    value: 11
+  - name: VFQFPN68_SMPS_USB
+    description: VFQFPN68 package with SMPS and USB
+    value: 12
+  - name: WLSCP88_SMPS_USB
+    description: WLSCP88 package with SMPS and USB
+    value: 13
+  - name: UFBGA121_SMPS_USB
+    description: UFBGA121 package with SMPS and USB
+    value: 15
+enum/UID64R2_DEVID:
+  bit_size: 8
+  variants:
+  - name: STM32WBA6xx
+    description: STM32WBA6 series device
+    value: 44
+enum/UID64R2_STID:
+  bit_size: 24
+  variants:
+  - name: STMicroelectronics
+    description: JEDEC manufacturer ID for STMicroelectronics
+    value: 32993

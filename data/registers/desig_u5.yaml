@@ -1,0 +1,143 @@
+block/DESIG:
+  description: Device electronic signature
+  items:
+  - name: UID0
+    description: Unique device identifier register 0 (UID[31:0]) – wafer coordinates
+    byte_offset: 512
+    access: Read
+    fieldset: UID0
+  - name: UID1
+    description: Unique device identifier register 1 (UID[63:32]) – lot number + wafer number
+    byte_offset: 516
+    access: Read
+    fieldset: UID1
+  - name: UID2
+    description: Unique device identifier register 2 (UID[95:64]) – lot number
+    byte_offset: 520
+    access: Read
+    fieldset: UID2
+  - name: FLASH_SIZE
+    description: Flash size data register
+    byte_offset: 672
+    access: Read
+    fieldset: FLASH_SIZE
+  - name: PKG
+    description: Package data register
+    byte_offset: 0
+    access: Read
+    fieldset: PKG
+fieldset/FLASH_SIZE:
+  description: Flash size data register
+  fields:
+  - name: FLASH_SIZE
+    description: Flash memory size in kilobytes
+    bit_offset: 0
+    bit_size: 16
+fieldset/PKG:
+  description: Package type register
+  fields:
+  - name: PKG
+    description: Package type
+    bit_offset: 0
+    bit_size: 5
+    enum: PKG
+fieldset/UID0:
+  description: Unique device identifier register 0 – wafer coordinates
+  fields:
+  - name: UID
+    description: X and Y coordinates on the wafer
+    bit_offset: 0
+    bit_size: 32
+fieldset/UID1:
+  description: Unique device identifier register 1 – wafer number and lot number part 1
+  fields:
+  - name: WAF_NUM
+    description: Wafer number [7:0]
+    bit_offset: 0
+    bit_size: 8
+  - name: LOT_NUM
+    description: Lot number [23:0] (ASCII)
+    bit_offset: 8
+    bit_size: 24
+fieldset/UID2:
+  description: Unique device identifier register 2 – lot number part 2
+  fields:
+  - name: LOT_NUM
+    description: Lot number [55:24] (ASCII)
+    bit_offset: 0
+    bit_size: 32
+enum/PKG:
+  bit_size: 5
+  variants:
+  - name: LQFP64
+    description: LQFP64
+    value: 0
+  - name: WLCSP72_SMPS
+    description: WLCSP72 SMPS
+    value: 1
+  - name: LQFP100
+    description: LQFP100
+    value: 2
+  - name: UFBGA132
+    description: UFBGA132
+    value: 3
+  - name: LQFP144
+    description: LQFP144
+    value: 4
+  - name: LQFP48
+    description: LQFP48
+    value: 5
+  - name: UFBGA169_TFBGA169
+    description: UFBGA169 or TFBGA169
+    value: 7
+  - name: LQFP64_SMPS
+    description: LQFP64 SMPS
+    value: 8
+  - name: WLCSP90_SMPS
+    description: WLCSP90 SMPS
+    value: 9
+  - name: LQFP100_SMPS
+    description: LQFP100 SMPS
+    value: 10
+  - name: UFBGA132_SMPS
+    description: UFBGA132 SMPS
+    value: 11
+  - name: LQFP144_SMPS
+    description: LQFP144 SMPS
+    value: 12
+  - name: LQFP48_SMPS
+    description: LQFP48 SMPS
+    value: 13
+  - name: UFBGA169_SMPS_TFBGA169_SMPS
+    description: UFBGA169 SMPS or TFBGA169 SMPS
+    value: 15
+  - name: UFBGA64
+    description: UFBGA64
+    value: 18
+  - name: UFBGA100
+    description: UFBGA100
+    value: 19
+  - name: LQFP100_DSI_SMPS
+    description: LQFP100 DSI SMPS
+    value: 20
+  - name: LQFP144_DSI_SMPS
+    description: LQFP144 DSI SMPS
+    value: 21
+  - name: UFBGA144_DSI_SMPS
+    description: UFBGA144 DSI SMPS
+    value: 25
+  - name: WLCSP208_DSI_SMPS
+    description: WLCSP208 DSI SMPS
+    value: 27
+  - name: TFBGA216_DSI_SMPS
+    description: TFBGA216 DSI SMPS
+    value: 28
+  - name: UFBGA100_SMPS
+    description: UFBGA100 SMPS
+    value: 29
+  - name: WLCSP56_SMPS
+    description: WLCSP56 SMPS
+    value: 30
+  - name: WLCSP150_SMPS_DSI_SMPS
+    description: WLCSP150 SMPS or WLCSP150 DSI SMPS
+    value: 31

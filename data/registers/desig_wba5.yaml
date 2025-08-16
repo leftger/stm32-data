@@ -1,0 +1,127 @@
+block/DESIG:
+  description: Device electronic signature
+  items:
+  - name: PKGR
+    description: Package data register
+    byte_offset: 0
+    fieldset: PKGR
+  - name: UIDR
+    description: Unique device ID register
+    array:
+      len: 3
+      stride: 4
+    byte_offset: 512
+  - name: TSCAL1R
+    description: Temperature calibration 1 register
+    byte_offset: 528
+    fieldset: TSCAL1R
+  - name: TSCAL2R
+    description: Temperature calibration 2 register
+    byte_offset: 576
+    fieldset: TSCAL2R
+  - name: FLASHSIZER
+    description: Flash size data register
+    byte_offset: 672
+    fieldset: FLASHSIZER
+  - name: VREFINTCALR
+    description: Internal voltage reference calibration register
+    byte_offset: 676
+    fieldset: VREFINTCALR
+  - name: RCALR
+    description: Resistor calibration register
+    byte_offset: 752
+    fieldset: RCALR
+  - name: RFGAINCALR
+    description: Radio gain calibration register
+    byte_offset: 756
+    fieldset: RFGAINCALR
+  - name: UID64R
+    description: IEEE 64-bit UID register
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 1280
+fieldset/FLASHSIZER:
+  description: Flash and RAM size
+  fields:
+  - name: FLASH_SIZE
+    description: Flash memory size in KBytes
+    bit_offset: 0
+    bit_size: 16
+  - name: RAM_SIZE
+    description: RAM memory size in KBytes
+    bit_offset: 16
+    bit_size: 16
+fieldset/PKGR:
+  description: Package type
+  fields:
+  - name: PKG
+    description: Package type
+    bit_offset: 0
+    bit_size: 5
+    enum: PKGR
+fieldset/RCALR:
+  description: Resistor calibration
+  fields:
+  - name: R_CAL
+    description: Resistor calibration value
+    bit_offset: 0
+    bit_size: 8
+fieldset/RFGAINCALR:
+  description: Radio gain calibration
+  fields:
+  - name: GAIN1_CAL
+    description: Radio gain 1 calibration value
+    bit_offset: 0
+    bit_size: 8
+  - name: GAIN2_CAL
+    description: Radio gain 2 calibration value
+    bit_offset: 8
+    bit_size: 8
+  - name: GAIN3_CAL
+    description: Radio gain 3 calibration value
+    bit_offset: 16
+    bit_size: 8
+  - name: GAIN4_CAL
+    description: Radio gain 4 calibration value
+    bit_offset: 24
+    bit_size: 8
+fieldset/TSCAL1R:
+  description: Temperature calibration 1
+  fields:
+  - name: TS_CAL1
+    description: Factory temperature sensor calibration 1 value for ADC4
+    bit_offset: 0
+    bit_size: 12
+fieldset/TSCAL2R:
+  description: Temperature calibration 2
+  fields:
+  - name: TS_CAL2
+    description: Factory temperature sensor calibration 2 value for ADC4
+    bit_offset: 16
+    bit_size: 12
+fieldset/VREFINTCALR:
+  description: Internal voltage reference calibration
+  fields:
+  - name: VREFINT_CAL
+    description: Internal voltage reference calibration value for ADC4
+    bit_offset: 8
+    bit_size: 12
+enum/PKGR:
+  bit_size: 5
+  variants:
+  - name: UFQFPN32
+    description: UFQFPN32
+    value: 0
+  - name: UFQFPN48
+    description: UFQFPN48
+    value: 2
+  - name: WLCSP41_SMPS
+    description: WLCSP41 SMPS
+    value: 9
+  - name: UFQFPN48_SMPS
+    description: UFQFPN48 SMPS
+    value: 10
+  - name: UFBGA59_SMPS
+    description: UFBGA59 SMPS
+    value: 11
