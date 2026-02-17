@@ -143,6 +143,8 @@ impl Defines {
             self.parse_value(x)
         } else if let Some(m) = regex!(r"^\*?\([0-9A-Za-z_]+ *\*?\)(.*)$").captures(val) {
             self.parse_value(m.get(1).unwrap().as_str())
+        } else if let Some(m) = regex!(r"^(.*)\*(.*)$").captures(val) {
+            Ok(self.parse_value(m.get(1).unwrap().as_str())? * self.parse_value(m.get(2).unwrap().as_str())?)
         } else if let Some(m) = regex!(r"^(.*)/(.*)$").captures(val) {
             Ok(self.parse_value(m.get(1).unwrap().as_str())? / self.parse_value(m.get(2).unwrap().as_str())?)
         } else if let Some(m) = regex!(r"^(.*)<<(.*)$").captures(val) {
