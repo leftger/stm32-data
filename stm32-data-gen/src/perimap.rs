@@ -474,7 +474,7 @@ pub static PERIMAP: RegexMap<(&str, &str, &str)> = RegexMap::new(&[
     // AN4013 Table 2: STM32Fx serials
     // Override for STM32Fx serials
     ("STM32F1.*:TIM(2|5):.*", ("timer", "v1", "TIM_GP16")),
-    // Normal STM32Fx serials
+    // Normal "original series" STM32Fx serials
     ("STM32F.*:TIM(1|8|20):.*", ("timer", "v1", "TIM_ADV")),
     ("STM32F.*:TIM(2|5):.*", ("timer", "v1", "TIM_GP32")),
     ("STM32F.*:TIM(3|4|19):.*", ("timer", "v1", "TIM_GP16")),
@@ -525,26 +525,26 @@ pub static PERIMAP: RegexMap<(&str, &str, &str)> = RegexMap::new(&[
         ("timer", "v2", "TIM_1CH_CMP"),
     ),
     ("STM32G4.*:HRTIM1:.*", ("hrtim", "v2", "HRTIM")),
-    // timer_v1 for STM32Gx/Hx/Ux/Wx (and Cx) serials
+    // timer_v3 for STM32F7/G0/H7/WB0/WL (and Cx) serials (not "original series" AN4013 Rev 13, but not v2)
     (
-        "STM32(C|G0|H7|WB|WB06|WB07|WL).*:TIM(1|8|20):.*",
-        ("timer", "v1", "TIM_ADV"),
+        "STM32(F7|C|G0|H7|WB|WB06|WB07|WL).*:TIM(1|8|20):.*",
+        ("timer", "v3", "TIM_ADV"),
     ),
     (
-        "STM32(C|G0|H7|WB|WB05|WB09|WL).*:TIM(2|5|23|24):.*",
-        ("timer", "v1", "TIM_GP32"),
+        "STM32(F7|C|G0|H7|WB|WB05|WB09|WL).*:TIM(2|5|23|24):.*",
+        ("timer", "v3", "TIM_GP32"),
     ),
-    ("STM32(C|G0|H7|WB|WL).*:TIM(3|4):.*", ("timer", "v1", "TIM_GP16")),
-    ("STM32(C|G0|H7|WB|WL).*:TIM(6|7):.*", ("timer", "v1", "TIM_BASIC")),
-    ("STM32(C|G0|H7|WB|WL).*:TIM(13|14):.*", ("timer", "v1", "TIM_1CH")),
-    ("STM32(C|G0|H7|WB|WL).*:TIM12:.*", ("timer", "v1", "TIM_2CH")),
-    ("STM32(C|G0|H7|WB|WL).*:TIM15:.*", ("timer", "v1", "TIM_2CH_CMP")),
+    ("STM32(F7|C|G0|H7|WB|WL).*:TIM(3|4|19):.*", ("timer", "v3", "TIM_GP16")),
+    ("STM32(F7|C|G0|H7|WB|WL).*:TIM(9|12):.*", ("timer", "v3", "TIM_2CH")),
+    ("STM32(F7|C|G0|H7|WB|WL).*:TIM15:.*", ("timer", "v3", "TIM_2CH_CMP")),
+    ("STM32(F7|C|G0|H7|WB|WL).*:TIM(6|7):.*", ("timer", "v3", "TIM_BASIC")),
+    ("STM32(F7|C|G0|H7|WB|WL).*:TIM(13|14):.*", ("timer", "v3", "TIM_1CH")),
     (
         "STM32(C|G0|H7|WB|WB05|WB09|WL).*:TIM(16|17):.*",
-        ("timer", "v1", "TIM_1CH_CMP"),
+        ("timer", "v3", "TIM_1CH_CMP"),
     ),
     ("STM32[CGHUW].*:HRTIM1?:.*", ("hrtim", "v1", "HRTIM")),
-    ("STM32(H7(R|S)|N6).*:TIM9:.*", ("timer", "v1", "TIM_2CH")),
+    ("STM32N6.*:TIM9:.*", ("timer", "v3", "TIM_2CH")),
     // LPTIM for STM32Gx/Hx/Ux/Wx (and Cx) serials
     ("STM32U0.*:LPTIM.*:.*", ("lptim", "v2b", "LPTIM")),
     ("STM32(H5|U3|U5|WBA).*:LPTIM[12356]:.*", ("lptim", "v2a", "LPTIM")),
