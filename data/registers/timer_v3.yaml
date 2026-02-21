@@ -750,12 +750,16 @@ fieldset/CCMR3_ADV:
       stride: 8
   - name: OCM
     description: Output compare x (x=5,6) mode
-    bit_offset: 4
-    bit_size: 3
+    bit_offset:
+    - start: 4
+      end: 6
+    - start: 16
+      end: 16
+    bit_size: 4
     array:
       len: 2
       stride: 8
-    enum: OCM
+    enum: OCM_GP
   - name: OCCE
     description: Output compare x (x=5,6) clear enable
     bit_offset: 7
@@ -843,12 +847,16 @@ fieldset/CCMR_Output_1CH:
       stride: 8
   - name: OCM
     description: Output compare y mode
-    bit_offset: 4
-    bit_size: 3
+    bit_offset:
+    - start: 4
+      end: 6
+    - start: 16
+      end: 16
+    bit_size: 4
     array:
       len: 1
       stride: 8
-    enum: OCM
+    enum: OCM_LIMITED
 fieldset/CCMR_Output_2CH:
   extends: CCMR_Output_1CH
   description: capture/compare mode register x (x=1) (output mode)
@@ -877,8 +885,12 @@ fieldset/CCMR_Output_2CH:
       stride: 8
   - name: OCM
     description: Output compare y mode
-    bit_offset: 4
-    bit_size: 3
+    bit_offset:
+    - start: 4
+      end: 6
+    - start: 16
+      end: 16
+    bit_size: 4
     array:
       len: 2
       stride: 8
@@ -887,6 +899,18 @@ fieldset/CCMR_Output_GP16:
   extends: CCMR_Output_2CH
   description: capture/compare mode register x (x=1-2) (output mode)
   fields:
+  - name: OCM
+    description: Output compare y mode
+    bit_offset:
+    - start: 4
+      end: 6
+    - start: 16
+      end: 16
+    bit_size: 4
+    array:
+      len: 2
+      stride: 8
+    enum: OCM_GP
   - name: OCCE
     description: Output compare y clear enable
     bit_offset: 7
@@ -1832,7 +1856,7 @@ enum/MSM:
     description: The effect of an event on the trigger input (TRGI) is delayed to allow a perfect synchronization between the current timer and its slaves (through TRGO). It is useful if we want to synchronize several timers on a single external event.
     value: 1
 enum/OCM:
-  bit_size: 3
+  bit_size: 4
   variants:
   - name: Frozen
     description: The comparison between the output compare register TIMx_CCRy and the counter TIMx_CNT has no effect on the outputs
@@ -1858,6 +1882,170 @@ enum/OCM:
   - name: PwmMode2
     description: Inversely to PwmMode1
     value: 7
+  - name: Retrigerrable_OPM_Mode_1
+    description: |-
+      In up-counting mode, the channel is active until a trigger
+      event is detected (on tim_trgi signal). Then, a comparison is performed as in PWM
+      mode 1 and the channels becomes active again at the next update. In down-counting
+      mode, the channel is inactive until a trigger event is detected (on tim_trgi signal).
+      Then, a comparison is performed as in PWM mode 1 and the channels becomes
+      inactive again at the next update.
+    value: 8
+  - name: Retrigerrable_OPM_Mode_2
+    description: |-
+      In up-counting mode, the channel is inactive until a
+      trigger event is detected (on tim_trgi signal). Then, a comparison is performed as in
+      PWM mode 2 and the channels becomes inactive again at the next update. In down-
+      counting mode, the channel is active until a trigger event is detected (on tim_trgi
+      signal). Then, a comparison is performed as in PWM mode 1 and the channels
+      becomes active again at the next update.
+    value: 9
+  - name: _reserved1
+    description: _reserved1
+    value: 10
+  - name: _reserved2
+    description: _reserved2
+    value: 11
+  - name: Combined_PWM_Mode_1
+    description: |-
+      tim_oc1ref has the same behavior as in PWM mode 1.
+      tim_oc1refc is the logical OR between tim_oc1ref and tim_oc2ref.
+    value: 12
+  - name: Combined_PWM_Mode_2
+    description: |-
+      tim_oc1ref has the same behavior as in PWM mode 2.
+      tim_oc1refc is the logical AND between tim_oc1ref and tim_oc2ref.
+    value: 13
+  - name: _reserved3
+    description: _reserved3
+    value: 14
+  - name: _reserved4
+    description: _reserved4
+    value: 15
+enum/OCM_LIMITED:
+  bit_size: 4
+  variants:
+  - name: Frozen
+    description: The comparison between the output compare register TIMx_CCRy and the counter TIMx_CNT has no effect on the outputs
+    value: 0
+  - name: ActiveOnMatch
+    description: Set channel to active level on match. OCyREF signal is forced high when the counter matches the capture/compare register
+    value: 1
+  - name: InactiveOnMatch
+    description: Set channel to inactive level on match. OCyREF signal is forced low when the counter matches the capture/compare register
+    value: 2
+  - name: Toggle
+    description: OCyREF toggles when TIMx_CNT=TIMx_CCRy
+    value: 3
+  - name: ForceInactive
+    description: OCyREF is forced low
+    value: 4
+  - name: ForceActive
+    description: OCyREF is forced high
+    value: 5
+  - name: PwmMode1
+    description: In upcounting, channel is active as long as TIMx_CNT<TIMx_CCRy else inactive. In downcounting, channel is inactive as long as TIMx_CNT>TIMx_CCRy else active
+    value: 6
+  - name: PwmMode2
+    description: Inversely to PwmMode1
+    value: 7
+  - name: _reserved1
+    description: _reserved1
+    value: 8
+  - name: _reserved2
+    description: _reserved2
+    value: 9
+  - name: _reserved3
+    description: _reserved3
+    value: 10
+  - name: _reserved4
+    description: _reserved4
+    value: 11
+  - name: _reserved5
+    description: _reserved5
+    value: 12
+  - name: _reserved6
+    description: _reserved6
+    value: 13
+  - name: _reserved7
+    description: _reserved7
+    value: 14
+  - name: _reserved8
+    description: _reserved8
+    value: 15
+enum/OCM_GP:
+  bit_size: 4
+  variants:
+  - name: Frozen
+    description: The comparison between the output compare register TIMx_CCRy and the counter TIMx_CNT has no effect on the outputs
+    value: 0
+  - name: ActiveOnMatch
+    description: Set channel to active level on match. OCyREF signal is forced high when the counter matches the capture/compare register
+    value: 1
+  - name: InactiveOnMatch
+    description: Set channel to inactive level on match. OCyREF signal is forced low when the counter matches the capture/compare register
+    value: 2
+  - name: Toggle
+    description: OCyREF toggles when TIMx_CNT=TIMx_CCRy
+    value: 3
+  - name: ForceInactive
+    description: OCyREF is forced low
+    value: 4
+  - name: ForceActive
+    description: OCyREF is forced high
+    value: 5
+  - name: PwmMode1
+    description: In upcounting, channel is active as long as TIMx_CNT<TIMx_CCRy else inactive. In downcounting, channel is inactive as long as TIMx_CNT>TIMx_CCRy else active
+    value: 6
+  - name: PwmMode2
+    description: Inversely to PwmMode1
+    value: 7
+  - name: Retrigerrable_OPM_Mode_1
+    description: |-
+      In up-counting mode, the channel is active until a trigger
+      event is detected (on tim_trgi signal). Then, a comparison is performed as in PWM
+      mode 1 and the channels becomes active again at the next update. In down-counting
+      mode, the channel is inactive until a trigger event is detected (on tim_trgi signal).
+      Then, a comparison is performed as in PWM mode 1 and the channels becomes
+      inactive again at the next update.
+    value: 8
+  - name: Retrigerrable_OPM_Mode_2
+    description: |-
+      In up-counting mode, the channel is inactive until a
+      trigger event is detected (on tim_trgi signal). Then, a comparison is performed as in
+      PWM mode 2 and the channels becomes inactive again at the next update. In down-
+      counting mode, the channel is active until a trigger event is detected (on tim_trgi
+      signal). Then, a comparison is performed as in PWM mode 1 and the channels
+      becomes active again at the next update.
+    value: 9
+  - name: _reserved1
+    description: _reserved1
+    value: 10
+  - name: _reserved2
+    description: _reserved2
+    value: 11
+  - name: Combined_PWM_Mode_1
+    description: |-
+      tim_oc1ref has the same behavior as in PWM mode 1.
+      tim_oc1refc is the logical OR between tim_oc1ref and tim_oc2ref.
+    value: 12
+  - name: Combined_PWM_Mode_2
+    description: |-
+      tim_oc1ref has the same behavior as in PWM mode 2.
+      tim_oc1refc is the logical AND between tim_oc1ref and tim_oc2ref.
+    value: 13
+  - name: Asymmetric_PWM_Mode_1
+    description: |-
+      tim_oc1ref has the same behavior as in PWM mode 1.
+      tim_oc1refc outputs tim_oc1ref when the counter is counting up, tim_oc2ref when it is
+      counting down.
+    value: 14
+  - name: Asymmetric_PWM_Mode_2
+    description: |-
+      tim_oc1ref has the same behavior as in PWM mode 2.
+      tim_oc1refc outputs tim_oc1ref when the counter is counting up, tim_oc2ref when it is
+      counting down.
+    value: 15
 enum/OSSI:
   bit_size: 1
   variants:
