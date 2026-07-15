@@ -299,6 +299,7 @@ impl ParsedRccs {
         const FALLBACKS: &[(&str, &[&str])] = &[
             ("DCMI", &["DCMI_PSSI", "PSSI"]),
             ("PSSI", &["DCMI_PSSI", "DCMI"]),
+            ("FMC", &["FSMC"]),
             ("FDCAN1", &["FDCAN12"]),
             ("FDCAN2", &["FDCAN12", "FDCAN1", "FDCAN"]),
             ("ADC", &["ADC1", "ADCDAC"]),

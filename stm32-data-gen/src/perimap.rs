@@ -503,6 +503,7 @@ const PERIMAP: &[(&str, (&str, &str, &str))] = &[
     ("STM32G4.*:FSMC:.*", ("fsmc", "v4x1", "FSMC")),
     ("STM32L5.*:FSMC:.*", ("fsmc", "v4x1", "FSMC")),
     ("STM32U5.*:FSMC:.*", ("fsmc", "v5x1", "FSMC")),
+    ("STM32U5.*:FMC:.*", ("fsmc", "v5x1", "FSMC")),
     //// TIM mapping starts here ////
     //
     // Note:
@@ -759,6 +760,14 @@ const PERIMAP: &[(&str, (&str, &str, &str))] = &[
     ("*:VREFINTCAL:.*", ("vrefintcal", "v1", "VREFINTCAL")),
     ("STM32U5.*:ADF[12]:.*", ("adf", "v1", "ADF")),
     ("STM32U3.*:ADF[12]:.*", ("adf", "v1", "ADF")),
+    (".*:MDF1:MDF:v1_0_Cube", ("mdf", "u5", "MDF")),
+    ("STM32U5.*:MDF1:.*", ("mdf", "u5", "MDF")),
+    (".*:GFXTIM:GFXTIM:v1_0_Cube", ("gfxtim", "v1", "GFXTIM")),
+    ("STM32U5.*:GFXTIM:.*", ("gfxtim", "v1", "GFXTIM")),
+    (".*:GPU2D:GPU2D:gpu2d_v1_0", ("gpu2d", "v1", "GPU2D")),
+    ("STM32U5.*:GPU2D:.*", ("gpu2d", "v1", "GPU2D")),
+    (".*:LPGPIO1:LPGPIO:lpgpio_v1_0_Cube", ("lpgpio", "v1", "LPGPIO")),
+    ("STM32U5.*:LPGPIO1:.*", ("lpgpio", "v1", "LPGPIO")),
     (".*:HASH:hash1_v1_0", ("hash", "v1", "HASH")),
     (".*:HASH:hash1_v2_0", ("hash", "v2", "HASH")),
     ("STM32U5.*:HASH:.*", ("hash", "v4", "HASH")),
