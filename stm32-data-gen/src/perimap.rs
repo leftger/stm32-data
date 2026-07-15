@@ -152,6 +152,7 @@ const PERIMAP: &[(&str, (&str, &str, &str))] = &[
     ("STM32WB0.*:SPI:.*", ("spi", "v3_i2s", "SPI")),
     ("STM32WBA.*:SPI:.*", ("spi", "v6", "SPI")),
     (".*:FMAC:matrix1_v1_0", ("fmac", "v1", "FMAC")),
+    (".*:I2C:c7amba_i2c2", ("i2c", "v3", "I2C")),
     (".*:I2C:i2c1_v1_0", ("i2c", "v1", "I2C")),
     (".*:I2C:i2c1_v1_5", ("i2c", "v1", "I2C")),
     (".*:I2C:i2c2_v1_1", ("i2c", "v2", "I2C")),
