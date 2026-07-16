@@ -1,0 +1,1497 @@
+block/TAMP:
+  description: Tamper and backup registers.
+  items:
+  - name: CR1
+    description: TAMP control register 1.
+    byte_offset: 0
+    fieldset: CR1
+  - name: CR2
+    description: TAMP control register 2.
+    byte_offset: 4
+    fieldset: CR2
+  - name: CR3
+    description: TAMP control register 3.
+    byte_offset: 8
+    fieldset: CR3
+  - name: FLTCR
+    description: TAMP filter control register.
+    byte_offset: 12
+    fieldset: FLTCR
+  - name: ATCR1
+    description: TAMP active tamper control register 1.
+    byte_offset: 16
+    fieldset: ATCR1
+  - name: ATSEEDR
+    description: TAMP active tamper seed register.
+    byte_offset: 20
+    fieldset: ATSEEDR
+  - name: ATOR
+    description: TAMP active tamper output register.
+    byte_offset: 24
+    fieldset: ATOR
+  - name: ATCR2
+    description: TAMP active tamper control register 2.
+    byte_offset: 28
+    fieldset: ATCR2
+  - name: SECCFGR
+    description: TAMP secure configuration register.
+    byte_offset: 32
+    fieldset: SECCFGR
+  - name: PRIVCFGR
+    description: TAMP privilege configuration register.
+    byte_offset: 36
+    fieldset: PRIVCFGR
+  - name: IER
+    description: TAMP interrupt enable register.
+    byte_offset: 44
+    fieldset: IER
+  - name: SR
+    description: TAMP status register.
+    byte_offset: 48
+    fieldset: SR
+  - name: MISR
+    description: TAMP non-secure masked interrupt status register.
+    byte_offset: 52
+    fieldset: MISR
+  - name: SMISR
+    description: TAMP secure masked interrupt status register.
+    byte_offset: 56
+    fieldset: SMISR
+  - name: SCR
+    description: TAMP status clear register.
+    byte_offset: 60
+    fieldset: SCR
+  - name: COUNT1R
+    description: TAMP monotonic counter 1 register.
+    byte_offset: 64
+    fieldset: COUNT1R
+  - name: OR
+    description: TAMP option register.
+    byte_offset: 80
+    fieldset: OR
+  - name: RPCFGR
+    description: TAMP resources protection configuration register.
+    byte_offset: 84
+    fieldset: RPCFGR
+  - name: BKP0R
+    description: TAMP backup 0 register.
+    byte_offset: 256
+    fieldset: BKP0R
+  - name: BKP1R
+    description: TAMP backup 1 register.
+    byte_offset: 260
+    fieldset: BKP1R
+  - name: BKP2R
+    description: TAMP backup 2 register.
+    byte_offset: 264
+    fieldset: BKP2R
+  - name: BKP3R
+    description: TAMP backup 3 register.
+    byte_offset: 268
+    fieldset: BKP3R
+  - name: BKP4R
+    description: TAMP backup 4 register.
+    byte_offset: 272
+    fieldset: BKP4R
+  - name: BKP5R
+    description: TAMP backup 5 register.
+    byte_offset: 276
+    fieldset: BKP5R
+  - name: BKP6R
+    description: TAMP backup 6 register.
+    byte_offset: 280
+    fieldset: BKP6R
+  - name: BKP7R
+    description: TAMP backup 7 register.
+    byte_offset: 284
+    fieldset: BKP7R
+  - name: BKP8R
+    description: TAMP backup 8 register.
+    byte_offset: 288
+    fieldset: BKP8R
+  - name: BKP9R
+    description: TAMP backup 9 register.
+    byte_offset: 292
+    fieldset: BKP9R
+  - name: BKP10R
+    description: TAMP backup 10 register.
+    byte_offset: 296
+    fieldset: BKP10R
+  - name: BKP11R
+    description: TAMP backup 11 register.
+    byte_offset: 300
+    fieldset: BKP11R
+  - name: BKP12R
+    description: TAMP backup 12 register.
+    byte_offset: 304
+    fieldset: BKP12R
+  - name: BKP13R
+    description: TAMP backup 13 register.
+    byte_offset: 308
+    fieldset: BKP13R
+  - name: BKP14R
+    description: TAMP backup 14 register.
+    byte_offset: 312
+    fieldset: BKP14R
+  - name: BKP15R
+    description: TAMP backup 15 register.
+    byte_offset: 316
+    fieldset: BKP15R
+  - name: BKP16R
+    description: TAMP backup 16 register.
+    byte_offset: 320
+    fieldset: BKP16R
+  - name: BKP17R
+    description: TAMP backup 17 register.
+    byte_offset: 324
+    fieldset: BKP17R
+  - name: BKP18R
+    description: TAMP backup 18 register.
+    byte_offset: 328
+    fieldset: BKP18R
+  - name: BKP19R
+    description: TAMP backup 19 register.
+    byte_offset: 332
+    fieldset: BKP19R
+  - name: BKP20R
+    description: TAMP backup 20 register.
+    byte_offset: 336
+    fieldset: BKP20R
+  - name: BKP21R
+    description: TAMP backup 21 register.
+    byte_offset: 340
+    fieldset: BKP21R
+  - name: BKP22R
+    description: TAMP backup 22 register.
+    byte_offset: 344
+    fieldset: BKP22R
+  - name: BKP23R
+    description: TAMP backup 23 register.
+    byte_offset: 348
+    fieldset: BKP23R
+  - name: BKP24R
+    description: TAMP backup 24 register.
+    byte_offset: 352
+    fieldset: BKP24R
+  - name: BKP25R
+    description: TAMP backup 25 register.
+    byte_offset: 356
+    fieldset: BKP25R
+  - name: BKP26R
+    description: TAMP backup 26 register.
+    byte_offset: 360
+    fieldset: BKP26R
+  - name: BKP27R
+    description: TAMP backup 27 register.
+    byte_offset: 364
+    fieldset: BKP27R
+  - name: BKP28R
+    description: TAMP backup 28 register.
+    byte_offset: 368
+    fieldset: BKP28R
+  - name: BKP29R
+    description: TAMP backup 29 register.
+    byte_offset: 372
+    fieldset: BKP29R
+  - name: BKP30R
+    description: TAMP backup 30 register.
+    byte_offset: 376
+    fieldset: BKP30R
+  - name: BKP31R
+    description: TAMP backup 31 register.
+    byte_offset: 380
+    fieldset: BKP31R
+fieldset/ATCR1:
+  description: TAMP active tamper control register 1.
+  fields:
+  - name: TAMP1AM
+    description: Tamper 1 active mode.
+    bit_offset: 0
+    bit_size: 1
+  - name: TAMP2AM
+    description: Tamper 2 active mode.
+    bit_offset: 1
+    bit_size: 1
+  - name: TAMP3AM
+    description: Tamper 3 active mode.
+    bit_offset: 2
+    bit_size: 1
+  - name: TAMP4AM
+    description: Tamper 4 active mode.
+    bit_offset: 3
+    bit_size: 1
+  - name: TAMP5AM
+    description: Tamper 5 active mode.
+    bit_offset: 4
+    bit_size: 1
+  - name: TAMP6AM
+    description: Tamper 6 active mode.
+    bit_offset: 5
+    bit_size: 1
+  - name: TAMP7AM
+    description: Tamper 7 active mode.
+    bit_offset: 6
+    bit_size: 1
+  - name: ATOSEL1
+    description: Active tamper shared output 1 selection.
+    bit_offset: 8
+    bit_size: 2
+    enum: TAMP_ATCR1_ATOSEL1
+  - name: ATOSEL2
+    description: Active tamper shared output 2 selection.
+    bit_offset: 10
+    bit_size: 2
+    enum: TAMP_ATCR1_ATOSEL2
+  - name: ATOSEL3
+    description: Active tamper shared output 3 selection.
+    bit_offset: 12
+    bit_size: 2
+    enum: TAMP_ATCR1_ATOSEL3
+  - name: ATOSEL4
+    description: Active tamper shared output 4 selection.
+    bit_offset: 14
+    bit_size: 2
+    enum: TAMP_ATCR1_ATOSEL4
+  - name: ATCKSEL
+    description: Active tamper RTC asynchronous prescaler clock selection.
+    bit_offset: 16
+    bit_size: 4
+  - name: ATPER
+    description: Active tamper output change period.
+    bit_offset: 24
+    bit_size: 3
+  - name: ATOSHARE
+    description: Active tamper output sharing.
+    bit_offset: 30
+    bit_size: 1
+  - name: FLTEN
+    description: Active tamper filter enable.
+    bit_offset: 31
+    bit_size: 1
+fieldset/ATCR2:
+  description: TAMP active tamper control register 2.
+  fields:
+  - name: ATOSEL1
+    description: Active tamper shared output 1 selection.
+    bit_offset: 8
+    bit_size: 3
+    enum: TAMP_ATCR2_ATOSEL1
+  - name: ATOSEL2
+    description: Active tamper shared output 2 selection.
+    bit_offset: 11
+    bit_size: 3
+    enum: TAMP_ATCR2_ATOSEL2
+  - name: ATOSEL3
+    description: Active tamper shared output 3 selection.
+    bit_offset: 14
+    bit_size: 3
+    enum: TAMP_ATCR2_ATOSEL3
+  - name: ATOSEL4
+    description: Active tamper shared output 4 selection.
+    bit_offset: 17
+    bit_size: 3
+    enum: TAMP_ATCR2_ATOSEL4
+  - name: ATOSEL5
+    description: Active tamper shared output 5 selection.
+    bit_offset: 20
+    bit_size: 3
+    enum: ATOSEL5
+  - name: ATOSEL6
+    description: Active tamper shared output 6 selection.
+    bit_offset: 23
+    bit_size: 3
+    enum: ATOSEL6
+  - name: ATOSEL7
+    description: Active tamper shared output 7 selection.
+    bit_offset: 26
+    bit_size: 3
+    enum: ATOSEL7
+fieldset/ATOR:
+  description: TAMP active tamper output register.
+  fields:
+  - name: PRNG
+    description: Pseudo-random generator value.
+    bit_offset: 0
+    bit_size: 8
+  - name: SEEDF
+    description: Seed running flag.
+    bit_offset: 14
+    bit_size: 1
+  - name: INITS
+    description: Active tamper initialization status.
+    bit_offset: 15
+    bit_size: 1
+fieldset/ATSEEDR:
+  description: TAMP active tamper seed register.
+  fields:
+  - name: SEED
+    description: Pseudo-random generator seed value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP0R:
+  description: TAMP backup 0 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP10R:
+  description: TAMP backup 10 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP11R:
+  description: TAMP backup 11 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP12R:
+  description: TAMP backup 12 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP13R:
+  description: TAMP backup 13 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP14R:
+  description: TAMP backup 14 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP15R:
+  description: TAMP backup 15 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP16R:
+  description: TAMP backup 16 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP17R:
+  description: TAMP backup 17 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP18R:
+  description: TAMP backup 18 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP19R:
+  description: TAMP backup 19 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP1R:
+  description: TAMP backup 1 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP20R:
+  description: TAMP backup 20 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP21R:
+  description: TAMP backup 21 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP22R:
+  description: TAMP backup 22 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP23R:
+  description: TAMP backup 23 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP24R:
+  description: TAMP backup 24 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP25R:
+  description: TAMP backup 25 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP26R:
+  description: TAMP backup 26 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP27R:
+  description: TAMP backup 27 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP28R:
+  description: TAMP backup 28 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP29R:
+  description: TAMP backup 29 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP2R:
+  description: TAMP backup 2 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP30R:
+  description: TAMP backup 30 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP31R:
+  description: TAMP backup 31 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP3R:
+  description: TAMP backup 3 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP4R:
+  description: TAMP backup 4 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP5R:
+  description: TAMP backup 5 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP6R:
+  description: TAMP backup 6 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP7R:
+  description: TAMP backup 7 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP8R:
+  description: TAMP backup 8 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/BKP9R:
+  description: TAMP backup 9 register.
+  fields:
+  - name: BKP
+    description: The application can write or read data to and from these registers.
+    bit_offset: 0
+    bit_size: 32
+fieldset/COUNT1R:
+  description: TAMP monotonic counter 1 register.
+  fields:
+  - name: COUNT
+    description: This register is read-only only and is incremented by one when a write access is done to this register. This register cannot roll-over and is frozen when reaching the maximum value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/CR1:
+  description: TAMP control register 1.
+  fields:
+  - name: TAMP1E
+    description: Tamper detection on TAMP_IN1 enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: TAMP2E
+    description: Tamper detection on TAMP_IN2 enableless thansup>(1)less than/sup>.
+    bit_offset: 1
+    bit_size: 1
+  - name: TAMP3E
+    description: Tamper detection on TAMP_IN3 enableless thansup>(1)less than/sup>.
+    bit_offset: 2
+    bit_size: 1
+  - name: TAMP4E
+    description: Tamper detection on TAMP_IN4 enableless thansup>(1)less than/sup>.
+    bit_offset: 3
+    bit_size: 1
+  - name: TAMP5E
+    description: Tamper detection on TAMP_IN5 enableless thansup>(1)less than/sup>.
+    bit_offset: 4
+    bit_size: 1
+  - name: TAMP6E
+    description: Tamper detection on TAMP_IN6 enableless thansup>(1)less than/sup>.
+    bit_offset: 5
+    bit_size: 1
+  - name: TAMP7E
+    description: Tamper detection on TAMP_IN7 enableless thansup>(1)less than/sup>.
+    bit_offset: 6
+    bit_size: 1
+  - name: ITAMP1E
+    description: Internal tamper 1 enable.
+    bit_offset: 16
+    bit_size: 1
+  - name: ITAMP2E
+    description: Internal tamper 2 enable.
+    bit_offset: 17
+    bit_size: 1
+  - name: ITAMP3E
+    description: Internal tamper 3 enable.
+    bit_offset: 18
+    bit_size: 1
+  - name: ITAMP4E
+    description: Internal tamper 4 enable.
+    bit_offset: 19
+    bit_size: 1
+  - name: ITAMP5E
+    description: Internal tamper 5 enable.
+    bit_offset: 20
+    bit_size: 1
+  - name: ITAMP6E
+    description: Internal tamper 6 enable.
+    bit_offset: 21
+    bit_size: 1
+  - name: ITAMP7E
+    description: Internal tamper 7 enable.
+    bit_offset: 22
+    bit_size: 1
+  - name: ITAMP8E
+    description: Internal tamper 8 enable.
+    bit_offset: 23
+    bit_size: 1
+  - name: ITAMP9E
+    description: Internal tamper 9 enable.
+    bit_offset: 24
+    bit_size: 1
+  - name: ITAMP11E
+    description: Internal tamper 11 enable.
+    bit_offset: 26
+    bit_size: 1
+fieldset/CR2:
+  description: TAMP control register 2.
+  fields:
+  - name: TAMP1POM
+    description: Tamper 1 potential mode.
+    bit_offset: 0
+    bit_size: 1
+  - name: TAMP2POM
+    description: Tamper 2 potential mode.
+    bit_offset: 1
+    bit_size: 1
+  - name: TAMP3POM
+    description: Tamper 3 potential mode.
+    bit_offset: 2
+    bit_size: 1
+  - name: TAMP4POM
+    description: Tamper 4 potential mode.
+    bit_offset: 3
+    bit_size: 1
+  - name: TAMP5POM
+    description: Tamper 5 potential mode.
+    bit_offset: 4
+    bit_size: 1
+  - name: TAMP6POM
+    description: Tamper 6 potential mode.
+    bit_offset: 5
+    bit_size: 1
+  - name: TAMP7POM
+    description: Tamper 7 potential mode.
+    bit_offset: 6
+    bit_size: 1
+  - name: TAMP1MSK
+    description: Tamper 1 mask.
+    bit_offset: 16
+    bit_size: 1
+  - name: TAMP2MSK
+    description: Tamper 2 mask.
+    bit_offset: 17
+    bit_size: 1
+  - name: TAMP3MSK
+    description: Tamper 3 mask.
+    bit_offset: 18
+    bit_size: 1
+  - name: BKBLOCK
+    description: Backup registers and device secretsless thansup>(1)less than/sup> access blocked.
+    bit_offset: 22
+    bit_size: 1
+  - name: BKERASE
+    description: Backup registers and device secretsless thansup>(1)less than/sup> erase.
+    bit_offset: 23
+    bit_size: 1
+  - name: TAMP1TRG
+    description: Active level for tamper 1 input.
+    bit_offset: 24
+    bit_size: 1
+  - name: TAMP2TRG
+    description: Active level for tamper 2 input.
+    bit_offset: 25
+    bit_size: 1
+  - name: TAMP3TRG
+    description: Active level for tamper 3 input.
+    bit_offset: 26
+    bit_size: 1
+  - name: TAMP4TRG
+    description: Active level for tamper 4 input (active mode disabled).
+    bit_offset: 27
+    bit_size: 1
+  - name: TAMP5TRG
+    description: Active level for tamper 5 input (active mode disabled).
+    bit_offset: 28
+    bit_size: 1
+  - name: TAMP6TRG
+    description: Active level for tamper 6 input (active mode disabled).
+    bit_offset: 29
+    bit_size: 1
+  - name: TAMP7TRG
+    description: Active level for tamper 7 input (active mode disabled).
+    bit_offset: 30
+    bit_size: 1
+fieldset/CR3:
+  description: TAMP control register 3.
+  fields:
+  - name: ITAMP1POM
+    description: Internal tamper 1 potential mode.
+    bit_offset: 0
+    bit_size: 1
+  - name: ITAMP2POM
+    description: Internal tamper 2 potential mode.
+    bit_offset: 1
+    bit_size: 1
+  - name: ITAMP3POM
+    description: Internal tamper 3 potential mode.
+    bit_offset: 2
+    bit_size: 1
+  - name: ITAMP4POM
+    description: Internal tamper 4 potential mode.
+    bit_offset: 3
+    bit_size: 1
+  - name: ITAMP5POM
+    description: Internal tamper 5 potential mode.
+    bit_offset: 4
+    bit_size: 1
+  - name: ITAMP6POM
+    description: Internal tamper 6 potential mode.
+    bit_offset: 5
+    bit_size: 1
+  - name: ITAMP7POM
+    description: Internal tamper 7 potential mode.
+    bit_offset: 6
+    bit_size: 1
+  - name: ITAMP8POM
+    description: Internal tamper 8 potential mode.
+    bit_offset: 7
+    bit_size: 1
+  - name: ITAMP9POM
+    description: Internal tamper 9 potential mode.
+    bit_offset: 8
+    bit_size: 1
+  - name: ITAMP11POM
+    description: Internal tamper 11 potential mode.
+    bit_offset: 10
+    bit_size: 1
+fieldset/FLTCR:
+  description: TAMP filter control register.
+  fields:
+  - name: TAMPFREQ
+    description: Tamper sampling frequency.
+    bit_offset: 0
+    bit_size: 3
+    enum: TAMPFREQ
+  - name: TAMPFLT
+    description: TAMP_INx filter count.
+    bit_offset: 3
+    bit_size: 2
+    enum: TAMPFLT
+  - name: TAMPPRCH
+    description: TAMP_INx precharge duration.
+    bit_offset: 5
+    bit_size: 2
+    enum: TAMPPRCH
+  - name: TAMPPUDIS
+    description: TAMP_INx pull-up disable.
+    bit_offset: 7
+    bit_size: 1
+fieldset/IER:
+  description: TAMP interrupt enable register.
+  fields:
+  - name: TAMP1IE
+    description: Tamper 1 interrupt enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: TAMP2IE
+    description: Tamper 2 interrupt enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: TAMP3IE
+    description: Tamper 3 interrupt enable.
+    bit_offset: 2
+    bit_size: 1
+  - name: TAMP4IE
+    description: Tamper 4 interrupt enable.
+    bit_offset: 3
+    bit_size: 1
+  - name: TAMP5IE
+    description: Tamper 5 interrupt enable.
+    bit_offset: 4
+    bit_size: 1
+  - name: TAMP6IE
+    description: Tamper 6 interrupt enable.
+    bit_offset: 5
+    bit_size: 1
+  - name: TAMP7IE
+    description: Tamper 7interrupt enable.
+    bit_offset: 6
+    bit_size: 1
+  - name: ITAMP1IE
+    description: Internal tamper 1 interrupt enable.
+    bit_offset: 16
+    bit_size: 1
+  - name: ITAMP2IE
+    description: Internal tamper 2 interrupt enable.
+    bit_offset: 17
+    bit_size: 1
+  - name: ITAMP3IE
+    description: Internal tamper 3 interrupt enable.
+    bit_offset: 18
+    bit_size: 1
+  - name: ITAMP4IE
+    description: Internal tamper 4 interrupt enable.
+    bit_offset: 19
+    bit_size: 1
+  - name: ITAMP5IE
+    description: Internal tamper 5 interrupt enable.
+    bit_offset: 20
+    bit_size: 1
+  - name: ITAMP6IE
+    description: Internal tamper 6 interrupt enable.
+    bit_offset: 21
+    bit_size: 1
+  - name: ITAMP7IE
+    description: Internal tamper 7 interrupt enable.
+    bit_offset: 22
+    bit_size: 1
+  - name: ITAMP8IE
+    description: Internal tamper 8 interrupt enable.
+    bit_offset: 23
+    bit_size: 1
+  - name: ITAMP9IE
+    description: Internal tamper 9 interrupt enable.
+    bit_offset: 24
+    bit_size: 1
+  - name: ITAMP11IE
+    description: Internal tamper 11 interrupt enable.
+    bit_offset: 26
+    bit_size: 1
+fieldset/MISR:
+  description: TAMP non-secure masked interrupt status register.
+  fields:
+  - name: TAMP1MF
+    description: TAMP1 non-secure interrupt masked flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: TAMP2MF
+    description: TAMP2 non-secure interrupt masked flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: TAMP3MF
+    description: TAMP3 non-secure interrupt masked flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: TAMP4MF
+    description: TAMP4 non-secure interrupt masked flag.
+    bit_offset: 3
+    bit_size: 1
+  - name: TAMP5MF
+    description: TAMP5 non-secure interrupt masked flag.
+    bit_offset: 4
+    bit_size: 1
+  - name: TAMP6MF
+    description: TAMP6 non-secure interrupt masked flag.
+    bit_offset: 5
+    bit_size: 1
+  - name: TAMP7MF
+    description: TAMP7 non-secure interrupt masked flag.
+    bit_offset: 6
+    bit_size: 1
+  - name: ITAMP1MF
+    description: Internal tamper 1 non-secure interrupt masked flag.
+    bit_offset: 16
+    bit_size: 1
+  - name: ITAMP2MF
+    description: Internal tamper 2 non-secure interrupt masked flag.
+    bit_offset: 17
+    bit_size: 1
+  - name: ITAMP3MF
+    description: Internal tamper 3 non-secure interrupt masked flag.
+    bit_offset: 18
+    bit_size: 1
+  - name: ITAMP4MF
+    description: Internal tamper 4 non-secure interrupt masked flag.
+    bit_offset: 19
+    bit_size: 1
+  - name: ITAMP5MF
+    description: Internal tamper 5 non-secure interrupt masked flag.
+    bit_offset: 20
+    bit_size: 1
+  - name: ITAMP6MF
+    description: Internal tamper 6 non-secure interrupt masked flag.
+    bit_offset: 21
+    bit_size: 1
+  - name: ITAMP7MF
+    description: Internal tamper 7 tamper non-secure interrupt masked flag.
+    bit_offset: 22
+    bit_size: 1
+  - name: ITAMP8MF
+    description: Internal tamper 8 non-secure interrupt masked flag.
+    bit_offset: 23
+    bit_size: 1
+  - name: ITAMP9MF
+    description: internal tamper 9 non-secure interrupt masked flag.
+    bit_offset: 24
+    bit_size: 1
+  - name: ITAMP11MF
+    description: internal tamper 11 non-secure interrupt masked flag.
+    bit_offset: 26
+    bit_size: 1
+fieldset/OR:
+  description: TAMP option register.
+  fields:
+  - name: VCOREMEN
+    description: Vless thansub>COREless than/sub> monitoring.
+    bit_offset: 0
+    bit_size: 1
+  - name: BSEN
+    description: Boundary scan enable.
+    bit_offset: 1
+    bit_size: 1
+fieldset/PRIVCFGR:
+  description: TAMP privilege configuration register.
+  fields:
+  - name: CNT1PRIV
+    description: Monotonic counter 1 privilege protection.
+    bit_offset: 15
+    bit_size: 1
+  - name: BKPRWPRIV
+    description: Backup registers zone 1 privilege protection.
+    bit_offset: 29
+    bit_size: 1
+  - name: BKPWPRIV
+    description: Backup registers zone 2 privilege protection.
+    bit_offset: 30
+    bit_size: 1
+  - name: TAMPPRIV
+    description: Tamper privilege protection (excluding backup registers).
+    bit_offset: 31
+    bit_size: 1
+fieldset/RPCFGR:
+  description: TAMP resources protection configuration register.
+  fields:
+  - name: RPCFG0
+    description: Configurable resource 0 protection.
+    bit_offset: 0
+    bit_size: 1
+fieldset/SCR:
+  description: TAMP status clear register.
+  fields:
+  - name: CTAMP1F
+    description: Clear TAMP1 detection flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: CTAMP2F
+    description: Clear TAMP2 detection flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: CTAMP3F
+    description: Clear TAMP3 detection flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: CTAMP4F
+    description: Clear TAMP4 detection flag.
+    bit_offset: 3
+    bit_size: 1
+  - name: CTAMP5F
+    description: Clear TAMP5 detection flag.
+    bit_offset: 4
+    bit_size: 1
+  - name: CTAMP6F
+    description: Clear TAMP6 detection flag.
+    bit_offset: 5
+    bit_size: 1
+  - name: CTAMP7F
+    description: Clear TAMP7 detection flag.
+    bit_offset: 6
+    bit_size: 1
+  - name: CITAMP1F
+    description: Clear ITAMP1 detection flag.
+    bit_offset: 16
+    bit_size: 1
+  - name: CITAMP2F
+    description: Clear ITAMP2 detection flag.
+    bit_offset: 17
+    bit_size: 1
+  - name: CITAMP3F
+    description: Clear ITAMP3 detection flag.
+    bit_offset: 18
+    bit_size: 1
+  - name: CITAMP4F
+    description: Clear ITAMP4 detection flag.
+    bit_offset: 19
+    bit_size: 1
+  - name: CITAMP5F
+    description: Clear ITAMP5 detection flag.
+    bit_offset: 20
+    bit_size: 1
+  - name: CITAMP6F
+    description: Clear ITAMP6 detection flag.
+    bit_offset: 21
+    bit_size: 1
+  - name: CITAMP7F
+    description: Clear ITAMP7 detection flag.
+    bit_offset: 22
+    bit_size: 1
+  - name: CITAMP8F
+    description: Clear ITAMP8 detection flag.
+    bit_offset: 23
+    bit_size: 1
+  - name: CITAMP9F
+    description: Clear ITAMP9 detection flag.
+    bit_offset: 24
+    bit_size: 1
+  - name: CITAMP11F
+    description: Clear ITAMP11 detection flag.
+    bit_offset: 26
+    bit_size: 1
+fieldset/SECCFGR:
+  description: TAMP secure configuration register.
+  fields:
+  - name: BKPRWSEC
+    description: Backup registers read/write protection offset.
+    bit_offset: 0
+    bit_size: 8
+  - name: CNT1SEC
+    description: Monotonic counter 1 secure protection.
+    bit_offset: 15
+    bit_size: 1
+  - name: BKPWSEC
+    description: Backup registers write protection offset.
+    bit_offset: 16
+    bit_size: 8
+  - name: BHKLOCK
+    description: Boot hardware key lock.
+    bit_offset: 30
+    bit_size: 1
+  - name: TAMPSEC
+    description: Tamper protection (excluding monotonic counters and backup registers).
+    bit_offset: 31
+    bit_size: 1
+fieldset/SMISR:
+  description: TAMP secure masked interrupt status register.
+  fields:
+  - name: TAMP1MF
+    description: TAMP1 secure interrupt masked flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: TAMP2MF
+    description: TAMP2 secure interrupt masked flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: TAMP3MF
+    description: TAMP3 secure interrupt masked flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: TAMP4MF
+    description: TAMP4 secure interrupt masked flag.
+    bit_offset: 3
+    bit_size: 1
+  - name: TAMP5MF
+    description: TAMP5 secure interrupt masked flag.
+    bit_offset: 4
+    bit_size: 1
+  - name: TAMP6MF
+    description: TAMP6 secure interrupt masked flag.
+    bit_offset: 5
+    bit_size: 1
+  - name: TAMP7MF
+    description: TAMP7 secure interrupt masked flag.
+    bit_offset: 6
+    bit_size: 1
+  - name: ITAMP1MF
+    description: Internal tamper 1 secure interrupt masked flag.
+    bit_offset: 16
+    bit_size: 1
+  - name: ITAMP2MF
+    description: Internal tamper 2 secure interrupt masked flag.
+    bit_offset: 17
+    bit_size: 1
+  - name: ITAMP3MF
+    description: Internal tamper 3 secure interrupt masked flag.
+    bit_offset: 18
+    bit_size: 1
+  - name: ITAMP4MF
+    description: Internal tamper 4 secure interrupt masked flag.
+    bit_offset: 19
+    bit_size: 1
+  - name: ITAMP5MF
+    description: Internal tamper 5 secure interrupt masked flag.
+    bit_offset: 20
+    bit_size: 1
+  - name: ITAMP6MF
+    description: Internal tamper 6 secure interrupt masked flag.
+    bit_offset: 21
+    bit_size: 1
+  - name: ITAMP7MF
+    description: Internal tamper 7 secure interrupt masked flag.
+    bit_offset: 22
+    bit_size: 1
+  - name: ITAMP8MF
+    description: Internal tamper 8 secure interrupt masked flag.
+    bit_offset: 23
+    bit_size: 1
+  - name: ITAMP9MF
+    description: internal tamper 9 secure interrupt masked flag.
+    bit_offset: 24
+    bit_size: 1
+  - name: ITAMP11MF
+    description: internal tamper 11 secure interrupt masked flag.
+    bit_offset: 26
+    bit_size: 1
+fieldset/SR:
+  description: TAMP status register.
+  fields:
+  - name: TAMP1F
+    description: TAMP1 detection flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: TAMP2F
+    description: TAMP2 detection flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: TAMP3F
+    description: TAMP3 detection flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: TAMP4F
+    description: TAMP4 detection flag.
+    bit_offset: 3
+    bit_size: 1
+  - name: TAMP5F
+    description: TAMP5 detection flag.
+    bit_offset: 4
+    bit_size: 1
+  - name: TAMP6F
+    description: TAMP6 detection flag.
+    bit_offset: 5
+    bit_size: 1
+  - name: TAMP7F
+    description: TAMP7 detection flag.
+    bit_offset: 6
+    bit_size: 1
+  - name: ITAMP1F
+    description: Internal tamper 1 flag.
+    bit_offset: 16
+    bit_size: 1
+  - name: ITAMP2F
+    description: Internal tamper 2 flag.
+    bit_offset: 17
+    bit_size: 1
+  - name: ITAMP3F
+    description: Internal tamper 3 flag.
+    bit_offset: 18
+    bit_size: 1
+  - name: ITAMP4F
+    description: Internal tamper 4 flag.
+    bit_offset: 19
+    bit_size: 1
+  - name: ITAMP5F
+    description: Internal tamper 5 flag.
+    bit_offset: 20
+    bit_size: 1
+  - name: ITAMP6F
+    description: Internal tamper 6 flag.
+    bit_offset: 21
+    bit_size: 1
+  - name: ITAMP7F
+    description: Internal tamper 7 flag.
+    bit_offset: 22
+    bit_size: 1
+  - name: ITAMP8F
+    description: Internal tamper 8 flag.
+    bit_offset: 23
+    bit_size: 1
+  - name: ITAMP9F
+    description: Internal tamper 9 flag.
+    bit_offset: 24
+    bit_size: 1
+  - name: ITAMP11F
+    description: Internal tamper 11 flag.
+    bit_offset: 26
+    bit_size: 1
+enum/ATOSEL5:
+  bit_size: 3
+  variants:
+  - name: B_0x0
+    description: TAMPOUTSEL5 = TAMP_OUT1.
+    value: 0
+  - name: B_0x1
+    description: TAMPOUTSEL5 = TAMP_OUT2.
+    value: 1
+  - name: B_0x2
+    description: TAMPOUTSEL5 = TAMP_OUT3.
+    value: 2
+  - name: B_0x3
+    description: TAMPOUTSEL5 = TAMP_OUT4.
+    value: 3
+  - name: B_0x4
+    description: TAMPOUTSEL5 = TAMP_OUT5.
+    value: 4
+  - name: B_0x5
+    description: TAMPOUTSEL5 = TAMP_OUT6.
+    value: 5
+  - name: B_0x6
+    description: TAMPOUTSEL5 = TAMP_OUT7.
+    value: 6
+  - name: B_0x7
+    description: TAMPOUTSEL5 = TAMP_OUT8.
+    value: 7
+enum/ATOSEL6:
+  bit_size: 3
+  variants:
+  - name: B_0x0
+    description: TAMPOUTSEL6 = TAMP_OUT1.
+    value: 0
+  - name: B_0x1
+    description: TAMPOUTSEL6 = TAMP_OUT2.
+    value: 1
+  - name: B_0x2
+    description: TAMPOUTSEL6 = TAMP_OUT3.
+    value: 2
+  - name: B_0x3
+    description: TAMPOUTSEL6 = TAMP_OUT4.
+    value: 3
+  - name: B_0x4
+    description: TAMPOUTSEL6 = TAMP_OUT5.
+    value: 4
+  - name: B_0x5
+    description: TAMPOUTSEL6 = TAMP_OUT6.
+    value: 5
+  - name: B_0x6
+    description: TAMPOUTSEL6 = TAMP_OUT7.
+    value: 6
+  - name: B_0x7
+    description: TAMPOUTSEL6 = TAMP_OUT8.
+    value: 7
+enum/ATOSEL7:
+  bit_size: 3
+  variants:
+  - name: B_0x0
+    description: TAMPOUTSEL7 = TAMP_OUT1.
+    value: 0
+  - name: B_0x1
+    description: TAMPOUTSEL7 = TAMP_OUT2.
+    value: 1
+  - name: B_0x2
+    description: TAMPOUTSEL7 = TAMP_OUT3.
+    value: 2
+  - name: B_0x3
+    description: TAMPOUTSEL7 = TAMP_OUT4.
+    value: 3
+  - name: B_0x4
+    description: TAMPOUTSEL7 = TAMP_OUT5.
+    value: 4
+  - name: B_0x5
+    description: TAMPOUTSEL7 = TAMP_OUT6.
+    value: 5
+  - name: B_0x6
+    description: TAMPOUTSEL7 = TAMP_OUT7.
+    value: 6
+  - name: B_0x7
+    description: TAMPOUTSEL7 = TAMP_OUT8.
+    value: 7
+enum/TAMPFLT:
+  bit_size: 2
+  variants:
+  - name: B_0x0
+    description: Tamper event is activated on edge of TAMP_INx input transitions to the active level (no internal pull-up on TAMP_INx input).
+    value: 0
+  - name: B_0x1
+    description: Tamper event is activated after 2 consecutive samples at the active level.
+    value: 1
+  - name: B_0x2
+    description: Tamper event is activated after 4 consecutive samples at the active level.
+    value: 2
+  - name: B_0x3
+    description: Tamper event is activated after 8 consecutive samples at the active level.
+    value: 3
+enum/TAMPFREQ:
+  bit_size: 3
+  variants:
+  - name: B_0x0
+    description: RTCCLK / 32768 (1 Hz when RTCCLK = 32768 Hz).
+    value: 0
+  - name: B_0x1
+    description: RTCCLK / 16384 (2 Hz when RTCCLK = 32768 Hz).
+    value: 1
+  - name: B_0x2
+    description: RTCCLK / 8192 (4 Hz when RTCCLK = 32768 Hz).
+    value: 2
+  - name: B_0x3
+    description: RTCCLK / 4096 (8 Hz when RTCCLK = 32768 Hz).
+    value: 3
+  - name: B_0x4
+    description: RTCCLK / 2048 (16 Hz when RTCCLK = 32768 Hz).
+    value: 4
+  - name: B_0x5
+    description: RTCCLK / 1024 (32 Hz when RTCCLK = 32768 Hz).
+    value: 5
+  - name: B_0x6
+    description: RTCCLK / 512 (64 Hz when RTCCLK = 32768 Hz).
+    value: 6
+  - name: B_0x7
+    description: RTCCLK / 256 (128 Hz when RTCCLK = 32768 Hz).
+    value: 7
+enum/TAMPPRCH:
+  bit_size: 2
+  variants:
+  - name: B_0x0
+    description: 1 RTCCLK cycle.
+    value: 0
+  - name: B_0x1
+    description: 2 RTCCLK cycles.
+    value: 1
+  - name: B_0x2
+    description: 4 RTCCLK cycles.
+    value: 2
+  - name: B_0x3
+    description: 8 RTCCLK cycles.
+    value: 3
+enum/TAMP_ATCR1_ATOSEL1:
+  bit_size: 2
+  variants:
+  - name: B_0x0
+    description: TAMPOUTSEL1 = TAMP_OUT1.
+    value: 0
+  - name: B_0x1
+    description: TAMPOUTSEL1 = TAMP_OUT2.
+    value: 1
+  - name: B_0x2
+    description: TAMPOUTSEL1 = TAMP_OUT3.
+    value: 2
+  - name: B_0x3
+    description: TAMPOUTSEL1 = TAMP_OUT4.
+    value: 3
+enum/TAMP_ATCR1_ATOSEL2:
+  bit_size: 2
+  variants:
+  - name: B_0x0
+    description: TAMPOUTSEL2 = TAMP_OUT1.
+    value: 0
+  - name: B_0x1
+    description: TAMPOUTSEL2 = TAMP_OUT2.
+    value: 1
+  - name: B_0x2
+    description: TAMPOUTSEL2 = TAMP_OUT3.
+    value: 2
+  - name: B_0x3
+    description: TAMPOUTSEL2 = TAMP_OUT4.
+    value: 3
+enum/TAMP_ATCR1_ATOSEL3:
+  bit_size: 2
+  variants:
+  - name: B_0x0
+    description: TAMPOUTSEL3 = TAMP_OUT1.
+    value: 0
+  - name: B_0x1
+    description: TAMPOUTSEL3 = TAMP_OUT2.
+    value: 1
+  - name: B_0x2
+    description: TAMPOUTSEL3 = TAMP_OUT3.
+    value: 2
+  - name: B_0x3
+    description: TAMPOUTSEL3 = TAMP_OUT4.
+    value: 3
+enum/TAMP_ATCR1_ATOSEL4:
+  bit_size: 2
+  variants:
+  - name: B_0x0
+    description: TAMPOUTSEL4 = TAMP_OUT1.
+    value: 0
+  - name: B_0x1
+    description: TAMPOUTSEL4 = TAMP_OUT2.
+    value: 1
+  - name: B_0x2
+    description: TAMPOUTSEL4 = TAMP_OUT3.
+    value: 2
+  - name: B_0x3
+    description: TAMPOUTSEL4 = TAMP_OUT4.
+    value: 3
+enum/TAMP_ATCR2_ATOSEL1:
+  bit_size: 3
+  variants:
+  - name: B_0x0
+    description: TAMPOUTSEL1 = TAMP_OUT1.
+    value: 0
+  - name: B_0x1
+    description: TAMPOUTSEL1 = TAMP_OUT2.
+    value: 1
+  - name: B_0x2
+    description: TAMPOUTSEL1 = TAMP_OUT3.
+    value: 2
+  - name: B_0x3
+    description: TAMPOUTSEL1 = TAMP_OUT4.
+    value: 3
+  - name: B_0x4
+    description: TAMPOUTSEL1 = TAMP_OUT5.
+    value: 4
+  - name: B_0x5
+    description: TAMPOUTSEL1 = TAMP_OUT6.
+    value: 5
+  - name: B_0x6
+    description: TAMPOUTSEL1 = TAMP_OUT7.
+    value: 6
+  - name: B_0x7
+    description: TAMPOUTSEL1 = TAMP_OUT8.
+    value: 7
+enum/TAMP_ATCR2_ATOSEL2:
+  bit_size: 3
+  variants:
+  - name: B_0x0
+    description: TAMPOUTSEL2 = TAMP_OUT1.
+    value: 0
+  - name: B_0x1
+    description: TAMPOUTSEL2 = TAMP_OUT2.
+    value: 1
+  - name: B_0x2
+    description: TAMPOUTSEL2 = TAMP_OUT3.
+    value: 2
+  - name: B_0x3
+    description: TAMPOUTSEL2 = TAMP_OUT4.
+    value: 3
+  - name: B_0x4
+    description: TAMPOUTSEL2 = TAMP_OUT5.
+    value: 4
+  - name: B_0x5
+    description: TAMPOUTSEL2 = TAMP_OUT6.
+    value: 5
+  - name: B_0x6
+    description: TAMPOUTSEL2 = TAMP_OUT7.
+    value: 6
+  - name: B_0x7
+    description: TAMPOUTSEL2 = TAMP_OUT8.
+    value: 7
+enum/TAMP_ATCR2_ATOSEL3:
+  bit_size: 3
+  variants:
+  - name: B_0x0
+    description: TAMPOUTSEL3 = TAMP_OUT1.
+    value: 0
+  - name: B_0x1
+    description: TAMPOUTSEL3 = TAMP_OUT2.
+    value: 1
+  - name: B_0x2
+    description: TAMPOUTSEL3 = TAMP_OUT3.
+    value: 2
+  - name: B_0x3
+    description: TAMPOUTSEL3 = TAMP_OUT4.
+    value: 3
+  - name: B_0x4
+    description: TAMPOUTSEL3 = TAMP_OUT5.
+    value: 4
+  - name: B_0x5
+    description: TAMPOUTSEL3 = TAMP_OUT6.
+    value: 5
+  - name: B_0x6
+    description: TAMPOUTSEL3 = TAMP_OUT7.
+    value: 6
+  - name: B_0x7
+    description: TAMPOUTSEL3 = TAMP_OUT8.
+    value: 7
+enum/TAMP_ATCR2_ATOSEL4:
+  bit_size: 3
+  variants:
+  - name: B_0x0
+    description: TAMPOUTSEL4 = TAMP_OUT1.
+    value: 0
+  - name: B_0x1
+    description: TAMPOUTSEL4 = TAMP_OUT2.
+    value: 1
+  - name: B_0x2
+    description: TAMPOUTSEL4 = TAMP_OUT3.
+    value: 2
+  - name: B_0x3
+    description: TAMPOUTSEL4 = TAMP_OUT4.
+    value: 3
+  - name: B_0x4
+    description: TAMPOUTSEL4 = TAMP_OUT5.
+    value: 4
+  - name: B_0x5
+    description: TAMPOUTSEL4 = TAMP_OUT6.
+    value: 5
+  - name: B_0x6
+    description: TAMPOUTSEL4 = TAMP_OUT7.
+    value: 6
+  - name: B_0x7
+    description: TAMPOUTSEL4 = TAMP_OUT8.
+    value: 7
