@@ -236,22 +236,18 @@ fieldset/ATCR1:
     description: Active tamper shared output 1 selection.
     bit_offset: 8
     bit_size: 2
-    enum: TAMP_ATCR1_ATOSEL1
   - name: ATOSEL2
     description: Active tamper shared output 2 selection.
     bit_offset: 10
     bit_size: 2
-    enum: TAMP_ATCR1_ATOSEL2
   - name: ATOSEL3
     description: Active tamper shared output 3 selection.
     bit_offset: 12
     bit_size: 2
-    enum: TAMP_ATCR1_ATOSEL3
   - name: ATOSEL4
     description: Active tamper shared output 4 selection.
     bit_offset: 14
     bit_size: 2
-    enum: TAMP_ATCR1_ATOSEL4
   - name: ATCKSEL
     description: Active tamper RTC asynchronous prescaler clock selection.
     bit_offset: 16
@@ -275,37 +271,30 @@ fieldset/ATCR2:
     description: Active tamper shared output 1 selection.
     bit_offset: 8
     bit_size: 3
-    enum: TAMP_ATCR2_ATOSEL1
   - name: ATOSEL2
     description: Active tamper shared output 2 selection.
     bit_offset: 11
     bit_size: 3
-    enum: TAMP_ATCR2_ATOSEL2
   - name: ATOSEL3
     description: Active tamper shared output 3 selection.
     bit_offset: 14
     bit_size: 3
-    enum: TAMP_ATCR2_ATOSEL3
   - name: ATOSEL4
     description: Active tamper shared output 4 selection.
     bit_offset: 17
     bit_size: 3
-    enum: TAMP_ATCR2_ATOSEL4
   - name: ATOSEL5
     description: Active tamper shared output 5 selection.
     bit_offset: 20
     bit_size: 3
-    enum: ATOSEL5
   - name: ATOSEL6
     description: Active tamper shared output 6 selection.
     bit_offset: 23
     bit_size: 3
-    enum: ATOSEL6
   - name: ATOSEL7
     description: Active tamper shared output 7 selection.
     bit_offset: 26
     bit_size: 3
-    enum: ATOSEL7
 fieldset/ATOR:
   description: TAMP active tamper output register.
   fields:
@@ -759,17 +748,14 @@ fieldset/FLTCR:
     description: Tamper sampling frequency.
     bit_offset: 0
     bit_size: 3
-    enum: TAMPFREQ
   - name: TAMPFLT
     description: TAMP_INx filter count.
     bit_offset: 3
     bit_size: 2
-    enum: TAMPFLT
   - name: TAMPPRCH
     description: TAMP_INx precharge duration.
     bit_offset: 5
     bit_size: 2
-    enum: TAMPPRCH
   - name: TAMPPUDIS
     description: TAMP_INx pull-up disable.
     bit_offset: 7
@@ -1189,309 +1175,3 @@ fieldset/SR:
     description: Internal tamper 11 flag.
     bit_offset: 26
     bit_size: 1
-enum/ATOSEL5:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: TAMPOUTSEL5 = TAMP_OUT1.
-    value: 0
-  - name: B_0x1
-    description: TAMPOUTSEL5 = TAMP_OUT2.
-    value: 1
-  - name: B_0x2
-    description: TAMPOUTSEL5 = TAMP_OUT3.
-    value: 2
-  - name: B_0x3
-    description: TAMPOUTSEL5 = TAMP_OUT4.
-    value: 3
-  - name: B_0x4
-    description: TAMPOUTSEL5 = TAMP_OUT5.
-    value: 4
-  - name: B_0x5
-    description: TAMPOUTSEL5 = TAMP_OUT6.
-    value: 5
-  - name: B_0x6
-    description: TAMPOUTSEL5 = TAMP_OUT7.
-    value: 6
-  - name: B_0x7
-    description: TAMPOUTSEL5 = TAMP_OUT8.
-    value: 7
-enum/ATOSEL6:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: TAMPOUTSEL6 = TAMP_OUT1.
-    value: 0
-  - name: B_0x1
-    description: TAMPOUTSEL6 = TAMP_OUT2.
-    value: 1
-  - name: B_0x2
-    description: TAMPOUTSEL6 = TAMP_OUT3.
-    value: 2
-  - name: B_0x3
-    description: TAMPOUTSEL6 = TAMP_OUT4.
-    value: 3
-  - name: B_0x4
-    description: TAMPOUTSEL6 = TAMP_OUT5.
-    value: 4
-  - name: B_0x5
-    description: TAMPOUTSEL6 = TAMP_OUT6.
-    value: 5
-  - name: B_0x6
-    description: TAMPOUTSEL6 = TAMP_OUT7.
-    value: 6
-  - name: B_0x7
-    description: TAMPOUTSEL6 = TAMP_OUT8.
-    value: 7
-enum/ATOSEL7:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: TAMPOUTSEL7 = TAMP_OUT1.
-    value: 0
-  - name: B_0x1
-    description: TAMPOUTSEL7 = TAMP_OUT2.
-    value: 1
-  - name: B_0x2
-    description: TAMPOUTSEL7 = TAMP_OUT3.
-    value: 2
-  - name: B_0x3
-    description: TAMPOUTSEL7 = TAMP_OUT4.
-    value: 3
-  - name: B_0x4
-    description: TAMPOUTSEL7 = TAMP_OUT5.
-    value: 4
-  - name: B_0x5
-    description: TAMPOUTSEL7 = TAMP_OUT6.
-    value: 5
-  - name: B_0x6
-    description: TAMPOUTSEL7 = TAMP_OUT7.
-    value: 6
-  - name: B_0x7
-    description: TAMPOUTSEL7 = TAMP_OUT8.
-    value: 7
-enum/TAMPFLT:
-  bit_size: 2
-  variants:
-  - name: B_0x0
-    description: Tamper event is activated on edge of TAMP_INx input transitions to the active level (no internal pull-up on TAMP_INx input).
-    value: 0
-  - name: B_0x1
-    description: Tamper event is activated after 2 consecutive samples at the active level.
-    value: 1
-  - name: B_0x2
-    description: Tamper event is activated after 4 consecutive samples at the active level.
-    value: 2
-  - name: B_0x3
-    description: Tamper event is activated after 8 consecutive samples at the active level.
-    value: 3
-enum/TAMPFREQ:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: RTCCLK / 32768 (1 Hz when RTCCLK = 32768 Hz).
-    value: 0
-  - name: B_0x1
-    description: RTCCLK / 16384 (2 Hz when RTCCLK = 32768 Hz).
-    value: 1
-  - name: B_0x2
-    description: RTCCLK / 8192 (4 Hz when RTCCLK = 32768 Hz).
-    value: 2
-  - name: B_0x3
-    description: RTCCLK / 4096 (8 Hz when RTCCLK = 32768 Hz).
-    value: 3
-  - name: B_0x4
-    description: RTCCLK / 2048 (16 Hz when RTCCLK = 32768 Hz).
-    value: 4
-  - name: B_0x5
-    description: RTCCLK / 1024 (32 Hz when RTCCLK = 32768 Hz).
-    value: 5
-  - name: B_0x6
-    description: RTCCLK / 512 (64 Hz when RTCCLK = 32768 Hz).
-    value: 6
-  - name: B_0x7
-    description: RTCCLK / 256 (128 Hz when RTCCLK = 32768 Hz).
-    value: 7
-enum/TAMPPRCH:
-  bit_size: 2
-  variants:
-  - name: B_0x0
-    description: 1 RTCCLK cycle.
-    value: 0
-  - name: B_0x1
-    description: 2 RTCCLK cycles.
-    value: 1
-  - name: B_0x2
-    description: 4 RTCCLK cycles.
-    value: 2
-  - name: B_0x3
-    description: 8 RTCCLK cycles.
-    value: 3
-enum/TAMP_ATCR1_ATOSEL1:
-  bit_size: 2
-  variants:
-  - name: B_0x0
-    description: TAMPOUTSEL1 = TAMP_OUT1.
-    value: 0
-  - name: B_0x1
-    description: TAMPOUTSEL1 = TAMP_OUT2.
-    value: 1
-  - name: B_0x2
-    description: TAMPOUTSEL1 = TAMP_OUT3.
-    value: 2
-  - name: B_0x3
-    description: TAMPOUTSEL1 = TAMP_OUT4.
-    value: 3
-enum/TAMP_ATCR1_ATOSEL2:
-  bit_size: 2
-  variants:
-  - name: B_0x0
-    description: TAMPOUTSEL2 = TAMP_OUT1.
-    value: 0
-  - name: B_0x1
-    description: TAMPOUTSEL2 = TAMP_OUT2.
-    value: 1
-  - name: B_0x2
-    description: TAMPOUTSEL2 = TAMP_OUT3.
-    value: 2
-  - name: B_0x3
-    description: TAMPOUTSEL2 = TAMP_OUT4.
-    value: 3
-enum/TAMP_ATCR1_ATOSEL3:
-  bit_size: 2
-  variants:
-  - name: B_0x0
-    description: TAMPOUTSEL3 = TAMP_OUT1.
-    value: 0
-  - name: B_0x1
-    description: TAMPOUTSEL3 = TAMP_OUT2.
-    value: 1
-  - name: B_0x2
-    description: TAMPOUTSEL3 = TAMP_OUT3.
-    value: 2
-  - name: B_0x3
-    description: TAMPOUTSEL3 = TAMP_OUT4.
-    value: 3
-enum/TAMP_ATCR1_ATOSEL4:
-  bit_size: 2
-  variants:
-  - name: B_0x0
-    description: TAMPOUTSEL4 = TAMP_OUT1.
-    value: 0
-  - name: B_0x1
-    description: TAMPOUTSEL4 = TAMP_OUT2.
-    value: 1
-  - name: B_0x2
-    description: TAMPOUTSEL4 = TAMP_OUT3.
-    value: 2
-  - name: B_0x3
-    description: TAMPOUTSEL4 = TAMP_OUT4.
-    value: 3
-enum/TAMP_ATCR2_ATOSEL1:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: TAMPOUTSEL1 = TAMP_OUT1.
-    value: 0
-  - name: B_0x1
-    description: TAMPOUTSEL1 = TAMP_OUT2.
-    value: 1
-  - name: B_0x2
-    description: TAMPOUTSEL1 = TAMP_OUT3.
-    value: 2
-  - name: B_0x3
-    description: TAMPOUTSEL1 = TAMP_OUT4.
-    value: 3
-  - name: B_0x4
-    description: TAMPOUTSEL1 = TAMP_OUT5.
-    value: 4
-  - name: B_0x5
-    description: TAMPOUTSEL1 = TAMP_OUT6.
-    value: 5
-  - name: B_0x6
-    description: TAMPOUTSEL1 = TAMP_OUT7.
-    value: 6
-  - name: B_0x7
-    description: TAMPOUTSEL1 = TAMP_OUT8.
-    value: 7
-enum/TAMP_ATCR2_ATOSEL2:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: TAMPOUTSEL2 = TAMP_OUT1.
-    value: 0
-  - name: B_0x1
-    description: TAMPOUTSEL2 = TAMP_OUT2.
-    value: 1
-  - name: B_0x2
-    description: TAMPOUTSEL2 = TAMP_OUT3.
-    value: 2
-  - name: B_0x3
-    description: TAMPOUTSEL2 = TAMP_OUT4.
-    value: 3
-  - name: B_0x4
-    description: TAMPOUTSEL2 = TAMP_OUT5.
-    value: 4
-  - name: B_0x5
-    description: TAMPOUTSEL2 = TAMP_OUT6.
-    value: 5
-  - name: B_0x6
-    description: TAMPOUTSEL2 = TAMP_OUT7.
-    value: 6
-  - name: B_0x7
-    description: TAMPOUTSEL2 = TAMP_OUT8.
-    value: 7
-enum/TAMP_ATCR2_ATOSEL3:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: TAMPOUTSEL3 = TAMP_OUT1.
-    value: 0
-  - name: B_0x1
-    description: TAMPOUTSEL3 = TAMP_OUT2.
-    value: 1
-  - name: B_0x2
-    description: TAMPOUTSEL3 = TAMP_OUT3.
-    value: 2
-  - name: B_0x3
-    description: TAMPOUTSEL3 = TAMP_OUT4.
-    value: 3
-  - name: B_0x4
-    description: TAMPOUTSEL3 = TAMP_OUT5.
-    value: 4
-  - name: B_0x5
-    description: TAMPOUTSEL3 = TAMP_OUT6.
-    value: 5
-  - name: B_0x6
-    description: TAMPOUTSEL3 = TAMP_OUT7.
-    value: 6
-  - name: B_0x7
-    description: TAMPOUTSEL3 = TAMP_OUT8.
-    value: 7
-enum/TAMP_ATCR2_ATOSEL4:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: TAMPOUTSEL4 = TAMP_OUT1.
-    value: 0
-  - name: B_0x1
-    description: TAMPOUTSEL4 = TAMP_OUT2.
-    value: 1
-  - name: B_0x2
-    description: TAMPOUTSEL4 = TAMP_OUT3.
-    value: 2
-  - name: B_0x3
-    description: TAMPOUTSEL4 = TAMP_OUT4.
-    value: 3
-  - name: B_0x4
-    description: TAMPOUTSEL4 = TAMP_OUT5.
-    value: 4
-  - name: B_0x5
-    description: TAMPOUTSEL4 = TAMP_OUT6.
-    value: 5
-  - name: B_0x6
-    description: TAMPOUTSEL4 = TAMP_OUT7.
-    value: 6
-  - name: B_0x7
-    description: TAMPOUTSEL4 = TAMP_OUT8.
-    value: 7

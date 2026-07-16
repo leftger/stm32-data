@@ -33,61 +33,57 @@ fieldset/CR:
   description: SPDIFRX control register.
   fields:
   - name: SPDIFRXEN
-    description: Peripheral block enable less than sup>(1) less than /sup>.
+    description: Peripheral block enableless thansup>(1)less than/sup>.
     bit_offset: 0
     bit_size: 2
-    enum: SPDIFRXEN
   - name: RXDMAEN
-    description: Receiver DMA enable for data flow less than sup>(1) less than /sup>.
+    description: Receiver DMA enable for data flowless thansup>(1)less than/sup>.
     bit_offset: 2
     bit_size: 1
   - name: RXSTEO
-    description: Stereo mode less than sup>(1) less than /sup>.
+    description: Stereo modeless thansup>(1)less than/sup>.
     bit_offset: 3
     bit_size: 1
   - name: DRFMT
-    description: RX data format less than sup>(1) less than /sup>.
+    description: RX data formatless thansup>(1)less than/sup>.
     bit_offset: 4
     bit_size: 2
-    enum: DRFMT
   - name: PMSK
-    description: Mask parity error bit less than sup>(1) less than /sup>.
+    description: Mask parity error bitless thansup>(1)less than/sup>.
     bit_offset: 6
     bit_size: 1
   - name: VMSK
-    description: Mask of validity bit less than sup>(1) less than /sup>.
+    description: Mask of validity bitless thansup>(1)less than/sup>.
     bit_offset: 7
     bit_size: 1
   - name: CUMSK
-    description: Mask of channel status and user bits less than sup>(1) less than /sup>.
+    description: Mask of channel status and user bitsless thansup>(1)less than/sup>.
     bit_offset: 8
     bit_size: 1
   - name: PTMSK
-    description: Mask of preamble type bits less than sup>(1) less than /sup>.
+    description: Mask of preamble type bitsless thansup>(1)less than/sup>.
     bit_offset: 9
     bit_size: 1
   - name: CBDMAEN
-    description: Control buffer DMA enable for control flow less than sup>(1) less than /sup>.
+    description: Control buffer DMA enable for control flowless thansup>(1)less than/sup>.
     bit_offset: 10
     bit_size: 1
   - name: CHSEL
-    description: Channel selection less than sup>(1) less than /sup>.
+    description: Channel selectionless thansup>(1)less than/sup>.
     bit_offset: 11
     bit_size: 1
   - name: NBTR
-    description: Maximum allowed re-tries during synchronization phase less than sup>(1) less than /sup>.
+    description: Maximum allowed re-tries during synchronization phaseless thansup>(1)less than/sup>.
     bit_offset: 12
     bit_size: 2
-    enum: NBTR
   - name: WFA
-    description: Wait for activity less than sup>(1) less than /sup>.
+    description: Wait for activityless thansup>(1)less than/sup>.
     bit_offset: 14
     bit_size: 1
   - name: INSEL
     description: SPDIFRX input selection.
     bit_offset: 16
     bit_size: 3
-    enum: INSEL
   - name: CKSEN
     description: Symbol clock enable.
     bit_offset: 20
@@ -115,11 +111,11 @@ fieldset/DIR:
   description: SPDIFRX debug information register.
   fields:
   - name: THI
-    description: threshold HIGH (THI = 2.5 x UI / T less than sub>spdifrx_ker_ck less than /sub>).
+    description: threshold HIGH (THI = 2.5 x UI / Tless thansub>spdifrx_ker_ckless than/sub>).
     bit_offset: 0
     bit_size: 13
   - name: TLO
-    description: threshold LOW (TLO = 1.5 x UI / T less than sub>spdifrx_ker_ck less than /sub>).
+    description: threshold LOW (TLO = 1.5 x UI / Tless thansub>spdifrx_ker_ckless than/sub>).
     bit_offset: 16
     bit_size: 13
 fieldset/DR:
@@ -242,57 +238,3 @@ fieldset/SR:
     description: duration of 5 symbols counted with spdifrx_ker_ck.
     bit_offset: 16
     bit_size: 15
-enum/DRFMT:
-  bit_size: 2
-  variants:
-  - name: B_0x0
-    description: Data samples are aligned in the right (LSB).
-    value: 0
-  - name: B_0x1
-    description: Data samples are aligned in the left (MSB).
-    value: 1
-  - name: B_0x2
-    description: Data sample are packed by setting two 16-bit sample into a 32-bit word.
-    value: 2
-enum/INSEL:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: SPDIFRX_IN0 selected.
-    value: 0
-  - name: B_0x1
-    description: SPDIFRX_IN1 selected.
-    value: 1
-  - name: B_0x2
-    description: SPDIFRX_IN2 selected.
-    value: 2
-  - name: B_0x3
-    description: SPDIFRX_IN3 selected.
-    value: 3
-enum/NBTR:
-  bit_size: 2
-  variants:
-  - name: B_0x0
-    description: No re-try is allowed (only one attempt).
-    value: 0
-  - name: B_0x1
-    description: 3 re-tries allowed.
-    value: 1
-  - name: B_0x2
-    description: 15 re-tries allowed.
-    value: 2
-  - name: B_0x3
-    description: 63 re-tries allowed.
-    value: 3
-enum/SPDIFRXEN:
-  bit_size: 2
-  variants:
-  - name: B_0x0
-    description: Disable SPDIFRX (STATE_IDLE).
-    value: 0
-  - name: B_0x1
-    description: Enable SPDIFRX synchronization only.
-    value: 1
-  - name: B_0x3
-    description: Enable SPDIF receiver.
-    value: 3

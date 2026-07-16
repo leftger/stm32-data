@@ -20,6 +20,6 @@ transforms:
     from: FMT0_DR
     to: DR
     type: Fieldset
+  # Drop placeholder enums (SVD uses unhelpful B_0x variant names).
   - !DeleteEnums
     from: .*
-    bit_size: 1

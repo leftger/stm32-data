@@ -14,6 +14,10 @@ transforms:
   - !DeleteEnums
     from: .*(IE|_EN|FI|FF|PD|OC|OB|FC|CL|CE)$
     bit_size: 1
+  # Drop single-bit placeholder enums (SVD uses unhelpful B_0x0/B_0x1 names).
+  - !DeleteEnums
+    from: .*
+    bit_size: 1
   - !MakeFieldArray
     fieldsets: .*
     from: ([A-Z]+)\d+([A-Z]*)

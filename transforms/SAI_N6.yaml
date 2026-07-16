@@ -14,9 +14,13 @@ transforms:
   - !MergeEnums
     from: ^[AB](.*)
     to: $1
+  - !Rename
+    from: ^(.+?)_(.+)
+    to: $2
+    type: All
+  # Drop placeholder enums (SVD uses unhelpful B_0x variant names).
   - !DeleteEnums
-    from: ^(C?A?FSDET(IE)?|CCNRDY(IE)?|CNRDYIE|C?OVRUDR|CWCKCFG(IE)?|WCKCFGIE|DMAEN|FFLUSH|FREQ(IE)?|C?LFSDET(IE)?|MUTE|C?MUTEDET(IE)?|OVRUDR(IE)?|SAIEN)$
-    bit_size: 1
+    from: .*
   - !MergeFieldsets
     from: ^[AB](.*)
     to: $1

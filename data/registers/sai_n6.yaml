@@ -87,72 +87,58 @@ fieldset/CR1:
     description: SAIx audio block mode.
     bit_offset: 0
     bit_size: 2
-    enum: CR1_MODE
   - name: PRTCFG
     description: Protocol configuration.
     bit_offset: 2
     bit_size: 2
-    enum: CR1_PRTCFG
   - name: DS
     description: Data size.
     bit_offset: 5
     bit_size: 3
-    enum: CR1_DS
   - name: LSBFIRST
     description: Least significant bit first.
     bit_offset: 8
     bit_size: 1
-    enum: CR1_LSBFIRST
   - name: CKSTR
     description: Clock strobing edge.
     bit_offset: 9
     bit_size: 1
-    enum: CR1_CKSTR
   - name: SYNCEN
     description: Synchronization enable.
     bit_offset: 10
     bit_size: 2
-    enum: CR1_SYNCEN
   - name: MONO
     description: Mono mode.
     bit_offset: 12
     bit_size: 1
-    enum: CR1_MONO
   - name: OUTDRIV
     description: Output drive.
     bit_offset: 13
     bit_size: 1
-    enum: CR1_OUTDRIV
   - name: SAIEN
     description: Audio block enable.
     bit_offset: 16
     bit_size: 1
-    enum: CR1_SAIEN
   - name: DMAEN
     description: DMA enable.
     bit_offset: 17
     bit_size: 1
-    enum: CR1_DMAEN
   - name: NODIV
     description: No divider.
     bit_offset: 19
     bit_size: 1
-    enum: CR1_NODIV
   - name: MCKDIV
     description: Master clock divider.
     bit_offset: 20
     bit_size: 6
-    enum: CR1_MCKDIV
   - name: OSR
     description: Oversampling ratio for master clock.
     bit_offset: 26
     bit_size: 1
-    enum: CR1_OSR
   - name: MCKEN
     description: Master clock generation enable.
     bit_offset: 27
     bit_size: 1
-    enum: CR1_MCKEN
 fieldset/CR2:
   description: SAI configuration register 2.
   fields:
@@ -160,27 +146,22 @@ fieldset/CR2:
     description: FIFO threshold.
     bit_offset: 0
     bit_size: 3
-    enum: CR2_FTH
   - name: FFLUSH
     description: FIFO flush.
     bit_offset: 3
     bit_size: 1
-    enum: CR2_FFLUSH
   - name: TRIS
     description: Tristate management on data line.
     bit_offset: 4
     bit_size: 1
-    enum: CR2_TRIS
   - name: MUTE
     description: Mute.
     bit_offset: 5
     bit_size: 1
-    enum: CR2_MUTE
   - name: MUTEVAL
     description: Mute value.
     bit_offset: 6
     bit_size: 1
-    enum: CR2_MUTEVAL
   - name: MUTECNT
     description: Mute counter.
     bit_offset: 7
@@ -189,12 +170,10 @@ fieldset/CR2:
     description: Complement bit.
     bit_offset: 13
     bit_size: 1
-    enum: CR2_CPL
   - name: COMP
     description: Companding mode.
     bit_offset: 14
     bit_size: 2
-    enum: CR2_COMP
 fieldset/DR:
   description: SAI data register.
   fields:
@@ -217,17 +196,14 @@ fieldset/FRCR:
     description: Frame synchronization definition.
     bit_offset: 16
     bit_size: 1
-    enum: FRCR_FSDEF
   - name: FSPOL
     description: Frame synchronization polarity.
     bit_offset: 17
     bit_size: 1
-    enum: FRCR_FSPOL
   - name: FSOFF
     description: Frame synchronization offset.
     bit_offset: 18
     bit_size: 1
-    enum: FRCR_FSOFF
 fieldset/GCR:
   description: SAI global configuration register.
   fields:
@@ -239,7 +215,6 @@ fieldset/GCR:
     description: Synchronization outputs.
     bit_offset: 4
     bit_size: 2
-    enum: SYNCOUT
 fieldset/IM:
   description: SAI interrupt mask register.
   fields:
@@ -247,37 +222,30 @@ fieldset/IM:
     description: Overrun/underrun interrupt enable.
     bit_offset: 0
     bit_size: 1
-    enum: IM_OVRUDRIE
   - name: MUTEDETIE
     description: Mute detection interrupt enable.
     bit_offset: 1
     bit_size: 1
-    enum: IM_MUTEDETIE
   - name: WCKCFGIE
     description: Wrong clock configuration interrupt enable.
     bit_offset: 2
     bit_size: 1
-    enum: IM_WCKCFGIE
   - name: FREQIE
     description: FIFO request interrupt enable.
     bit_offset: 3
     bit_size: 1
-    enum: IM_FREQIE
   - name: CNRDYIE
     description: Codec not ready interrupt enable (AC'97).
     bit_offset: 4
     bit_size: 1
-    enum: IM_CNRDYIE
   - name: AFSDETIE
     description: Anticipated frame synchronization detection interrupt enable.
     bit_offset: 5
     bit_size: 1
-    enum: IM_AFSDETIE
   - name: LFSDETIE
     description: Late frame synchronization detection interrupt enable.
     bit_offset: 6
     bit_size: 1
-    enum: IM_LFSDETIE
 fieldset/PDMCR:
   description: SAI PDM control register.
   fields:
@@ -285,12 +253,10 @@ fieldset/PDMCR:
     description: PDM enable.
     bit_offset: 0
     bit_size: 1
-    enum: PDMEN
   - name: MICNBR
     description: Number of microphones.
     bit_offset: 4
     bit_size: 2
-    enum: MICNBR
   - name: CKEN
     description: Clock enable of bitstream clock number 1.
     bit_offset: 8
@@ -298,7 +264,6 @@ fieldset/PDMCR:
     array:
       len: 2
       stride: 1
-    enum: CKEN1
 fieldset/PDMDLY:
   description: SAI PDM delay register.
   fields:
@@ -309,7 +274,6 @@ fieldset/PDMDLY:
     array:
       len: 4
       stride: 8
-    enum: DLYM1L
   - name: DLYMR
     description: Delay line adjust for second microphone of pair 1.
     bit_offset: 4
@@ -317,7 +281,6 @@ fieldset/PDMDLY:
     array:
       len: 4
       stride: 8
-    enum: DLYM1R
 fieldset/SLOTR:
   description: SAI slot register.
   fields:
@@ -329,7 +292,6 @@ fieldset/SLOTR:
     description: Slot size.
     bit_offset: 6
     bit_size: 2
-    enum: SLOTR_SLOTSZ
   - name: NBSLOT
     description: Number of slots in an audio frame.
     bit_offset: 8
@@ -338,7 +300,6 @@ fieldset/SLOTR:
     description: Slot enable.
     bit_offset: 16
     bit_size: 16
-    enum: SLOTR_SLOTEN
 fieldset/SR:
   description: SAI status register.
   fields:
@@ -346,531 +307,31 @@ fieldset/SR:
     description: Overrun / underrun.
     bit_offset: 0
     bit_size: 1
-    enum: SR_OVRUDR
   - name: MUTEDET
     description: Mute detection.
     bit_offset: 1
     bit_size: 1
-    enum: SR_MUTEDET
   - name: WCKCFG
     description: Wrong clock configuration flag.
     bit_offset: 2
     bit_size: 1
-    enum: SR_WCKCFG
   - name: FREQ
     description: FIFO request.
     bit_offset: 3
     bit_size: 1
-    enum: SR_FREQ
   - name: CNRDY
     description: Codec not ready.
     bit_offset: 4
     bit_size: 1
-    enum: SR_CNRDY
   - name: AFSDET
     description: Anticipated frame synchronization detection.
     bit_offset: 5
     bit_size: 1
-    enum: SR_AFSDET
   - name: LFSDET
     description: Late frame synchronization detection.
     bit_offset: 6
     bit_size: 1
-    enum: SR_LFSDET
   - name: FLVL
     description: FIFO level threshold.
     bit_offset: 16
     bit_size: 3
-    enum: SR_FLVL
-enum/CKEN1:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: SAI_CK1 clock disabled.
-    value: 0
-  - name: B_0x1
-    description: SAI_CK1 clock enabled.
-    value: 1
-enum/CR1_CKSTR:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: Signals generated by the SAI change on SCK rising edge, while signals received by the SAI are sampled on the SCK falling edge.
-    value: 0
-  - name: B_0x1
-    description: Signals generated by the SAI change on SCK falling edge, while signals received by the SAI are sampled on the SCK rising edge.
-    value: 1
-enum/CR1_DMAEN:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: DMA disabled.
-    value: 0
-  - name: B_0x1
-    description: DMA enabled.
-    value: 1
-enum/CR1_DS:
-  bit_size: 3
-  variants:
-  - name: B_0x2
-    description: 8 bits.
-    value: 2
-  - name: B_0x3
-    description: 10 bits.
-    value: 3
-  - name: B_0x4
-    description: 16 bits.
-    value: 4
-  - name: B_0x5
-    description: 20 bits.
-    value: 5
-  - name: B_0x6
-    description: 24 bits.
-    value: 6
-  - name: B_0x7
-    description: 32 bits.
-    value: 7
-enum/CR1_LSBFIRST:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: Data are transferred with MSB first.
-    value: 0
-  - name: B_0x1
-    description: Data are transferred with LSB first.
-    value: 1
-enum/CR1_MCKDIV:
-  bit_size: 6
-  variants:
-  - name: B_0x0
-    description: Divides by 1 the kernel clock input (sai_x_ker_ck).
-    value: 0
-enum/CR1_MCKEN:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: The master clock is not generated.
-    value: 0
-  - name: B_0x1
-    description: The master clock is generated independently of SAIEN bit.
-    value: 1
-enum/CR1_MODE:
-  bit_size: 2
-  variants:
-  - name: B_0x0
-    description: Master transmitter.
-    value: 0
-  - name: B_0x1
-    description: Master receiver.
-    value: 1
-  - name: B_0x2
-    description: Slave transmitter.
-    value: 2
-  - name: B_0x3
-    description: Slave receiver.
-    value: 3
-enum/CR1_MONO:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: Stereo mode.
-    value: 0
-  - name: B_0x1
-    description: Mono mode.
-    value: 1
-enum/CR1_NODIV:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: the ratio between the Master clock generator and frame synchronization is fixed to 256 or 512.
-    value: 0
-  - name: B_0x1
-    description: the ratio between the Master clock generator and frame synchronization depends on FRL[7:0].
-    value: 1
-enum/CR1_OSR:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: Master clock frequency = Fless thansub>FSless than/sub> x 256.
-    value: 0
-  - name: B_0x1
-    description: Master clock frequency = Fless thansub>FSless than/sub> x 512.
-    value: 1
-enum/CR1_OUTDRIV:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: Audio block output driven when SAIEN is set.
-    value: 0
-  - name: B_0x1
-    description: Audio block output driven immediately after the setting of this bit.
-    value: 1
-enum/CR1_PRTCFG:
-  bit_size: 2
-  variants:
-  - name: B_0x0
-    description: Free protocol. Free protocol enables to use the powerful configuration of the audio block to address a specific audio protocol (such as I2S, LSB/MSB justified, TDM, PCM/DSP...) by setting most of the configuration register bits as well as frame configuration register.
-    value: 0
-  - name: B_0x1
-    description: SPDIF protocol.
-    value: 1
-  - name: B_0x2
-    description: AC'97 protocol.
-    value: 2
-enum/CR1_SAIEN:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: SAI audio block disabled.
-    value: 0
-  - name: B_0x1
-    description: SAI audio block enabled.
-    value: 1
-enum/CR1_SYNCEN:
-  bit_size: 2
-  variants:
-  - name: B_0x0
-    description: audio subblock in asynchronous mode.
-    value: 0
-  - name: B_0x1
-    description: audio subblock is synchronous with the other internal audio subblock. In this case, the audio subblock must be configured in slave mode.
-    value: 1
-  - name: B_0x2
-    description: audio subblock is synchronous with an external SAI embedded peripheral. In this case the audio subblock should be configured in Slave mode.
-    value: 2
-enum/CR2_COMP:
-  bit_size: 2
-  variants:
-  - name: B_0x0
-    description: No companding algorithm.
-    value: 0
-  - name: B_0x2
-    description: -Law algorithm.
-    value: 2
-  - name: B_0x3
-    description: A-Law algorithm.
-    value: 3
-enum/CR2_CPL:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: 1's complement representation.
-    value: 0
-  - name: B_0x1
-    description: 2's complement representation.
-    value: 1
-enum/CR2_FFLUSH:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: No FIFO flush.
-    value: 0
-  - name: B_0x1
-    description: FIFO flush. Programming this bit to 1 triggers the FIFO Flush. All the internal FIFO pointers (read and write) are cleared. In this case data still present in the FIFO are lost (no more transmission or received data lost). Before flushing, SAI DMA stream/interrupt must be disabled.
-    value: 1
-enum/CR2_FTH:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: FIFO empty.
-    value: 0
-  - name: B_0x1
-    description: FIFO.
-    value: 1
-  - name: B_0x2
-    description: FIFO.
-    value: 2
-  - name: B_0x3
-    description: FIFO.
-    value: 3
-  - name: B_0x4
-    description: FIFO full.
-    value: 4
-enum/CR2_MUTE:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: No mute mode.
-    value: 0
-  - name: B_0x1
-    description: Mute mode enabled.
-    value: 1
-enum/CR2_MUTEVAL:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: Bit value 0 is sent during the mute mode.
-    value: 0
-  - name: B_0x1
-    description: Last values are sent during the mute mode.
-    value: 1
-enum/CR2_TRIS:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: SD output line is still driven by the SAI when a slot is inactive.
-    value: 0
-  - name: B_0x1
-    description: SD output line is released (HI-Z) at the end of the last data bit of the last active slot if the next one is inactive.
-    value: 1
-enum/DLYM1L:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: No delay.
-    value: 0
-  - name: B_0x1
-    description: Delay of 1 Tless thansub>SAI_CK less than/sub>period.
-    value: 1
-  - name: B_0x2
-    description: Delay of 2 Tless thansub>SAI_CK less than/sub>periods.
-    value: 2
-  - name: B_0x7
-    description: Delay of 7 Tless thansub>SAI_CK less than/sub>periods.
-    value: 7
-enum/DLYM1R:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: No delay.
-    value: 0
-  - name: B_0x1
-    description: Delay of 1 Tless thansub>SAI_CK less than/sub>period.
-    value: 1
-  - name: B_0x2
-    description: Delay of 2 Tless thansub>SAI_CK less than/sub>periods.
-    value: 2
-  - name: B_0x7
-    description: Delay of 7 Tless thansub>SAI_CK less than/sub>periods.
-    value: 7
-enum/FRCR_FSDEF:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: FS signal is a start frame signal.
-    value: 0
-  - name: B_0x1
-    description: FS signal is a start of frame signal + channel side identification.
-    value: 1
-enum/FRCR_FSOFF:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: FS is asserted on the first bit of the slot 0.
-    value: 0
-  - name: B_0x1
-    description: FS is asserted one bit before the first bit of the slot 0.
-    value: 1
-enum/FRCR_FSPOL:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: FS is active low (falling edge).
-    value: 0
-  - name: B_0x1
-    description: FS is active high (rising edge).
-    value: 1
-enum/IM_AFSDETIE:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: Interrupt is disabled.
-    value: 0
-  - name: B_0x1
-    description: Interrupt is enabled.
-    value: 1
-enum/IM_CNRDYIE:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: Interrupt is disabled.
-    value: 0
-  - name: B_0x1
-    description: Interrupt is enabled.
-    value: 1
-enum/IM_FREQIE:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: Interrupt is disabled.
-    value: 0
-  - name: B_0x1
-    description: Interrupt is enabled.
-    value: 1
-enum/IM_LFSDETIE:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: Interrupt is disabled.
-    value: 0
-  - name: B_0x1
-    description: Interrupt is enabled.
-    value: 1
-enum/IM_MUTEDETIE:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: Interrupt is disabled.
-    value: 0
-  - name: B_0x1
-    description: Interrupt is enabled.
-    value: 1
-enum/IM_OVRUDRIE:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: Interrupt is disabled.
-    value: 0
-  - name: B_0x1
-    description: Interrupt is enabled.
-    value: 1
-enum/IM_WCKCFGIE:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: Interrupt is disabled.
-    value: 0
-  - name: B_0x1
-    description: Interrupt is enabled.
-    value: 1
-enum/MICNBR:
-  bit_size: 2
-  variants:
-  - name: B_0x0
-    description: Configuration with 2 microphones.
-    value: 0
-  - name: B_0x1
-    description: Configuration with 4 microphones.
-    value: 1
-  - name: B_0x2
-    description: Configuration with 6 microphones.
-    value: 2
-  - name: B_0x3
-    description: Configuration with 8 microphones.
-    value: 3
-enum/PDMEN:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: PDM interface disabled.
-    value: 0
-  - name: B_0x1
-    description: PDM interface enabled.
-    value: 1
-enum/SLOTR_SLOTEN:
-  bit_size: 16
-  variants:
-  - name: B_0x0
-    description: Inactive slot.
-    value: 0
-  - name: B_0x1
-    description: Active slot.
-    value: 1
-enum/SLOTR_SLOTSZ:
-  bit_size: 2
-  variants:
-  - name: B_0x0
-    description: The slot size is equivalent to the data size (specified in DS[3:0] in the SAI_xCR1 register).
-    value: 0
-  - name: B_0x1
-    description: 16-bit.
-    value: 1
-  - name: B_0x2
-    description: 32-bit.
-    value: 2
-enum/SR_AFSDET:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: No error.
-    value: 0
-  - name: B_0x1
-    description: Frame synchronization signal is detected earlier than expected.
-    value: 1
-enum/SR_CNRDY:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: External AC'97 Codec is ready.
-    value: 0
-  - name: B_0x1
-    description: External AC'97 Codec is not ready.
-    value: 1
-enum/SR_FLVL:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: FIFO empty (transmitter and receiver modes).
-    value: 0
-  - name: B_0x1
-    description: FIFO less than or equal to 1/4 but not empty (transmitter mode), FIFO less than 1/4 but not empty (receiver mode).
-    value: 1
-  - name: B_0x2
-    description: 1/4 less than FIFO less than or equal to 1/2 (transmitter mode), 1/4 less than or equal to FIFO less than 1/2 (receiver mode).
-    value: 2
-  - name: B_0x3
-    description: 1/2 less than FIFO less than or equal to 3/4 (transmitter mode), 1/2 less than or equal to FIFO less than 3/4 (receiver mode).
-    value: 3
-  - name: B_0x4
-    description: 3/4 less than FIFO but not full (transmitter mode), 3/4 less than or equal to FIFO but not full (receiver mode).
-    value: 4
-  - name: B_0x5
-    description: FIFO full (transmitter and receiver modes).
-    value: 5
-enum/SR_FREQ:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: No FIFO request.
-    value: 0
-  - name: B_0x1
-    description: FIFO request to read or to write the SAI_xDR.
-    value: 1
-enum/SR_LFSDET:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: No error.
-    value: 0
-  - name: B_0x1
-    description: Frame synchronization signal is not present at the right time.
-    value: 1
-enum/SR_MUTEDET:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: No MUTE detection on the SD input line.
-    value: 0
-  - name: B_0x1
-    description: MUTE value detected on the SD input line (0 value) for a specified number of consecutive audio frame.
-    value: 1
-enum/SR_OVRUDR:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: No overrun/underrun error.
-    value: 0
-  - name: B_0x1
-    description: Overrun/underrun error detection.
-    value: 1
-enum/SR_WCKCFG:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: Clock configuration is correct.
-    value: 0
-  - name: B_0x1
-    description: 'Clock configuration does not respect the rule concerning the frame length specification defined in Section 59.4.6: Frame synchronization (configuration of FRL[7:0] bit in the SAI_xFRCR register).'
-    value: 1
-enum/SYNCOUT:
-  bit_size: 2
-  variants:
-  - name: B_0x0
-    description: No synchronization output signals. SYNCOUT[1:0] should be configured as No synchronization output signals when audio block is configured as SPDIF.
-    value: 0
-  - name: B_0x1
-    description: Block A used for further synchronization for others SAI.
-    value: 1
-  - name: B_0x2
-    description: Block B used for further synchronization for others SAI.
-    value: 2

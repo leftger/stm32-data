@@ -7,6 +7,6 @@ transforms:
     from: ^CACHEAXI_(.+)$
     to: $1
     type: Fieldset
+  # Drop placeholder enums (SVD uses unhelpful B_0x variant names).
   - !DeleteEnums
     from: .*
-    bit_size: 1

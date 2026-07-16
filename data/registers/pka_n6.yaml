@@ -53,7 +53,6 @@ fieldset/CR:
     description: PKA operation code.
     bit_offset: 8
     bit_size: 6
-    enum: MODE
   - name: PROCENDIE
     description: End of operation interrupt enable.
     bit_offset: 17
@@ -101,69 +100,3 @@ fieldset/SR:
     description: Operation error flag.
     bit_offset: 21
     bit_size: 1
-enum/MODE:
-  bit_size: 6
-  variants:
-  - name: B_0x0
-    description: Montgomery parameter computation then modular exponentiation.
-    value: 0
-  - name: B_0x1
-    description: Montgomery parameter computation only.
-    value: 1
-  - name: B_0x2
-    description: Modular exponentiation only (Montgomery parameter must be loaded first).
-    value: 2
-  - name: B_0x3
-    description: Modular exponentiation (protected, used when manipulating secrets).
-    value: 3
-  - name: B_0x7
-    description: RSA CRT exponentiation.
-    value: 7
-  - name: B_0x8
-    description: Modular inversion.
-    value: 8
-  - name: B_0x9
-    description: Arithmetic addition.
-    value: 9
-  - name: B_0xA
-    description: Arithmetic subtraction.
-    value: 10
-  - name: B_0xB
-    description: Arithmetic multiplication.
-    value: 11
-  - name: B_0xC
-    description: Arithmetic comparison.
-    value: 12
-  - name: B_0xD
-    description: Modular reduction.
-    value: 13
-  - name: B_0xE
-    description: Modular addition.
-    value: 14
-  - name: B_0xF
-    description: Modular subtraction.
-    value: 15
-  - name: B_0x10
-    description: Montgomery multiplication.
-    value: 16
-  - name: B_0x20
-    description: Montgomery parameter computation then ECC scalar multiplication.
-    value: 32
-  - name: B_0x23
-    description: ECC complete addition.
-    value: 35
-  - name: B_0x24
-    description: ECDSA sign.
-    value: 36
-  - name: B_0x26
-    description: ECDSA verification.
-    value: 38
-  - name: B_0x27
-    description: ECC double base ladder.
-    value: 39
-  - name: B_0x28
-    description: Point on elliptic curve Fp check.
-    value: 40
-  - name: B_0x2F
-    description: ECC projective to affine.
-    value: 47

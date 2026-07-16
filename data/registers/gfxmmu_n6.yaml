@@ -71,12 +71,10 @@ fieldset/CR:
     description: Block size.
     bit_offset: 6
     bit_size: 1
-    enum: BS
   - name: ATE
     description: Address translation enable.
     bit_offset: 15
     bit_size: 1
-    enum: ATE
   - name: BPE
     description: Buffer 0 packing enable.
     bit_offset: 24
@@ -84,7 +82,6 @@ fieldset/CR:
     array:
       len: 4
       stride: 2
-    enum: B0PE
   - name: BPM
     description: Buffer 0 packing mode.
     bit_offset: 25
@@ -92,7 +89,6 @@ fieldset/CR:
     array:
       len: 4
       stride: 2
-    enum: B0PM
 fieldset/DAR:
   description: GFXMMU default alpha register.
   fields:
@@ -157,39 +153,3 @@ fieldset/SR:
     description: AXI master error flag.
     bit_offset: 4
     bit_size: 1
-enum/ATE:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: Address translation is disable.
-    value: 0
-  - name: B_0x1
-    description: Address translation is enable.
-    value: 1
-enum/B0PE:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: Packing is disabled.
-    value: 0
-  - name: B_0x1
-    description: Packing is enable.
-    value: 1
-enum/B0PM:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: MSB is removed.
-    value: 0
-  - name: B_0x1
-    description: LSB is removed.
-    value: 1
-enum/BS:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: 16-byte blocks.
-    value: 0
-  - name: B_0x1
-    description: 12-byte blocks.
-    value: 1

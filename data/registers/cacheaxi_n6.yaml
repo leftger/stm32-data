@@ -161,7 +161,6 @@ fieldset/CR2:
     description: cache command maintenance operation (clean or clean-and-invalidate an address range).
     bit_offset: 1
     bit_size: 2
-    enum: CACHECMD
 fieldset/EVIMONR:
   description: CACHEAXI eviction monitor register.
   fields:
@@ -271,15 +270,3 @@ fieldset/WTMONR:
     description: cache write-through monitor counter.
     bit_offset: 0
     bit_size: 32
-enum/CACHECMD:
-  bit_size: 2
-  variants:
-  - name: B_0x0
-    description: no operation.
-    value: 0
-  - name: B_0x1
-    description: clean range.
-    value: 1
-  - name: B_0x3
-    description: clean and invalidate range.
-    value: 3
