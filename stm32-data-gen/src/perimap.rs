@@ -146,6 +146,7 @@ const PERIMAP: &[(&str, (&str, &str, &str))] = &[
     ("STM32H7[RS].*:SPI:.*", ("spi", "v5_i2s", "SPI")),
     ("STM32H7.*:SPI:.*", ("spi", "v4_i2s", "SPI")),
     ("STM32H5.*:SPI:.*", ("spi", "v5_i2s", "SPI")),
+    ("STM32C5.*:SPI:.*", ("spi", "v5_i2s", "SPI")),
     ("STM32N6.*:SPI:.*", ("spi", "v5", "SPI")),
     ("STM32U3.*:SPI:.*", ("spi", "v6", "SPI")),
     ("STM32U5.*:SPI:.*", ("spi", "v6", "SPI")),
