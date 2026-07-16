@@ -322,6 +322,7 @@ const PERIMAP: &[(&str, (&str, &str, &str))] = &[
     (".*:SDIO:sdmmc_v1_2", ("sdmmc", "v1", "SDMMC")),
     (".*:SDMMC:sdmmc_v1_3", ("sdmmc", "v1", "SDMMC")),
     (".*:SPDIFRX:spdifrx1_v1_0", ("spdifrx", "v1", "SPDIFRX")),
+    ("STM32N6.*:SPDIFRX.*:.*", ("spdifrx", "n6", "SPDIFRX")),
     (".*:SPDIFRX:spdifrx1_H7", ("spdifrx", "h7", "SPDIFRX")),
     // # USB
     ("STM32(F1|L1).*:USB:.*", ("usb", "v1", "USB")),
@@ -750,6 +751,7 @@ const PERIMAP: &[(&str, (&str, &str, &str))] = &[
     ("STM32U3.*:ICACHE:.*", ("icache", "v1_3crr", "ICACHE")),
     ("STM32H50.*:ICACHE:.*", ("icache", "v1_0crr", "ICACHE")),
     ("STM32N6.*:ICACHE:.*", ("icache", "v1_0crr", "ICACHE")),
+    ("STM32N6.*:CACHEAXI:.*", ("cacheaxi", "n6", "CACHEAXI")),
     ("STM32(L5|H5[67]|WBA).*:ICACHE:.*", ("icache", "v1_4crr", "ICACHE")),
     (".*:CORDIC:.*", ("cordic", "v1", "CORDIC")),
     ("STM32F0.[128].*:TSC:.*", ("tsc", "v1", "TSC")),

@@ -1,0 +1,12 @@
+transforms:
+  - !RenameRegisters
+    block: .*
+    from: ^CACHEAXI_(.+)$
+    to: $1
+  - !Rename
+    from: ^CACHEAXI_(.+)$
+    to: $1
+    type: Fieldset
+  - !DeleteEnums
+    from: .*
+    bit_size: 1
