@@ -1,3 +1,88 @@
+block/BCH:
+  description: BCH error correction code.
+  items:
+  - name: IER
+    description: BCH interrupt enable register.
+    byte_offset: 0
+    fieldset: BCHIER
+  - name: ISR
+    description: BCH interrupt status register.
+    byte_offset: 4
+    fieldset: BCHISR
+  - name: ICR
+    description: BCH interrupt clear register.
+    byte_offset: 8
+    fieldset: BCHICR
+  - name: PBR
+    description: BCH parity bits registers.
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 16
+    fieldset: BCHPBR
+  - name: DSR0
+    description: BCH decoder status register 0.
+    byte_offset: 44
+    fieldset: BCHDSR0
+  - name: DSR1
+    description: BCH decoder status register 1.
+    byte_offset: 48
+    fieldset: BCHDSR1
+  - name: DSR2
+    description: BCH decoder status register 2.
+    byte_offset: 52
+    fieldset: BCHDSR2
+  - name: DSR3
+    description: BCH decoder status register 3.
+    byte_offset: 56
+    fieldset: BCHDSR3
+  - name: DSR4
+    description: BCH decoder status register 4.
+    byte_offset: 60
+    fieldset: BCHDSR4
+block/CSQ:
+  description: NAND Command Sequencer.
+  items:
+  - name: CR
+    description: Command Sequencer control register.
+    byte_offset: 0
+    fieldset: CSQCR
+  - name: CFGR1
+    description: Command Sequencer configuration register 1.
+    byte_offset: 4
+    fieldset: CSQCFGR1
+  - name: CFGR2
+    description: Command Sequencer configuration register 2.
+    byte_offset: 8
+    fieldset: CSQCFGR2
+  - name: CFGR3
+    description: Command Sequencer configuration register 3.
+    byte_offset: 12
+    fieldset: CSQCFGR3
+  - name: AR1
+    description: Command Sequencer address register 1.
+    byte_offset: 16
+    fieldset: CSQAR1
+  - name: AR2
+    description: Command Sequencer address register 2.
+    byte_offset: 20
+    fieldset: CSQAR2
+  - name: IER
+    description: Command Sequencer interrupt enable register.
+    byte_offset: 32
+    fieldset: CSQIER
+  - name: ISR
+    description: Command Sequencer interrupt status register.
+    byte_offset: 36
+    fieldset: CSQISR
+  - name: ICR
+    description: Command Sequencer interrupt clear register.
+    byte_offset: 40
+    fieldset: CSQICR
+  - name: EMSR
+    description: Command Sequencer error mapping status register.
+    byte_offset: 48
+    fieldset: CSQEMSR
 block/FMC:
   description: Flexible memory controller (N6 with BCH ECC and Command Sequencer).
   items:
@@ -7,6 +92,9 @@ block/FMC:
   - name: NAND
     byte_offset: 128
     block: NAND
+  - name: SDRAM
+    byte_offset: 320
+    block: SDRAM
   - name: NAND_EXT
     byte_offset: 384
     block: NAND_EXT
@@ -16,9 +104,6 @@ block/FMC:
   - name: BCH
     byte_offset: 592
     block: BCH
-  - name: SDRAM
-    byte_offset: 320
-    block: SDRAM
 block/NAND:
   items:
   - name: PCR
@@ -40,6 +125,21 @@ block/NAND:
   - name: ECCR
     description: ECC result registers.
     byte_offset: 20
+block/NAND_EXT:
+  description: NAND extended interrupt registers.
+  items:
+  - name: IER
+    description: NAND interrupt enable register.
+    byte_offset: 0
+    fieldset: NAND_IER
+  - name: ISR
+    description: NAND interrupt status register.
+    byte_offset: 4
+    fieldset: NAND_ISR
+  - name: ICR
+    description: NAND interrupt clear register.
+    byte_offset: 8
+    fieldset: NAND_ICR
 block/NOR_PSRAM:
   items:
   - name: BCR1
@@ -99,106 +199,141 @@ block/SDRAM:
     description: SDRAM status register.
     byte_offset: 24
     fieldset: SDSR
-block/NAND_EXT:
-  description: NAND extended interrupt registers.
-  items:
-  - name: IER
-    description: NAND interrupt enable register.
-    byte_offset: 0
-    fieldset: NAND_IER
-  - name: ISR
-    description: NAND interrupt status register.
-    byte_offset: 4
-    fieldset: NAND_ISR
-  - name: ICR
-    description: NAND interrupt clear register.
-    byte_offset: 8
-    fieldset: NAND_ICR
-block/CSQ:
-  description: NAND Command Sequencer.
-  items:
-  - name: CR
-    description: Command Sequencer control register.
-    byte_offset: 0
-    fieldset: CSQCR
-  - name: CFGR1
-    description: Command Sequencer configuration register 1.
-    byte_offset: 4
-    fieldset: CSQCFGR1
-  - name: CFGR2
-    description: Command Sequencer configuration register 2.
-    byte_offset: 8
-    fieldset: CSQCFGR2
-  - name: CFGR3
-    description: Command Sequencer configuration register 3.
-    byte_offset: 12
-    fieldset: CSQCFGR3
-  - name: AR1
-    description: Command Sequencer address register 1.
-    byte_offset: 16
-    fieldset: CSQAR1
-  - name: AR2
-    description: Command Sequencer address register 2.
-    byte_offset: 20
-    fieldset: CSQAR2
-  - name: IER
-    description: Command Sequencer interrupt enable register.
-    byte_offset: 32
-    fieldset: CSQIER
-  - name: ISR
-    description: Command Sequencer interrupt status register.
-    byte_offset: 36
-    fieldset: CSQISR
-  - name: ICR
-    description: Command Sequencer interrupt clear register.
-    byte_offset: 40
-    fieldset: CSQICR
-  - name: EMSR
-    description: Command Sequencer error mapping status register.
-    byte_offset: 48
-    fieldset: CSQEMSR
-block/BCH:
-  description: BCH error correction code.
-  items:
-  - name: IER
-    description: BCH interrupt enable register.
-    byte_offset: 0
-    fieldset: BCHIER
-  - name: ISR
-    description: BCH interrupt status register.
-    byte_offset: 4
-    fieldset: BCHISR
-  - name: ICR
-    description: BCH interrupt clear register.
-    byte_offset: 8
-    fieldset: BCHICR
-  - name: PBR
-    description: BCH parity bits registers.
-    array:
-      len: 4
-      stride: 4
-    byte_offset: 16
-    fieldset: BCHPBR
-  - name: DSR0
-    description: BCH decoder status register 0.
-    byte_offset: 44
-    fieldset: BCHDSR0
-  - name: DSR1
-    description: BCH decoder status register 1.
-    byte_offset: 48
-    fieldset: BCHDSR1
-  - name: DSR2
-    description: BCH decoder status register 2.
-    byte_offset: 52
-    fieldset: BCHDSR2
-  - name: DSR3
-    description: BCH decoder status register 3.
-    byte_offset: 56
-    fieldset: BCHDSR3
-  - name: DSR4
-    description: BCH decoder status register 4.
-    byte_offset: 60
-    fieldset: BCHDSR4
+fieldset/BCHDSR0:
+  description: BCH decoder status register 0.
+  fields:
+  - name: DUE
+    description: Decoder uncorrectable error.
+    bit_offset: 0
+    bit_size: 1
+  - name: DEF
+    description: Decoder error found.
+    bit_offset: 1
+    bit_size: 1
+  - name: DEN
+    description: Decoder error number.
+    bit_offset: 4
+    bit_size: 4
+fieldset/BCHDSR1:
+  description: BCH decoder status register 1.
+  fields:
+  - name: EBP1
+    description: Error bit position 1.
+    bit_offset: 0
+    bit_size: 13
+  - name: EBP2
+    description: Error bit position 2.
+    bit_offset: 16
+    bit_size: 13
+fieldset/BCHDSR2:
+  description: BCH decoder status register 2.
+  fields:
+  - name: EBP3
+    description: Error bit position 3.
+    bit_offset: 0
+    bit_size: 13
+  - name: EBP4
+    description: Error bit position 4.
+    bit_offset: 16
+    bit_size: 13
+fieldset/BCHDSR3:
+  description: BCH decoder status register 3.
+  fields:
+  - name: EBP5
+    description: Error bit position 5.
+    bit_offset: 0
+    bit_size: 13
+  - name: EBP6
+    description: Error bit position 6.
+    bit_offset: 16
+    bit_size: 13
+fieldset/BCHDSR4:
+  description: BCH decoder status register 4.
+  fields:
+  - name: EBP7
+    description: Error bit position 7.
+    bit_offset: 0
+    bit_size: 13
+  - name: EBP8
+    description: Error bit position 8.
+    bit_offset: 16
+    bit_size: 13
+fieldset/BCHICR:
+  description: BCH interrupt clear register.
+  fields:
+  - name: CDUEF
+    description: Clear decoder uncorrectable error flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: CDERF
+    description: Clear decoder error ready flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: CDEFF
+    description: Clear decoder error found flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: CDSRF
+    description: Clear decoder syndrome ready flag.
+    bit_offset: 3
+    bit_size: 1
+  - name: CEPBRF
+    description: Clear encoder parity bits ready flag.
+    bit_offset: 4
+    bit_size: 1
+fieldset/BCHIER:
+  description: BCH interrupt enable register.
+  fields:
+  - name: DUEIE
+    description: Decoder uncorrectable error interrupt enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: DERIE
+    description: Decoder error ready interrupt enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: DEFIE
+    description: Decoder error found interrupt enable.
+    bit_offset: 2
+    bit_size: 1
+  - name: DSRIE
+    description: Decoder syndrome ready interrupt enable.
+    bit_offset: 3
+    bit_size: 1
+  - name: EPBRIE
+    description: Encoder parity bits ready interrupt enable.
+    bit_offset: 4
+    bit_size: 1
+fieldset/BCHISR:
+  description: BCH interrupt status register.
+  fields:
+  - name: DUEF
+    description: Decoder uncorrectable error flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: DERF
+    description: Decoder error ready flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: DEFF
+    description: Decoder error found flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: DSRF
+    description: Decoder syndrome ready flag.
+    bit_offset: 3
+    bit_size: 1
+  - name: EPBRF
+    description: Encoder parity bits ready flag.
+    bit_offset: 4
+    bit_size: 1
+fieldset/BCHPBR:
+  description: BCH parity bits register.
+  fields:
+  - name: BCHPB
+    description: BCH parity bits.
+    bit_offset: 0
+    bit_size: 32
 fieldset/BCR:
   description: SRAM/NOR-Flash chip-select control register for bank 4.
   fields:
@@ -332,6 +467,265 @@ fieldset/BWTR:
     description: Data hold phase duration These bits are written by software to define the duration of the data hold phase in HCLK cycles (refer to Figure 21 to Figure 33), used in asynchronous write accesses:.
     bit_offset: 30
     bit_size: 2
+fieldset/CSQAR1:
+  description: Command Sequencer address register 1.
+  fields:
+  - name: ADDC1
+    description: Address cycle 1.
+    bit_offset: 0
+    bit_size: 8
+  - name: ADDC2
+    description: Address cycle 2.
+    bit_offset: 8
+    bit_size: 8
+  - name: ADDC3
+    description: Address cycle 3.
+    bit_offset: 16
+    bit_size: 8
+  - name: ADDC4
+    description: Address cycle 4.
+    bit_offset: 24
+    bit_size: 8
+fieldset/CSQAR2:
+  description: Command Sequencer address register 2.
+  fields:
+  - name: ADDC5
+    description: Address cycle 5.
+    bit_offset: 0
+    bit_size: 8
+  - name: SAO
+    description: Spare area address offset.
+    bit_offset: 16
+    bit_size: 16
+fieldset/CSQCFGR1:
+  description: Command Sequencer configuration register 1.
+  fields:
+  - name: CMD2EN
+    description: Command cycle 2 enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: DMADEN
+    description: DMA request data enable.
+    bit_offset: 2
+    bit_size: 1
+  - name: ACYNBR
+    description: Address cycle number.
+    bit_offset: 4
+    bit_size: 3
+  - name: CMD1
+    description: Command 1.
+    bit_offset: 8
+    bit_size: 8
+  - name: CMD2
+    description: Command 2.
+    bit_offset: 16
+    bit_size: 8
+  - name: CMD1T
+    description: Command 1 timing.
+    bit_offset: 24
+    bit_size: 1
+  - name: CMD2T
+    description: Command 2 timing.
+    bit_offset: 25
+    bit_size: 1
+fieldset/CSQCFGR2:
+  description: Command Sequencer configuration register 2.
+  fields:
+  - name: SQSDTEN
+    description: Sequencer spare data transfer enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: RCMD2EN
+    description: Random command 2 sequencer enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: DMASEN
+    description: DMA request decoding status enable.
+    bit_offset: 2
+    bit_size: 1
+  - name: RCMD1
+    description: Random command 1.
+    bit_offset: 8
+    bit_size: 8
+  - name: RCMD2
+    description: Random command 2.
+    bit_offset: 16
+    bit_size: 8
+  - name: RCMD1T
+    description: Random command 1 timing.
+    bit_offset: 24
+    bit_size: 1
+fieldset/CSQCFGR3:
+  description: Command Sequencer configuration register 3.
+  fields:
+  - name: SNBR
+    description: Number of sectors to read/write.
+    bit_offset: 0
+    bit_size: 6
+  - name: AC1T
+    description: Address cycle 1 timing.
+    bit_offset: 8
+    bit_size: 1
+  - name: AC2T
+    description: Address cycle 2 timing.
+    bit_offset: 9
+    bit_size: 1
+  - name: AC3T
+    description: Address cycle 3 timing.
+    bit_offset: 10
+    bit_size: 1
+  - name: AC4T
+    description: Address cycle 4 timing.
+    bit_offset: 11
+    bit_size: 1
+  - name: AC5T
+    description: Address cycle 5 timing.
+    bit_offset: 12
+    bit_size: 1
+  - name: SDT
+    description: Spare data transfer timing.
+    bit_offset: 13
+    bit_size: 1
+  - name: RAC1T
+    description: Random address cycle 1 timing.
+    bit_offset: 14
+    bit_size: 1
+  - name: RAC2T
+    description: Random address cycle 2 timing.
+    bit_offset: 15
+    bit_size: 1
+fieldset/CSQCR:
+  description: Command Sequencer control register.
+  fields:
+  - name: CSQSTART
+    description: Command Sequencer start.
+    bit_offset: 0
+    bit_size: 1
+fieldset/CSQEMSR:
+  description: Command Sequencer error mapping status register.
+  fields:
+  - name: SEM
+    description: Sector error mapping.
+    bit_offset: 0
+    bit_size: 16
+fieldset/CSQICR:
+  description: Command Sequencer interrupt clear register.
+  fields:
+  - name: CTCF
+    description: Clear transfer complete flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: CSCF
+    description: Clear sector complete flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: CSEF
+    description: Clear sector error flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: CSUEF
+    description: Clear sector uncorrectable error flag.
+    bit_offset: 3
+    bit_size: 1
+  - name: CCMDTCF
+    description: Clear command transfer complete flag.
+    bit_offset: 4
+    bit_size: 1
+fieldset/CSQIER:
+  description: Command Sequencer interrupt enable register.
+  fields:
+  - name: TCIE
+    description: Transfer complete interrupt enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: SCIE
+    description: Sector complete interrupt enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: SEIE
+    description: Sector error interrupt enable.
+    bit_offset: 2
+    bit_size: 1
+  - name: SUEIE
+    description: Sector uncorrectable error interrupt enable.
+    bit_offset: 3
+    bit_size: 1
+  - name: CMDTCIE
+    description: Command transfer complete interrupt enable.
+    bit_offset: 4
+    bit_size: 1
+fieldset/CSQISR:
+  description: Command Sequencer interrupt status register.
+  fields:
+  - name: TCF
+    description: Transfer complete flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: SCF
+    description: Sector complete flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: SEF
+    description: Sector error flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: SUEF
+    description: Sector uncorrectable error flag.
+    bit_offset: 3
+    bit_size: 1
+  - name: CMDTCF
+    description: Command transfer complete flag.
+    bit_offset: 4
+    bit_size: 1
+fieldset/NAND_ICR:
+  description: NAND interrupt clear register.
+  fields:
+  - name: CIRC
+    description: Clear interrupt rising edge.
+    bit_offset: 0
+    bit_size: 1
+  - name: CILC
+    description: Clear interrupt high-level.
+    bit_offset: 1
+    bit_size: 1
+  - name: CIFC
+    description: Clear interrupt falling edge.
+    bit_offset: 2
+    bit_size: 1
+fieldset/NAND_IER:
+  description: NAND interrupt enable register.
+  fields:
+  - name: IRSEN
+    description: Interrupt rising edge enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: ILSEN
+    description: Interrupt high-level enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: IFSEN
+    description: Interrupt falling edge enable.
+    bit_offset: 2
+    bit_size: 1
+fieldset/NAND_ISR:
+  description: NAND interrupt status register.
+  fields:
+  - name: IRS
+    description: Interrupt rising edge status.
+    bit_offset: 0
+    bit_size: 1
+  - name: ILS
+    description: Interrupt high-level status.
+    bit_offset: 1
+    bit_size: 1
+  - name: IFS
+    description: Interrupt falling edge status.
+    bit_offset: 2
+    bit_size: 1
+  - name: FEMPT
+    description: FIFO empty.
+    bit_offset: 6
+    bit_size: 1
 fieldset/PATT:
   description: Attribute memory space timing register.
   fields:
@@ -591,400 +985,6 @@ fieldset/SR:
     description: FIFO empty Read-only bit that provides the status of the FIFO.
     bit_offset: 6
     bit_size: 1
-fieldset/NAND_IER:
-  description: NAND interrupt enable register.
-  fields:
-  - name: IRSEN
-    description: Interrupt rising edge enable.
-    bit_offset: 0
-    bit_size: 1
-  - name: ILSEN
-    description: Interrupt high-level enable.
-    bit_offset: 1
-    bit_size: 1
-  - name: IFSEN
-    description: Interrupt falling edge enable.
-    bit_offset: 2
-    bit_size: 1
-fieldset/NAND_ISR:
-  description: NAND interrupt status register.
-  fields:
-  - name: IRS
-    description: Interrupt rising edge status.
-    bit_offset: 0
-    bit_size: 1
-  - name: ILS
-    description: Interrupt high-level status.
-    bit_offset: 1
-    bit_size: 1
-  - name: IFS
-    description: Interrupt falling edge status.
-    bit_offset: 2
-    bit_size: 1
-  - name: FEMPT
-    description: FIFO empty.
-    bit_offset: 6
-    bit_size: 1
-fieldset/NAND_ICR:
-  description: NAND interrupt clear register.
-  fields:
-  - name: CIRC
-    description: Clear interrupt rising edge.
-    bit_offset: 0
-    bit_size: 1
-  - name: CILC
-    description: Clear interrupt high-level.
-    bit_offset: 1
-    bit_size: 1
-  - name: CIFC
-    description: Clear interrupt falling edge.
-    bit_offset: 2
-    bit_size: 1
-fieldset/CSQCR:
-  description: Command Sequencer control register.
-  fields:
-  - name: CSQSTART
-    description: Command Sequencer start.
-    bit_offset: 0
-    bit_size: 1
-fieldset/CSQCFGR1:
-  description: Command Sequencer configuration register 1.
-  fields:
-  - name: CMD2EN
-    description: Command cycle 2 enable.
-    bit_offset: 1
-    bit_size: 1
-  - name: DMADEN
-    description: DMA request data enable.
-    bit_offset: 2
-    bit_size: 1
-  - name: ACYNBR
-    description: Address cycle number.
-    bit_offset: 4
-    bit_size: 3
-  - name: CMD1
-    description: Command 1.
-    bit_offset: 8
-    bit_size: 8
-  - name: CMD2
-    description: Command 2.
-    bit_offset: 16
-    bit_size: 8
-  - name: CMD1T
-    description: Command 1 timing.
-    bit_offset: 24
-    bit_size: 1
-  - name: CMD2T
-    description: Command 2 timing.
-    bit_offset: 25
-    bit_size: 1
-fieldset/CSQCFGR2:
-  description: Command Sequencer configuration register 2.
-  fields:
-  - name: SQSDTEN
-    description: Sequencer spare data transfer enable.
-    bit_offset: 0
-    bit_size: 1
-  - name: RCMD2EN
-    description: Random command 2 sequencer enable.
-    bit_offset: 1
-    bit_size: 1
-  - name: DMASEN
-    description: DMA request decoding status enable.
-    bit_offset: 2
-    bit_size: 1
-  - name: RCMD1
-    description: Random command 1.
-    bit_offset: 8
-    bit_size: 8
-  - name: RCMD2
-    description: Random command 2.
-    bit_offset: 16
-    bit_size: 8
-  - name: RCMD1T
-    description: Random command 1 timing.
-    bit_offset: 24
-    bit_size: 1
-fieldset/CSQCFGR3:
-  description: Command Sequencer configuration register 3.
-  fields:
-  - name: SNBR
-    description: Number of sectors to read/write.
-    bit_offset: 0
-    bit_size: 6
-  - name: AC1T
-    description: Address cycle 1 timing.
-    bit_offset: 8
-    bit_size: 1
-  - name: AC2T
-    description: Address cycle 2 timing.
-    bit_offset: 9
-    bit_size: 1
-  - name: AC3T
-    description: Address cycle 3 timing.
-    bit_offset: 10
-    bit_size: 1
-  - name: AC4T
-    description: Address cycle 4 timing.
-    bit_offset: 11
-    bit_size: 1
-  - name: AC5T
-    description: Address cycle 5 timing.
-    bit_offset: 12
-    bit_size: 1
-  - name: SDT
-    description: Spare data transfer timing.
-    bit_offset: 13
-    bit_size: 1
-  - name: RAC1T
-    description: Random address cycle 1 timing.
-    bit_offset: 14
-    bit_size: 1
-  - name: RAC2T
-    description: Random address cycle 2 timing.
-    bit_offset: 15
-    bit_size: 1
-fieldset/CSQAR1:
-  description: Command Sequencer address register 1.
-  fields:
-  - name: ADDC1
-    description: Address cycle 1.
-    bit_offset: 0
-    bit_size: 8
-  - name: ADDC2
-    description: Address cycle 2.
-    bit_offset: 8
-    bit_size: 8
-  - name: ADDC3
-    description: Address cycle 3.
-    bit_offset: 16
-    bit_size: 8
-  - name: ADDC4
-    description: Address cycle 4.
-    bit_offset: 24
-    bit_size: 8
-fieldset/CSQAR2:
-  description: Command Sequencer address register 2.
-  fields:
-  - name: ADDC5
-    description: Address cycle 5.
-    bit_offset: 0
-    bit_size: 8
-  - name: SAO
-    description: Spare area address offset.
-    bit_offset: 16
-    bit_size: 16
-fieldset/CSQIER:
-  description: Command Sequencer interrupt enable register.
-  fields:
-  - name: TCIE
-    description: Transfer complete interrupt enable.
-    bit_offset: 0
-    bit_size: 1
-  - name: SCIE
-    description: Sector complete interrupt enable.
-    bit_offset: 1
-    bit_size: 1
-  - name: SEIE
-    description: Sector error interrupt enable.
-    bit_offset: 2
-    bit_size: 1
-  - name: SUEIE
-    description: Sector uncorrectable error interrupt enable.
-    bit_offset: 3
-    bit_size: 1
-  - name: CMDTCIE
-    description: Command transfer complete interrupt enable.
-    bit_offset: 4
-    bit_size: 1
-fieldset/CSQISR:
-  description: Command Sequencer interrupt status register.
-  fields:
-  - name: TCF
-    description: Transfer complete flag.
-    bit_offset: 0
-    bit_size: 1
-  - name: SCF
-    description: Sector complete flag.
-    bit_offset: 1
-    bit_size: 1
-  - name: SEF
-    description: Sector error flag.
-    bit_offset: 2
-    bit_size: 1
-  - name: SUEF
-    description: Sector uncorrectable error flag.
-    bit_offset: 3
-    bit_size: 1
-  - name: CMDTCF
-    description: Command transfer complete flag.
-    bit_offset: 4
-    bit_size: 1
-fieldset/CSQICR:
-  description: Command Sequencer interrupt clear register.
-  fields:
-  - name: CTCF
-    description: Clear transfer complete flag.
-    bit_offset: 0
-    bit_size: 1
-  - name: CSCF
-    description: Clear sector complete flag.
-    bit_offset: 1
-    bit_size: 1
-  - name: CSEF
-    description: Clear sector error flag.
-    bit_offset: 2
-    bit_size: 1
-  - name: CSUEF
-    description: Clear sector uncorrectable error flag.
-    bit_offset: 3
-    bit_size: 1
-  - name: CCMDTCF
-    description: Clear command transfer complete flag.
-    bit_offset: 4
-    bit_size: 1
-fieldset/CSQEMSR:
-  description: Command Sequencer error mapping status register.
-  fields:
-  - name: SEM
-    description: Sector error mapping.
-    bit_offset: 0
-    bit_size: 16
-fieldset/BCHIER:
-  description: BCH interrupt enable register.
-  fields:
-  - name: DUEIE
-    description: Decoder uncorrectable error interrupt enable.
-    bit_offset: 0
-    bit_size: 1
-  - name: DERIE
-    description: Decoder error ready interrupt enable.
-    bit_offset: 1
-    bit_size: 1
-  - name: DEFIE
-    description: Decoder error found interrupt enable.
-    bit_offset: 2
-    bit_size: 1
-  - name: DSRIE
-    description: Decoder syndrome ready interrupt enable.
-    bit_offset: 3
-    bit_size: 1
-  - name: EPBRIE
-    description: Encoder parity bits ready interrupt enable.
-    bit_offset: 4
-    bit_size: 1
-fieldset/BCHISR:
-  description: BCH interrupt status register.
-  fields:
-  - name: DUEF
-    description: Decoder uncorrectable error flag.
-    bit_offset: 0
-    bit_size: 1
-  - name: DERF
-    description: Decoder error ready flag.
-    bit_offset: 1
-    bit_size: 1
-  - name: DEFF
-    description: Decoder error found flag.
-    bit_offset: 2
-    bit_size: 1
-  - name: DSRF
-    description: Decoder syndrome ready flag.
-    bit_offset: 3
-    bit_size: 1
-  - name: EPBRF
-    description: Encoder parity bits ready flag.
-    bit_offset: 4
-    bit_size: 1
-fieldset/BCHICR:
-  description: BCH interrupt clear register.
-  fields:
-  - name: CDUEF
-    description: Clear decoder uncorrectable error flag.
-    bit_offset: 0
-    bit_size: 1
-  - name: CDERF
-    description: Clear decoder error ready flag.
-    bit_offset: 1
-    bit_size: 1
-  - name: CDEFF
-    description: Clear decoder error found flag.
-    bit_offset: 2
-    bit_size: 1
-  - name: CDSRF
-    description: Clear decoder syndrome ready flag.
-    bit_offset: 3
-    bit_size: 1
-  - name: CEPBRF
-    description: Clear encoder parity bits ready flag.
-    bit_offset: 4
-    bit_size: 1
-fieldset/BCHPBR:
-  description: BCH parity bits register.
-  fields:
-  - name: BCHPB
-    description: BCH parity bits.
-    bit_offset: 0
-    bit_size: 32
-fieldset/BCHDSR0:
-  description: BCH decoder status register 0.
-  fields:
-  - name: DUE
-    description: Decoder uncorrectable error.
-    bit_offset: 0
-    bit_size: 1
-  - name: DEF
-    description: Decoder error found.
-    bit_offset: 1
-    bit_size: 1
-  - name: DEN
-    description: Decoder error number.
-    bit_offset: 4
-    bit_size: 4
-fieldset/BCHDSR1:
-  description: BCH decoder status register 1.
-  fields:
-  - name: EBP1
-    description: Error bit position 1.
-    bit_offset: 0
-    bit_size: 13
-  - name: EBP2
-    description: Error bit position 2.
-    bit_offset: 16
-    bit_size: 13
-fieldset/BCHDSR2:
-  description: BCH decoder status register 2.
-  fields:
-  - name: EBP3
-    description: Error bit position 3.
-    bit_offset: 0
-    bit_size: 13
-  - name: EBP4
-    description: Error bit position 4.
-    bit_offset: 16
-    bit_size: 13
-fieldset/BCHDSR3:
-  description: BCH decoder status register 3.
-  fields:
-  - name: EBP5
-    description: Error bit position 5.
-    bit_offset: 0
-    bit_size: 13
-  - name: EBP6
-    description: Error bit position 6.
-    bit_offset: 16
-    bit_size: 13
-fieldset/BCHDSR4:
-  description: BCH decoder status register 4.
-  fields:
-  - name: EBP7
-    description: Error bit position 7.
-    bit_offset: 0
-    bit_size: 13
-  - name: EBP8
-    description: Error bit position 8.
-    bit_offset: 16
-    bit_size: 13
 enum/ACCMOD:
   bit_size: 2
   variants:
