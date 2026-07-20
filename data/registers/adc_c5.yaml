@@ -584,10 +584,10 @@ fieldset/SQR4:
 enum/AWD1SGL:
   bit_size: 1
   variants:
-  - name: B_0x0
+  - name: All
     description: Analog watchdog 1 enabled on all channels.
     value: 0
-  - name: B_0x1
+  - name: Single
     description: Analog watchdog 1 enabled on a single channel.
     value: 1
 enum/AWDFILT:
@@ -605,37 +605,37 @@ enum/AWDFILT:
 enum/DMNGT:
   bit_size: 2
   variants:
-  - name: B_0x0
+  - name: NoDma
     description: Regular conversion data stored in DR only.
     value: 0
-  - name: B_0x1
+  - name: DmaOneShot
     description: DMA one-shot mode selected.
     value: 1
-  - name: B_0x3
+  - name: DmaCircular
     description: DMA circular mode selected.
     value: 3
 enum/EXTEN:
   bit_size: 2
   variants:
-  - name: B_0x0
+  - name: Disabled
     description: Hardware trigger detection disabled (conversions can be launched by software).
     value: 0
-  - name: B_0x1
-    description: Hardware trigger detection on the rising edge.
+  - name: RisingEdge
+    description: Hardware trigger detection on the rising edge
     value: 1
-  - name: B_0x2
-    description: Hardware trigger detection on the falling edge.
+  - name: FallingEdge
+    description: Hardware trigger detection on the falling edge
     value: 2
-  - name: B_0x3
-    description: Hardware trigger detection on both the rising and falling edges.
+  - name: BothEdges
+    description: Hardware trigger detection on both the rising and falling edges
     value: 3
 enum/OVRMOD:
   bit_size: 1
   variants:
-  - name: B_0x0
+  - name: Preserve
     description: DR register is preserved with the old data when an overrun is detected.
     value: 0
-  - name: B_0x1
+  - name: Overwrite
     description: DR register is overwritten with the last conversion result when an overrun is detected.
     value: 1
 enum/PCSEL:
@@ -650,69 +650,69 @@ enum/PCSEL:
 enum/RES:
   bit_size: 2
   variants:
-  - name: B_0x0
-    description: 12-bit.
+  - name: Bits12
+    description: 12-bit resolution
     value: 0
-  - name: B_0x1
-    description: 10-bit.
+  - name: Bits10
+    description: 10-bit resolution
     value: 1
-  - name: B_0x2
-    description: 8-bit.
+  - name: Bits8
+    description: 8-bit resolution
     value: 2
-  - name: B_0x3
-    description: 6-bit.
+  - name: Bits6
+    description: 6-bit resolution
     value: 3
 enum/ROVSM:
   bit_size: 1
   variants:
-  - name: B_0x0
+  - name: Continued
     description: 'Continued mode: When injected conversions are triggered, the oversampling is temporary stopped and continued after the injection sequence (oversampling buffer is maintained during injected sequence).'
     value: 0
-  - name: B_0x1
+  - name: Resumed
     description: 'Resumed mode: When injected conversions are triggered, the current oversampling is aborted and resumed from start after the injection sequence (oversampling buffer is zeroed by injected sequence start).'
     value: 1
 enum/SAMPLE_TIME:
   bit_size: 3
   variants:
-  - name: B_0x0
+  - name: Cycles3
     description: 3 ADC clock cycles.
     value: 0
-  - name: B_0x1
+  - name: Cycles5
     description: 5 ADC clock cycles.
     value: 1
-  - name: B_0x2
+  - name: Cycles8
     description: 8 ADC clock cycles.
     value: 2
-  - name: B_0x3
+  - name: Cycles13
     description: 13 ADC clock cycles.
     value: 3
-  - name: B_0x4
+  - name: Cycles25
     description: 25 ADC clock cycles.
     value: 4
-  - name: B_0x5
+  - name: Cycles48
     description: 48 ADC clock cycles.
     value: 5
-  - name: B_0x6
+  - name: Cycles139
     description: 139 ADC clock cycles.
     value: 6
-  - name: B_0x7
+  - name: Cycles289
     description: 289 ADC clock cycles.
     value: 7
 enum/SWTRIG:
   bit_size: 1
   variants:
-  - name: B_0x0
+  - name: Conversion
     description: Software trigger starts the conversion for sampling time control trigger mode.
     value: 0
-  - name: B_0x1
+  - name: Sampling
     description: Software trigger starts the sampling for sampling time control trigger mode.
     value: 1
 enum/TROVS:
   bit_size: 1
   variants:
-  - name: B_0x0
+  - name: Automatic
     description: All oversampled conversions for a channel are done consecutively following a trigger.
     value: 0
-  - name: B_0x1
+  - name: Triggered
     description: Each oversampled conversion for a channel needs a new trigger.
     value: 1
