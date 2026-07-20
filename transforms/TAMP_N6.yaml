@@ -1,4 +1,13 @@
 transforms:
+  - !RenameRegisters
+    block: .*
+    from: ^TAMP_(.+)$
+    to: $1
+  - !Rename
+    from: ^TAMP_(.+)$
+    to: $1
+    type: Fieldset
+
   - !DeleteEnums
     from: ^(BHKLOCK|ERCFG|PRIV|SEC)$
 
@@ -87,3 +96,7 @@ transforms:
 
   - !DeleteFieldsets
     from: ATSEEDR
+
+  # Drop placeholder enums (SVD uses unhelpful B_0x variant names).
+  - !DeleteEnums
+    from: .*

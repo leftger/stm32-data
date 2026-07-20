@@ -3,55 +3,55 @@ block/RISAF:
   items:
   - name: CR
     description: RISAF configuration register.
-    byte_offset: 0x000
+    byte_offset: 0
     fieldset: CR
   - name: IASR
     description: RISAF illegal access status register.
-    byte_offset: 0x008
+    byte_offset: 8
     access: Read
     fieldset: IASR
   - name: IACR
     description: RISAF illegal access clear register.
-    byte_offset: 0x00C
+    byte_offset: 12
     access: Write
     fieldset: IACR
   - name: IAESR
     description: RISAF illegal access error status register.
-    byte_offset: 0x020
+    byte_offset: 32
     access: Read
     fieldset: IAESR
   - name: IADDR
     description: RISAF illegal address register.
-    byte_offset: 0x024
+    byte_offset: 36
     access: Read
     fieldset: IADDR
   - name: REG_CFGR
     description: RISAF region configuration register.
-    byte_offset: 0x040
     array:
       len: 4
-      stride: 0x40
+      stride: 64
+    byte_offset: 64
     fieldset: REG_CFGR
   - name: REG_STARTR
     description: RISAF region start address register.
-    byte_offset: 0x044
     array:
       len: 4
-      stride: 0x40
+      stride: 64
+    byte_offset: 68
     fieldset: REG_STARTR
   - name: REG_ENDR
     description: RISAF region end address register.
-    byte_offset: 0x048
     array:
       len: 4
-      stride: 0x40
+      stride: 64
+    byte_offset: 72
     fieldset: REG_ENDR
   - name: REG_CIDCFGR
     description: RISAF region CID configuration register.
-    byte_offset: 0x04C
     array:
       len: 4
-      stride: 0x40
+      stride: 64
+    byte_offset: 76
     fieldset: REG_CIDCFGR
 fieldset/CR:
   description: RISAF configuration register.
@@ -59,17 +59,6 @@ fieldset/CR:
   - name: GLOCK
     description: Global lock. When set, writes to RISAF registers are ignored except for IACR and region configuration registers.
     bit_offset: 0
-    bit_size: 1
-fieldset/IASR:
-  description: RISAF illegal access status register.
-  fields:
-  - name: CAEF
-    description: Configuration access error flag.
-    bit_offset: 0
-    bit_size: 1
-  - name: IAEF
-    description: Illegal access error flag.
-    bit_offset: 1
     bit_size: 1
 fieldset/IACR:
   description: RISAF illegal access clear register.
@@ -82,6 +71,13 @@ fieldset/IACR:
     description: Clear illegal access error flag.
     bit_offset: 1
     bit_size: 1
+fieldset/IADDR:
+  description: RISAF illegal address register.
+  fields:
+  - name: IADD
+    description: Illegal access address.
+    bit_offset: 0
+    bit_size: 32
 fieldset/IAESR:
   description: RISAF illegal access error status register.
   fields:
@@ -101,13 +97,17 @@ fieldset/IAESR:
     description: Illegal access was a write (0 = read/fetch, 1 = write).
     bit_offset: 7
     bit_size: 1
-fieldset/IADDR:
-  description: RISAF illegal address register.
+fieldset/IASR:
+  description: RISAF illegal access status register.
   fields:
-  - name: IADD
-    description: Illegal access address.
+  - name: CAEF
+    description: Configuration access error flag.
     bit_offset: 0
-    bit_size: 32
+    bit_size: 1
+  - name: IAEF
+    description: Illegal access error flag.
+    bit_offset: 1
+    bit_size: 1
 fieldset/REG_CFGR:
   description: RISAF region configuration register.
   fields:
@@ -126,20 +126,6 @@ fieldset/REG_CFGR:
     array:
       len: 8
       stride: 1
-fieldset/REG_STARTR:
-  description: RISAF region start address register.
-  fields:
-  - name: BADDSTART
-    description: Base region start address.
-    bit_offset: 0
-    bit_size: 32
-fieldset/REG_ENDR:
-  description: RISAF region end address register.
-  fields:
-  - name: BADDEND
-    description: Base region end address.
-    bit_offset: 0
-    bit_size: 32
 fieldset/REG_CIDCFGR:
   description: RISAF region CID configuration register.
   fields:
@@ -157,3 +143,17 @@ fieldset/REG_CIDCFGR:
     array:
       len: 8
       stride: 1
+fieldset/REG_ENDR:
+  description: RISAF region end address register.
+  fields:
+  - name: BADDEND
+    description: Base region end address.
+    bit_offset: 0
+    bit_size: 32
+fieldset/REG_STARTR:
+  description: RISAF region start address register.
+  fields:
+  - name: BADDSTART
+    description: Base region start address.
+    bit_offset: 0
+    bit_size: 32
