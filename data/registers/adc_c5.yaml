@@ -352,15 +352,13 @@ fieldset/GCOMP:
   description: ADC gain compensation register.
   fields:
   - name: GCOMPCOEFF
-    description: Gain compensation coefficient.
+    description: Gain compensation coefficient. The coefficient is divided by 4096 to get the gain factor ranging from 0 to 3.9999756
     bit_offset: 0
     bit_size: 14
-    enum: GCOMPCOEFF
   - name: GCOMP
     description: Gain compensation mode.
     bit_offset: 31
     bit_size: 1
-    enum: GCOMP
 fieldset/IER:
   description: ADC interrupt enable register.
   fields:
@@ -796,30 +794,6 @@ enum/EXTEN:
   - name: B_0x3
     description: Hardware trigger detection on both the rising and falling edges.
     value: 3
-enum/GCOMP:
-  bit_size: 1
-  variants:
-  - name: B_0x0
-    description: Regular ADC operation mode.
-    value: 0
-  - name: B_0x1
-    description: Gain compensation enabled and applied on all channels.
-    value: 1
-enum/GCOMPCOEFF:
-  bit_size: 14
-  variants:
-  - name: B_0x800
-    description: gain factor of 0.5.
-    value: 2048
-  - name: B_0x1000
-    description: gain factor of 1.
-    value: 4096
-  - name: B_0x2000
-    description: gain factor of 2.
-    value: 8192
-  - name: B_0x3000
-    description: gain factor of 3.
-    value: 12288
 enum/OVRMOD:
   bit_size: 1
   variants:
