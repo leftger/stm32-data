@@ -516,7 +516,7 @@ fieldset/PCSEL:
       stride: 1
     enum: PCSEL
 fieldset/SMPR1:
-  description: ADC sample time register 1.
+  description: sample time register 1
   fields:
   - name: SMP
     description: Channel x sampling time selection (x=9 to 0).
