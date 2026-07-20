@@ -497,86 +497,8 @@ fieldset/OFCFGR:
     description: Channel selection for the data offset y.
     bit_offset: 27
     bit_size: 5
-fieldset/OFCFGR2:
-  description: ADC offset 2 configuration register.
-  fields:
-  - name: POSOFF
-    description: Positive offset enable.
-    bit_offset: 24
-    bit_size: 1
-  - name: USAT
-    description: Unsigned saturation enable.
-    bit_offset: 25
-    bit_size: 1
-  - name: SSAT
-    description: Signed saturation enable.
-    bit_offset: 26
-    bit_size: 1
-  - name: OFFSET_CH
-    description: Channel selection for the data offset y.
-    bit_offset: 27
-    bit_size: 5
-fieldset/OFCFGR3:
-  description: ADC offset 3 configuration register.
-  fields:
-  - name: POSOFF
-    description: Positive offset enable.
-    bit_offset: 24
-    bit_size: 1
-  - name: USAT
-    description: Unsigned saturation enable.
-    bit_offset: 25
-    bit_size: 1
-  - name: SSAT
-    description: Signed saturation enable.
-    bit_offset: 26
-    bit_size: 1
-  - name: OFFSET_CH
-    description: Channel selection for the data offset y.
-    bit_offset: 27
-    bit_size: 5
-fieldset/OFCFGR4:
-  description: ADC offset 4 configuration register.
-  fields:
-  - name: POSOFF
-    description: Positive offset enable.
-    bit_offset: 24
-    bit_size: 1
-  - name: USAT
-    description: Unsigned saturation enable.
-    bit_offset: 25
-    bit_size: 1
-  - name: SSAT
-    description: Signed saturation enable.
-    bit_offset: 26
-    bit_size: 1
-  - name: OFFSET_CH
-    description: Channel selection for the data offset y.
-    bit_offset: 27
-    bit_size: 5
-fieldset/OFR1:
-  description: ADC offset 1 register.
-  fields:
-  - name: OFFSET
-    description: Data offset y for the channel programmed in OFFSETy_CH[4:0] bits.
-    bit_offset: 0
-    bit_size: 22
-fieldset/OFR2:
-  description: ADC offset 2 register.
-  fields:
-  - name: OFFSET
-    description: Data offset y for the channel programmed in OFFSETy_CH[4:0] bits.
-    bit_offset: 0
-    bit_size: 22
-fieldset/OFR3:
-  description: ADC offset 3 register.
-  fields:
-  - name: OFFSET
-    description: Data offset y for the channel programmed in OFFSETy_CH[4:0] bits.
-    bit_offset: 0
-    bit_size: 22
-fieldset/OFR4:
-  description: ADC offset 4 register.
+fieldset/OFR:
+  description: offset 1 register.
   fields:
   - name: OFFSET
     description: Data offset y for the channel programmed in OFFSETy_CH[4:0] bits.
@@ -593,159 +515,69 @@ fieldset/PCSEL:
 fieldset/SMPR1:
   description: ADC sample time register 1.
   fields:
-  - name: SMP0
+  - name: SMP
     description: Channel x sampling time selection (x=9 to 0).
     bit_offset: 0
     bit_size: 3
-    enum: SMP0
-  - name: SMP1
-    description: Channel x sampling time selection (x=9 to 0).
-    bit_offset: 3
-    bit_size: 3
-    enum: SMP1
-  - name: SMP2
-    description: Channel x sampling time selection (x=9 to 0).
-    bit_offset: 6
-    bit_size: 3
-    enum: SMP2
-  - name: SMP3
-    description: Channel x sampling time selection (x=9 to 0).
-    bit_offset: 9
-    bit_size: 3
-    enum: SMP3
-  - name: SMP4
-    description: Channel x sampling time selection (x=9 to 0).
-    bit_offset: 12
-    bit_size: 3
-    enum: SMP4
-  - name: SMP5
-    description: Channel x sampling time selection (x=9 to 0).
-    bit_offset: 15
-    bit_size: 3
-    enum: SMP5
-  - name: SMP6
-    description: Channel x sampling time selection (x=9 to 0).
-    bit_offset: 18
-    bit_size: 3
-    enum: SMP6
-  - name: SMP7
-    description: Channel x sampling time selection (x=9 to 0).
-    bit_offset: 21
-    bit_size: 3
-    enum: SMP7
-  - name: SMP8
-    description: Channel x sampling time selection (x=9 to 0).
-    bit_offset: 24
-    bit_size: 3
-    enum: SMP8
-  - name: SMP9
-    description: Channel x sampling time selection (x=9 to 0).
-    bit_offset: 27
-    bit_size: 3
-    enum: SMP9
+    array:
+      len: 10
+      stride: 3
+    enum: SAMPLE_TIME
 fieldset/SMPR2:
-  description: ADC sample time register 2.
+  description: sample time register 2
   fields:
-  - name: SMP10
-    description: Channel x sampling time selection (x=13 to 10).
+  - name: SMP
+    description: Channel 10-13 sampling time selection
     bit_offset: 0
     bit_size: 3
-    enum: SMP10
-  - name: SMP11
-    description: Channel x sampling time selection (x=13 to 10).
-    bit_offset: 3
-    bit_size: 3
-    enum: SMP11
-  - name: SMP12
-    description: Channel x sampling time selection (x=13 to 10).
-    bit_offset: 6
-    bit_size: 3
-    enum: SMP12
-  - name: SMP13
-    description: Channel x sampling time selection (x=13 to 10).
-    bit_offset: 9
-    bit_size: 3
-    enum: SMP13
+    array:
+      len: 10
+      stride: 3
+    enum: SAMPLE_TIME
 fieldset/SQR1:
-  description: ADC regular sequence register 1.
+  description: regular sequence register 1
   fields:
   - name: L
-    description: Regular channel sequence length.
+    description: Regular channel sequence length
     bit_offset: 0
     bit_size: 4
-  - name: SQ1
-    description: 1st conversion in regular sequence.
+  - name: SQ
+    description: 1st -4th conversions in regular sequence
     bit_offset: 6
     bit_size: 5
-  - name: SQ2
-    description: 2nd conversion in regular sequence.
-    bit_offset: 12
-    bit_size: 5
-  - name: SQ3
-    description: 3rd conversion in regular sequence.
-    bit_offset: 18
-    bit_size: 5
-  - name: SQ4
-    description: 4th conversion in regular sequence.
-    bit_offset: 24
-    bit_size: 5
+    array:
+      len: 4
+      stride: 6
 fieldset/SQR2:
-  description: ADC regular sequence register 2.
+  description: regular sequence register 2
   fields:
-  - name: SQ5
-    description: 5th conversion in regular sequence.
+  - name: SQ
+    description: 5th-9th conversions in regular sequence
     bit_offset: 0
     bit_size: 5
-  - name: SQ6
-    description: 6th conversion in regular sequence.
-    bit_offset: 6
-    bit_size: 5
-  - name: SQ7
-    description: 7th conversion in regular sequence.
-    bit_offset: 12
-    bit_size: 5
-  - name: SQ8
-    description: 8th conversion in regular sequence.
-    bit_offset: 18
-    bit_size: 5
-  - name: SQ9
-    description: 9th conversion in regular sequence.
-    bit_offset: 24
-    bit_size: 5
+    array:
+      len: 5
+      stride: 6
 fieldset/SQR3:
-  description: ADC regular sequence register 3.
+  description: regular sequence register 3
   fields:
-  - name: SQ10
-    description: 10th conversion in regular sequence.
+  - name: SQ
+    description: 10th-14th conversions in regular sequence
     bit_offset: 0
     bit_size: 5
-  - name: SQ11
-    description: 11th conversion in regular sequence.
-    bit_offset: 6
-    bit_size: 5
-  - name: SQ12
-    description: 12th conversion in regular sequence.
-    bit_offset: 12
-    bit_size: 5
-  - name: SQ13
-    description: 13th conversion in regular sequence.
-    bit_offset: 18
-    bit_size: 5
-  - name: SQ14
-    description: 14th conversion in regular sequence.
-    bit_offset: 24
-    bit_size: 5
+    array:
+      len: 5
+      stride: 6
 fieldset/SQR4:
-  description: ADC regular sequence register 4.
+  description: regular sequence register 4
   fields:
-  - name: SQ15
-    description: 15th conversion in regular sequence.
+  - name: SQ
+    description: 15th-16th conversion in regular sequence
     bit_offset: 0
     bit_size: 5
-  - name: SQ16
-    description: 16th conversion in regular sequence.
-    bit_offset: 6
-    bit_size: 5
+    array:
+      len: 2
+      stride: 6
 enum/AWD1SGL:
   bit_size: 1
   variants:
@@ -836,358 +668,7 @@ enum/ROVSM:
   - name: B_0x1
     description: 'Resumed mode: When injected conversions are triggered, the current oversampling is aborted and resumed from start after the injection sequence (oversampling buffer is zeroed by injected sequence start).'
     value: 1
-enum/SMP0:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: 3 ADC clock cycles.
-    value: 0
-  - name: B_0x1
-    description: 5 ADC clock cycles.
-    value: 1
-  - name: B_0x2
-    description: 8 ADC clock cycles.
-    value: 2
-  - name: B_0x3
-    description: 13 ADC clock cycles.
-    value: 3
-  - name: B_0x4
-    description: 25 ADC clock cycles.
-    value: 4
-  - name: B_0x5
-    description: 48 ADC clock cycles.
-    value: 5
-  - name: B_0x6
-    description: 139 ADC clock cycles.
-    value: 6
-  - name: B_0x7
-    description: 289 ADC clock cycles.
-    value: 7
-enum/SMP1:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: 3 ADC clock cycles.
-    value: 0
-  - name: B_0x1
-    description: 5 ADC clock cycles.
-    value: 1
-  - name: B_0x2
-    description: 8 ADC clock cycles.
-    value: 2
-  - name: B_0x3
-    description: 13 ADC clock cycles.
-    value: 3
-  - name: B_0x4
-    description: 25 ADC clock cycles.
-    value: 4
-  - name: B_0x5
-    description: 48 ADC clock cycles.
-    value: 5
-  - name: B_0x6
-    description: 139 ADC clock cycles.
-    value: 6
-  - name: B_0x7
-    description: 289 ADC clock cycles.
-    value: 7
-enum/SMP10:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: 3 ADC clock cycles.
-    value: 0
-  - name: B_0x1
-    description: 5 ADC clock cycles.
-    value: 1
-  - name: B_0x2
-    description: 8 ADC clock cycles.
-    value: 2
-  - name: B_0x3
-    description: 13 ADC clock cycles.
-    value: 3
-  - name: B_0x4
-    description: 25 ADC clock cycles.
-    value: 4
-  - name: B_0x5
-    description: 48 ADC clock cycles.
-    value: 5
-  - name: B_0x6
-    description: 139 ADC clock cycles.
-    value: 6
-  - name: B_0x7
-    description: 289 ADC clock cycles.
-    value: 7
-enum/SMP11:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: 3 ADC clock cycles.
-    value: 0
-  - name: B_0x1
-    description: 5 ADC clock cycles.
-    value: 1
-  - name: B_0x2
-    description: 8 ADC clock cycles.
-    value: 2
-  - name: B_0x3
-    description: 13 ADC clock cycles.
-    value: 3
-  - name: B_0x4
-    description: 25 ADC clock cycles.
-    value: 4
-  - name: B_0x5
-    description: 48 ADC clock cycles.
-    value: 5
-  - name: B_0x6
-    description: 139 ADC clock cycles.
-    value: 6
-  - name: B_0x7
-    description: 289 ADC clock cycles.
-    value: 7
-enum/SMP12:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: 3 ADC clock cycles.
-    value: 0
-  - name: B_0x1
-    description: 5 ADC clock cycles.
-    value: 1
-  - name: B_0x2
-    description: 8 ADC clock cycles.
-    value: 2
-  - name: B_0x3
-    description: 13 ADC clock cycles.
-    value: 3
-  - name: B_0x4
-    description: 25 ADC clock cycles.
-    value: 4
-  - name: B_0x5
-    description: 48 ADC clock cycles.
-    value: 5
-  - name: B_0x6
-    description: 139 ADC clock cycles.
-    value: 6
-  - name: B_0x7
-    description: 289 ADC clock cycles.
-    value: 7
-enum/SMP13:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: 3 ADC clock cycles.
-    value: 0
-  - name: B_0x1
-    description: 5 ADC clock cycles.
-    value: 1
-  - name: B_0x2
-    description: 8 ADC clock cycles.
-    value: 2
-  - name: B_0x3
-    description: 13 ADC clock cycles.
-    value: 3
-  - name: B_0x4
-    description: 25 ADC clock cycles.
-    value: 4
-  - name: B_0x5
-    description: 48 ADC clock cycles.
-    value: 5
-  - name: B_0x6
-    description: 139 ADC clock cycles.
-    value: 6
-  - name: B_0x7
-    description: 289 ADC clock cycles.
-    value: 7
-enum/SMP2:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: 3 ADC clock cycles.
-    value: 0
-  - name: B_0x1
-    description: 5 ADC clock cycles.
-    value: 1
-  - name: B_0x2
-    description: 8 ADC clock cycles.
-    value: 2
-  - name: B_0x3
-    description: 13 ADC clock cycles.
-    value: 3
-  - name: B_0x4
-    description: 25 ADC clock cycles.
-    value: 4
-  - name: B_0x5
-    description: 48 ADC clock cycles.
-    value: 5
-  - name: B_0x6
-    description: 139 ADC clock cycles.
-    value: 6
-  - name: B_0x7
-    description: 289 ADC clock cycles.
-    value: 7
-enum/SMP3:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: 3 ADC clock cycles.
-    value: 0
-  - name: B_0x1
-    description: 5 ADC clock cycles.
-    value: 1
-  - name: B_0x2
-    description: 8 ADC clock cycles.
-    value: 2
-  - name: B_0x3
-    description: 13 ADC clock cycles.
-    value: 3
-  - name: B_0x4
-    description: 25 ADC clock cycles.
-    value: 4
-  - name: B_0x5
-    description: 48 ADC clock cycles.
-    value: 5
-  - name: B_0x6
-    description: 139 ADC clock cycles.
-    value: 6
-  - name: B_0x7
-    description: 289 ADC clock cycles.
-    value: 7
-enum/SMP4:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: 3 ADC clock cycles.
-    value: 0
-  - name: B_0x1
-    description: 5 ADC clock cycles.
-    value: 1
-  - name: B_0x2
-    description: 8 ADC clock cycles.
-    value: 2
-  - name: B_0x3
-    description: 13 ADC clock cycles.
-    value: 3
-  - name: B_0x4
-    description: 25 ADC clock cycles.
-    value: 4
-  - name: B_0x5
-    description: 48 ADC clock cycles.
-    value: 5
-  - name: B_0x6
-    description: 139 ADC clock cycles.
-    value: 6
-  - name: B_0x7
-    description: 289 ADC clock cycles.
-    value: 7
-enum/SMP5:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: 3 ADC clock cycles.
-    value: 0
-  - name: B_0x1
-    description: 5 ADC clock cycles.
-    value: 1
-  - name: B_0x2
-    description: 8 ADC clock cycles.
-    value: 2
-  - name: B_0x3
-    description: 13 ADC clock cycles.
-    value: 3
-  - name: B_0x4
-    description: 25 ADC clock cycles.
-    value: 4
-  - name: B_0x5
-    description: 48 ADC clock cycles.
-    value: 5
-  - name: B_0x6
-    description: 139 ADC clock cycles.
-    value: 6
-  - name: B_0x7
-    description: 289 ADC clock cycles.
-    value: 7
-enum/SMP6:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: 3 ADC clock cycles.
-    value: 0
-  - name: B_0x1
-    description: 5 ADC clock cycles.
-    value: 1
-  - name: B_0x2
-    description: 8 ADC clock cycles.
-    value: 2
-  - name: B_0x3
-    description: 13 ADC clock cycles.
-    value: 3
-  - name: B_0x4
-    description: 25 ADC clock cycles.
-    value: 4
-  - name: B_0x5
-    description: 48 ADC clock cycles.
-    value: 5
-  - name: B_0x6
-    description: 139 ADC clock cycles.
-    value: 6
-  - name: B_0x7
-    description: 289 ADC clock cycles.
-    value: 7
-enum/SMP7:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: 3 ADC clock cycles.
-    value: 0
-  - name: B_0x1
-    description: 5 ADC clock cycles.
-    value: 1
-  - name: B_0x2
-    description: 8 ADC clock cycles.
-    value: 2
-  - name: B_0x3
-    description: 13 ADC clock cycles.
-    value: 3
-  - name: B_0x4
-    description: 25 ADC clock cycles.
-    value: 4
-  - name: B_0x5
-    description: 48 ADC clock cycles.
-    value: 5
-  - name: B_0x6
-    description: 139 ADC clock cycles.
-    value: 6
-  - name: B_0x7
-    description: 289 ADC clock cycles.
-    value: 7
-enum/SMP8:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: 3 ADC clock cycles.
-    value: 0
-  - name: B_0x1
-    description: 5 ADC clock cycles.
-    value: 1
-  - name: B_0x2
-    description: 8 ADC clock cycles.
-    value: 2
-  - name: B_0x3
-    description: 13 ADC clock cycles.
-    value: 3
-  - name: B_0x4
-    description: 25 ADC clock cycles.
-    value: 4
-  - name: B_0x5
-    description: 48 ADC clock cycles.
-    value: 5
-  - name: B_0x6
-    description: 139 ADC clock cycles.
-    value: 6
-  - name: B_0x7
-    description: 289 ADC clock cycles.
-    value: 7
-enum/SMP9:
+enum/SAMPLE_TIME:
   bit_size: 3
   variants:
   - name: B_0x0
