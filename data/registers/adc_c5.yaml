@@ -393,18 +393,13 @@ fieldset/ISR:
     description: Injected channel end of sequence flag.
     bit_offset: 6
     bit_size: 1
-  - name: AWD1
-    description: Analog watchdog 1 flag.
+  - name: AWD
+    description: Analog watchdog 1-3 flags.
     bit_offset: 7
     bit_size: 1
-  - name: AWD2
-    description: Analog watchdog 2 flag.
-    bit_offset: 8
-    bit_size: 1
-  - name: AWD3
-    description: Analog watchdog 3 flag.
-    bit_offset: 9
-    bit_size: 1
+    array:
+      len: 3
+      stride: 1
   - name: LDORDY
     description: ADC internal voltage regulator output ready flag.
     bit_offset: 12
