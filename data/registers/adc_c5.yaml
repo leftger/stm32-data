@@ -505,12 +505,15 @@ fieldset/OFR:
     bit_offset: 0
     bit_size: 22
 fieldset/PCSEL:
-  description: ADC channel preselection register.
+  description: channel preselection register.
   fields:
   - name: PCSEL
-    description: Channel i (Vless thansub>IN[i]less than/sub>) preselection.
+    description: Channel x (VIN[i]) preselected
     bit_offset: 0
-    bit_size: 14
+    bit_size: 1
+    array:
+      len: 14
+      stride: 1
     enum: PCSEL
 fieldset/SMPR1:
   description: ADC sample time register 1.
@@ -636,13 +639,13 @@ enum/OVRMOD:
     description: DR register is overwritten with the last conversion result when an overrun is detected.
     value: 1
 enum/PCSEL:
-  bit_size: 14
+  bit_size: 1
   variants:
-  - name: B_0x0
-    description: Input channel i (Vless thansub>IN[i]less than/sub>) is not preselected for conversion, the result of the ADC conversion for this channel is wrong.
+  - name: NotPreselected
+    description: Input channel x is not pre-selected
     value: 0
-  - name: B_0x1
-    description: Input channel i (Vless thansub>IN[i]less than/sub>) is preselected for conversion.
+  - name: Preselected
+    description: Pre-select input channel x
     value: 1
 enum/RES:
   bit_size: 2
