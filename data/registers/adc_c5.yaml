@@ -1,4 +1,4 @@
-block/ADC1:
+block/ADC:
   description: Analog to digital converter
   items:
   - name: ISR
