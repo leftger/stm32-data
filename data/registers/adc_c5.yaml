@@ -58,62 +58,32 @@ block/ADC1:
     description: injected sequence register
     byte_offset: 76
     fieldset: JSQR
-  - name: OFCFGR1
-    description: offset 1 configuration register
+  - name: OFCFGR
+    description: offset 1-4 configuration register
+    array:
+      len: 4
+      stride: 4
     byte_offset: 80
-    fieldset: OFCFGR1
-  - name: OFCFGR2
-    description: offset 2 configuration register
-    byte_offset: 84
-    fieldset: OFCFGR2
-  - name: OFCFGR3
-    description: offset 3 configuration register
-    byte_offset: 88
-    fieldset: OFCFGR3
-  - name: OFCFGR4
-    description: offset 4 configuration register
-    byte_offset: 92
-    fieldset: OFCFGR4
-  - name: OFR1
-    description: offset 1 register
+    fieldset: OFCFGR
+  - name: OFR
+    description: offset 1-4 register
+    array:
+      len: 4
+      stride: 4
     byte_offset: 96
-    fieldset: OFR1
-  - name: OFR2
-    description: offset 2 register
-    byte_offset: 100
-    fieldset: OFR2
-  - name: OFR3
-    description: offset 3 register
-    byte_offset: 104
-    fieldset: OFR3
-  - name: OFR4
-    description: offset 4 register
-    byte_offset: 108
-    fieldset: OFR4
+    fieldset: OFR
   - name: GCOMP
     description: gain compensation register
     byte_offset: 112
     fieldset: GCOMP
-  - name: JDR1
-    description: injected channel 1 data register
+  - name: JDR
+    description: injected channel 1-4 data register
+    array:
+      len: 4
+      stride: 4
     byte_offset: 128
     access: Read
-    fieldset: JDR1
-  - name: JDR2
-    description: injected channel 2 data register
-    byte_offset: 132
-    access: Read
-    fieldset: JDR2
-  - name: JDR3
-    description: injected channel 3 data register
-    byte_offset: 136
-    access: Read
-    fieldset: JDR3
-  - name: JDR4
-    description: injected channel 4 data register
-    byte_offset: 140
-    access: Read
-    fieldset: JDR4
+    fieldset: JDR
   - name: AWD2CR
     description: analog watchdog 2 configuration register
     byte_offset: 160
@@ -422,24 +392,19 @@ fieldset/IER:
     description: End of injected sequence of conversions interrupt enable.
     bit_offset: 6
     bit_size: 1
-  - name: AWD1IE
-    description: Analog watchdog 1 interrupt enable.
+  - name: AWDIE
+    description: Analog watchdog 1-3 interrupt enable.
     bit_offset: 7
     bit_size: 1
-  - name: AWD2IE
-    description: Analog watchdog 2 interrupt enable.
-    bit_offset: 8
-    bit_size: 1
-  - name: AWD3IE
-    description: Analog watchdog 3 interrupt enable.
-    bit_offset: 9
-    bit_size: 1
+    array:
+      len: 3
+      stride: 1
   - name: LDORDYIE
-    description: ADC internal voltage regulator interrupt enable.
+    description: internal voltage regulator interrupt enable.
     bit_offset: 12
     bit_size: 1
 fieldset/ISR:
-  description: ADC interrupt and status register.
+  description: interrupt and status register.
   fields:
   - name: ADRDY
     description: ADC ready.
@@ -485,29 +450,8 @@ fieldset/ISR:
     description: ADC internal voltage regulator output ready flag.
     bit_offset: 12
     bit_size: 1
-fieldset/JDR1:
+fieldset/JDR:
   description: ADC injected channel 1 data register.
-  fields:
-  - name: JDATA
-    description: Injected data.
-    bit_offset: 0
-    bit_size: 32
-fieldset/JDR2:
-  description: ADC injected channel 2 data register.
-  fields:
-  - name: JDATA
-    description: Injected data.
-    bit_offset: 0
-    bit_size: 32
-fieldset/JDR3:
-  description: ADC injected channel 3 data register.
-  fields:
-  - name: JDATA
-    description: Injected data.
-    bit_offset: 0
-    bit_size: 32
-fieldset/JDR4:
-  description: ADC injected channel 4 data register.
   fields:
   - name: JDATA
     description: Injected data.
@@ -529,24 +473,15 @@ fieldset/JSQR:
     bit_offset: 7
     bit_size: 2
     enum: EXTEN
-  - name: JSQ1
-    description: 1st conversion in the injected sequence.
+  - name: JSQ
+    description: 1st-4th conversion in the injected sequence.
     bit_offset: 9
     bit_size: 5
-  - name: JSQ2
-    description: 2nd conversion in the injected sequence.
-    bit_offset: 15
-    bit_size: 5
-  - name: JSQ3
-    description: 3rd conversion in the injected sequence.
-    bit_offset: 21
-    bit_size: 5
-  - name: JSQ4
-    description: 4th conversion in the injected sequence.
-    bit_offset: 27
-    bit_size: 5
-fieldset/OFCFGR1:
-  description: ADC offset 1 configuration register.
+    array:
+      len: 4
+      stride: 6
+fieldset/OFCFGR:
+  description: offset 1 configuration register.
   fields:
   - name: POSOFF
     description: Positive offset enable.
