@@ -1,5 +1,5 @@
 block/ADC:
-  description: Analog to digital converter
+  description: ADC register block
   items:
   - name: ISR
     description: interrupt and status register
@@ -21,14 +21,13 @@ block/ADC:
     description: configuration register 2
     byte_offset: 16
     fieldset: CFGR2
-  - name: SMPR1
-    description: sample time register 1
+  - name: SMPR
+    description: sample time register 1-2
+    array:
+      len: 2
+      stride: 4
     byte_offset: 20
-    fieldset: SMPR1
-  - name: SMPR2
-    description: sample time register 2
-    byte_offset: 24
-    fieldset: SMPR2
+    fieldset: SMPR
   - name: PCSEL
     description: channel preselection register
     byte_offset: 28
@@ -66,7 +65,7 @@ block/ADC:
     byte_offset: 80
     fieldset: OFCFGR
   - name: OFR
-    description: offset 1-4 register
+    description: offset register
     array:
       len: 4
       stride: 4
@@ -77,7 +76,7 @@ block/ADC:
     byte_offset: 112
     fieldset: GCOMP
   - name: JDR
-    description: injected channel 1-4 data register
+    description: injected channel data register
     array:
       len: 4
       stride: 4
@@ -124,11 +123,11 @@ fieldset/AWD1HTR:
   description: analog watchdog 1 higher threshold register
   fields:
   - name: HTR
-    description: Analog watchdog 1 higher threshold.
+    description: Analog watchdog 1 higher threshold
     bit_offset: 0
     bit_size: 23
   - name: AWDFILT
-    description: Analog watchdog filtering parameter.
+    description: Analog watchdog filtering parameter
     bit_offset: 29
     bit_size: 3
     enum: AWDFILT
@@ -136,82 +135,82 @@ fieldset/AWD1LTR:
   description: analog watchdog 1 lower threshold register
   fields:
   - name: LTR
-    description: Analog watchdog 1 lower threshold.
+    description: Analog watchdog 1 lower threshold
     bit_offset: 0
     bit_size: 23
 fieldset/AWD2CR:
   description: analog watchdog 2 configuration register
   fields:
   - name: AWDCH
-    description: Analog watchdog 2 channel selection.
+    description: Analog watchdog 2 channel selection
     bit_offset: 0
     bit_size: 14
 fieldset/AWD2HTR:
   description: analog watchdog 2 higher threshold register
   fields:
   - name: HTR
-    description: Analog watchdog 2 higher threshold.
+    description: Analog watchdog 2 higher threshold
     bit_offset: 0
     bit_size: 23
 fieldset/AWD2LTR:
   description: analog watchdog 2 lower threshold register
   fields:
   - name: LTR
-    description: Analog watchdog 2 lower threshold.
+    description: Analog watchdog 2 lower threshold
     bit_offset: 0
     bit_size: 23
 fieldset/AWD3CR:
   description: analog watchdog 3 configuration register
   fields:
   - name: AWDCH
-    description: Analog watchdog 3 channel selection.
+    description: Analog watchdog 3 channel selection
     bit_offset: 0
     bit_size: 14
 fieldset/AWD3HTR:
   description: analog watchdog 3 higher threshold register
   fields:
   - name: HTR
-    description: Analog watchdog 3 higher threshold.
+    description: Analog watchdog 3 higher threshold
     bit_offset: 0
     bit_size: 23
 fieldset/AWD3LTR:
   description: analog watchdog 3 lower threshold register
   fields:
   - name: LTR
-    description: Analog watchdog 3 lower threshold.
+    description: Analog watchdog 3 lower threshold
     bit_offset: 0
     bit_size: 23
 fieldset/CALFACT:
   description: calibration factors
   fields:
   - name: CALFACT
-    description: Calibration factors.
+    description: Calibration factors
     bit_offset: 0
     bit_size: 7
 fieldset/CFGR:
   description: configuration register
   fields:
   - name: DMNGT
-    description: Data management configuration.
+    description: Data management configuration
     bit_offset: 0
     bit_size: 2
     enum: DMNGT
   - name: RES
-    description: Data resolution.
+    description: Data resolution
     bit_offset: 2
     bit_size: 2
     enum: RES
   - name: EXTSEL
-    description: External trigger selection for regular group.
+    description: External trigger selection for regular group
     bit_offset: 5
     bit_size: 5
   - name: EXTEN
-    description: External trigger enable and polarity selection for regular channels.
+    description: External trigger enable and polarity selection for regular channels
     bit_offset: 10
     bit_size: 2
     enum: EXTEN
   - name: OVRMOD
-    description: Overrun mode.
+    description: Overrun mode
     bit_offset: 12
     bit_size: 1
     enum: OVRMOD
@@ -220,64 +219,64 @@ fieldset/CFGR:
     bit_offset: 13
     bit_size: 1
   - name: AUTDLY
-    description: Delayed conversion mode.
+    description: Delayed conversion mode
     bit_offset: 14
     bit_size: 1
   - name: DISCEN
-    description: Discontinuous mode for regular channels.
+    description: Discontinuous mode for regular channels
     bit_offset: 16
     bit_size: 1
   - name: DISCNUM
-    description: Discontinuous mode channel count.
+    description: Discontinuous mode channel count
     bit_offset: 17
     bit_size: 3
   - name: JDISCEN
-    description: Discontinuous mode on injected channels.
+    description: Discontinuous mode on injected channels
     bit_offset: 20
     bit_size: 1
   - name: AWD1SGL
-    description: Enable the watchdog 1 on a single channel or on all channels.
+    description: Enable the watchdog 1 on a single channel or on all channels
     bit_offset: 22
     bit_size: 1
     enum: AWD1SGL
   - name: AWD1EN
-    description: Analog watchdog 1 enable on regular channels.
+    description: Analog watchdog 1 enable on regular channels
     bit_offset: 23
     bit_size: 1
   - name: JAWD1EN
-    description: Analog watchdog 1 enable on injected channels.
+    description: Analog watchdog 1 enable on injected channels
     bit_offset: 24
     bit_size: 1
   - name: JAUTO
-    description: Automatic injected group conversion.
+    description: Automatic injected group conversion
     bit_offset: 25
     bit_size: 1
   - name: AWD1CH
-    description: Analog watchdog 1 channel selection.
+    description: Analog watchdog 1 channel selection
     bit_offset: 26
     bit_size: 5
 fieldset/CFGR2:
   description: configuration register 2
   fields:
   - name: ROVSE
-    description: Regular oversampling enable.
+    description: Regular oversampling enable
     bit_offset: 0
     bit_size: 1
   - name: JOVSE
-    description: Injected oversampling enable.
+    description: Injected oversampling enable
     bit_offset: 1
     bit_size: 1
   - name: OVSS
-    description: Oversampling shift.
+    description: Oversampling shift
     bit_offset: 5
     bit_size: 4
   - name: TROVS
-    description: Triggered regular oversampling.
+    description: Triggered regular oversampling
     bit_offset: 9
     bit_size: 1
     enum: TROVS
   - name: ROVSM
-    description: Regular oversampling mode.
+    description: Regular oversampling mode
     bit_offset: 10
     bit_size: 1
     enum: ROVSM
@@ -286,20 +285,20 @@ fieldset/CFGR2:
     bit_offset: 13
     bit_size: 1
   - name: SWTRIG
-    description: Software trigger bit for sampling time control trigger mode.
+    description: Software trigger bit for sampling time control trigger mode
     bit_offset: 14
     bit_size: 1
     enum: SWTRIG
   - name: SMPTRIG
-    description: Sampling time control trigger mode.
+    description: Sampling time control trigger mode
     bit_offset: 15
     bit_size: 1
   - name: OVSR
-    description: Oversampling ratio.
+    description: Oversampling ratio
     bit_offset: 16
     bit_size: 10
   - name: LSHIFT
-    description: Left shift factor.
+    description: Left shift factor
     bit_offset: 28
     bit_size: 4
 fieldset/CR:
@@ -322,185 +321,185 @@ fieldset/CR:
     bit_offset: 3
     bit_size: 1
   - name: ADSTP
-    description: ADC stop of regular conversion command.
+    description: ADC stop of regular conversion command
     bit_offset: 4
     bit_size: 1
   - name: JADSTP
-    description: ADC stop of injected conversion command.
+    description: ADC stop of injected conversion command
     bit_offset: 5
     bit_size: 1
   - name: ADVREGEN
-    description: ADC internal voltage regulator enable.
+    description: ADC internal voltage regulator enable
     bit_offset: 28
     bit_size: 1
   - name: DEEPPWD
-    description: Deep-power-down enable.
+    description: Deep-power-down enable
     bit_offset: 29
     bit_size: 1
   - name: ADCAL
-    description: ADC calibration.
+    description: calibration
     bit_offset: 31
     bit_size: 1
 fieldset/DR:
-  description: ADC regular data register.
+  description: regular data register
   fields:
   - name: RDATA
-    description: Regular data converted.
+    description: Regular data converted
     bit_offset: 0
     bit_size: 32
 fieldset/GCOMP:
-  description: ADC gain compensation register.
+  description: gain compensation register
   fields:
   - name: GCOMPCOEFF
-    description: Gain compensation coefficient. The coefficient is divided by 4096 to get the gain factor ranging from 0 to 3.9999756
+    description: Gain compensation coefficient The coefficient is divided by 4096 to get the gain factor ranging from 0 to 39999756
     bit_offset: 0
     bit_size: 14
   - name: GCOMP
-    description: Gain compensation mode.
+    description: Gain compensation mode
     bit_offset: 31
     bit_size: 1
 fieldset/IER:
-  description: ADC interrupt enable register.
+  description: interrupt enable register
   fields:
   - name: ADRDYIE
-    description: ADC ready interrupt enable.
+    description: ready interrupt enable
     bit_offset: 0
     bit_size: 1
   - name: EOSMPIE
-    description: End of sampling flag interrupt enable for regular conversions.
+    description: End of sampling flag interrupt enable for regular conversions
     bit_offset: 1
     bit_size: 1
   - name: EOCIE
-    description: End of regular conversion interrupt enable.
+    description: End of regular conversion interrupt enable
     bit_offset: 2
     bit_size: 1
   - name: EOSIE
-    description: End of regular sequence of conversions interrupt enable.
+    description: End of regular sequence of conversions interrupt enable
     bit_offset: 3
     bit_size: 1
   - name: OVRIE
-    description: Overrun interrupt enable.
+    description: Overrun interrupt enable
     bit_offset: 4
     bit_size: 1
   - name: JEOCIE
-    description: End of injected conversion interrupt enable.
+    description: End of injected conversion interrupt enable
     bit_offset: 5
     bit_size: 1
   - name: JEOSIE
-    description: End of injected sequence of conversions interrupt enable.
+    description: End of injected sequence of conversions interrupt enable
     bit_offset: 6
     bit_size: 1
   - name: AWDIE
-    description: Analog watchdog 1-3 interrupt enable.
+    description: Analog watchdog 1-3 interrupt enable
     bit_offset: 7
     bit_size: 1
     array:
       len: 3
       stride: 1
   - name: LDORDYIE
-    description: internal voltage regulator interrupt enable.
+    description: internal voltage regulator interrupt enable
     bit_offset: 12
     bit_size: 1
 fieldset/ISR:
-  description: interrupt and status register.
+  description: interrupt and status register
   fields:
   - name: ADRDY
-    description: ADC ready.
+    description: ready
     bit_offset: 0
     bit_size: 1
   - name: EOSMP
-    description: End of sampling flag.
+    description: End of sampling flag
     bit_offset: 1
     bit_size: 1
   - name: EOC
-    description: End of conversion flag.
+    description: End of conversion flag
     bit_offset: 2
     bit_size: 1
   - name: EOS
-    description: End of regular sequence flag.
+    description: End of regular sequence flag
     bit_offset: 3
     bit_size: 1
   - name: OVR
-    description: ADC overrun.
+    description: ADC overrun
     bit_offset: 4
     bit_size: 1
   - name: JEOC
-    description: Injected channel end of conversion flag.
+    description: Injected channel end of conversion flag
     bit_offset: 5
     bit_size: 1
   - name: JEOS
-    description: Injected channel end of sequence flag.
+    description: Injected channel end of sequence flag
     bit_offset: 6
     bit_size: 1
   - name: AWD
-    description: Analog watchdog 1-3 flags.
+    description: Analog watchdog 1-3 flags
     bit_offset: 7
     bit_size: 1
     array:
       len: 3
       stride: 1
   - name: LDORDY
-    description: ADC internal voltage regulator output ready flag.
+    description: ADC internal voltage regulator output ready flag
     bit_offset: 12
     bit_size: 1
 fieldset/JDR:
-  description: ADC injected channel 1 data register.
+  description: ADC injected channel 1 data register
   fields:
   - name: JDATA
-    description: Injected data.
+    description: Injected data
     bit_offset: 0
     bit_size: 32
 fieldset/JSQR:
-  description: ADC injected sequence register.
+  description: ADC injected sequence register
   fields:
   - name: JL
-    description: Injected channel sequence length.
+    description: Injected channel sequence length
     bit_offset: 0
     bit_size: 2
   - name: JEXTSEL
-    description: External trigger selection for injected group.
+    description: External trigger selection for injected group
     bit_offset: 2
     bit_size: 5
   - name: JEXTEN
-    description: External trigger enable and polarity selection for injected channels.
+    description: External trigger enable and polarity selection for injected channels
     bit_offset: 7
     bit_size: 2
     enum: EXTEN
   - name: JSQ
-    description: 1st-4th conversion in the injected sequence.
+    description: 1st-4th conversion in the injected sequence
     bit_offset: 9
     bit_size: 5
     array:
       len: 4
       stride: 6
 fieldset/OFCFGR:
-  description: offset 1 configuration register.
+  description: offset 1 configuration register
   fields:
   - name: POSOFF
-    description: Positive offset enable.
+    description: Positive offset enable
     bit_offset: 24
     bit_size: 1
   - name: USAT
-    description: Unsigned saturation enable.
+    description: Unsigned saturation enable
     bit_offset: 25
     bit_size: 1
   - name: SSAT
-    description: Signed saturation enable.
+    description: Signed saturation enable
     bit_offset: 26
     bit_size: 1
   - name: OFFSET_CH
-    description: Channel selection for the data offset y.
+    description: Channel selection for the data offset y
     bit_offset: 27
     bit_size: 5
 fieldset/OFR:
-  description: offset 1 register.
+  description: offset 1 register
   fields:
   - name: OFFSET
     description: Data offset y for the channel programmed in OFFSETy_CH[4:0] bits.
     bit_offset: 0
     bit_size: 22
 fieldset/PCSEL:
-  description: channel preselection register.
+  description: channel preselection register
   fields:
   - name: PCSEL
     description: Channel x (VIN[i]) preselected
@@ -580,10 +579,10 @@ enum/AWD1SGL:
   bit_size: 1
   variants:
   - name: All
-    description: Analog watchdog 1 enabled on all channels.
+    description: Analog watchdog 1 enabled on all channels
     value: 0
   - name: Single
-    description: Analog watchdog 1 enabled on a single channel.
+    description: Analog watchdog 1 enabled on a single channel
     value: 1
 enum/AWDFILT:
   bit_size: 3
@@ -592,22 +591,22 @@ enum/AWDFILT:
     description: No filtering, one detection generates an AWD1 flag or an interrupt.
     value: 0
   - name: B_0x1
-    description: two consecutive detections generate an AWD1 flag or an interrupt.
+    description: two consecutive detections generate an AWD1 flag or an interrupt
     value: 1
   - name: B_0x7
-    description: Eight consecutive detections generate an AWD1 flag or an interrupt.
+    description: Eight consecutive detections generate an AWD1 flag or an interrupt
     value: 7
 enum/DMNGT:
   bit_size: 2
   variants:
   - name: NoDma
-    description: Regular conversion data stored in DR only.
+    description: Regular conversion data stored in DR only
     value: 0
   - name: DmaOneShot
-    description: DMA one-shot mode selected.
+    description: DMA one-shot mode selected
     value: 1
   - name: DmaCircular
-    description: DMA circular mode selected.
+    description: DMA circular mode selected
     value: 3
 enum/EXTEN:
   bit_size: 2
@@ -628,10 +627,10 @@ enum/OVRMOD:
   bit_size: 1
   variants:
   - name: Preserve
-    description: DR register is preserved with the old data when an overrun is detected.
+    description: DR register is preserved with the old data when an overrun is detected
     value: 0
   - name: Overwrite
-    description: DR register is overwritten with the last conversion result when an overrun is detected.
+    description: DR register is overwritten with the last conversion result when an overrun is detected
     value: 1
 enum/PCSEL:
   bit_size: 1
@@ -670,44 +669,44 @@ enum/SAMPLE_TIME:
   bit_size: 3
   variants:
   - name: Cycles3
-    description: 3 ADC clock cycles.
+    description: 3 ADC clock cycles
     value: 0
   - name: Cycles5
-    description: 5 ADC clock cycles.
+    description: 5 ADC clock cycles
     value: 1
   - name: Cycles8
-    description: 8 ADC clock cycles.
+    description: 8 ADC clock cycles
     value: 2
   - name: Cycles13
-    description: 13 ADC clock cycles.
+    description: 13 ADC clock cycles
     value: 3
   - name: Cycles25
-    description: 25 ADC clock cycles.
+    description: 25 ADC clock cycles
     value: 4
   - name: Cycles48
-    description: 48 ADC clock cycles.
+    description: 48 ADC clock cycles
     value: 5
   - name: Cycles139
-    description: 139 ADC clock cycles.
+    description: 139 ADC clock cycles
     value: 6
   - name: Cycles289
-    description: 289 ADC clock cycles.
+    description: 289 ADC clock cycles
     value: 7
 enum/SWTRIG:
   bit_size: 1
   variants:
   - name: Conversion
-    description: Software trigger starts the conversion for sampling time control trigger mode.
+    description: Software trigger starts the conversion for sampling time control trigger mode
     value: 0
   - name: Sampling
-    description: Software trigger starts the sampling for sampling time control trigger mode.
+    description: Software trigger starts the sampling for sampling time control trigger mode
     value: 1
 enum/TROVS:
   bit_size: 1
   variants:
   - name: Automatic
-    description: All oversampled conversions for a channel are done consecutively following a trigger.
+    description: All oversampled conversions for a channel are done consecutively following a trigger
     value: 0
   - name: Triggered
-    description: Each oversampled conversion for a channel needs a new trigger.
+    description: Each oversampled conversion for a channel needs a new trigger
     value: 1
