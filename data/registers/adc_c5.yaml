@@ -471,22 +471,11 @@ fieldset/PCSEL:
       len: 14
       stride: 1
     enum: PCSEL
-fieldset/SMPR1:
+fieldset/SMPR:
   description: sample time register 1
   fields:
   - name: SMP
     description: Channel x sampling time selection (x=9 to 0).
-    bit_offset: 0
-    bit_size: 3
-    array:
-      len: 10
-      stride: 3
-    enum: SAMPLE_TIME
-fieldset/SMPR2:
-  description: sample time register 2
-  fields:
-  - name: SMP
-    description: Channel 10-13 sampling time selection
     bit_offset: 0
     bit_size: 3
     array:
@@ -552,18 +541,6 @@ enum/AWD1SGL:
   - name: Single
     description: Analog watchdog 1 enabled on a single channel
     value: 1
-enum/AWDFILT:
-  bit_size: 3
-  variants:
-  - name: B_0x0
-    description: No filtering, one detection generates an AWD1 flag or an interrupt.
-    value: 0
-  - name: B_0x1
-    description: two consecutive detections generate an AWD1 flag or an interrupt
-    value: 1
-  - name: B_0x7
-    description: Eight consecutive detections generate an AWD1 flag or an interrupt
-    value: 7
 enum/DMNGT:
   bit_size: 2
   variants:
