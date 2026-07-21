@@ -210,6 +210,7 @@ const PERIMAP: &[(&str, (&str, &str, &str))] = &[
     ("STM32G4.*:ADC:.*", ("adc", "g4", "ADC")),
     ("STM32N6.*:ADC:.*", ("adc", "n6", "ADC")),
     ("STM32C0.*:ADC\\d*_COMMON:.*", ("adccommon", "c0", "ADC_COMMON")),
+    ("STM32C5.*:ADC\\d*_COMMON:.*", ("adccommon", "c5", "ADC_COMMON")),
     ("STM32G0.*:ADC\\d*_COMMON:.*", ("adccommon", "v3", "ADC_COMMON")),
     ("STM32U0.*:ADC\\d*_COMMON:.*", ("adccommon", "v3", "ADC_COMMON")),
     ("STM32G4.*:ADC\\d*_COMMON:.*", ("adccommon", "g4", "ADC_COMMON")),
