@@ -826,6 +826,8 @@ const PERIMAP: &[(&str, (&str, &str, &str))] = &[
     ("STM32H5.*:I3C:.*", ("i3c", "v1", "I3C")),
     ("STM32U3.*:I3C:.*", ("i3c", "v1", "I3C")),
     ("STM32N6.*:I3C.*:.*", ("i3c", "v1", "I3C")),
+    ("STM32C5.*:I3C1:.*", ("i3c", "v1", "I3C")),
+    ("STM32H7[RS].*:I3C1:.*", ("i3c", "v1", "I3C")),
     ("STM32(H5|H7[RS]|WBA).*:PKA:.*", ("pka", "v1a", "PKA")),
     ("STM32N6.*:PKA:.*", ("pka", "n6", "PKA")),
     ("STM32U3.*:PKA:.*", ("pka", "v1b", "PKA")),
